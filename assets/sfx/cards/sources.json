@@ -1,0 +1,21 @@
+[
+  {
+    "source": "音效收集/卡牌/打牌.wav",
+    "source_sha256": "ab50a48a5d063534b7ed6968156b68bf111f50efc86163af61e7346d16c067c8",
+    "output": "play.ogg",
+    "trim_start": 0,
+    "trim_end": 0.19,
+    "gain_db": -1,
+    "note": "原音高与速度；保留完整有效声音，裁去首尾静音。"
+  },
+  {
+    "source": "音效收集/卡牌/放牌.wav",
+    "source_sha256": "5d238e066c0e2031d989e978f3d9a2bc92cdabe22d84af626cd11d628a07e1a9",
+    "output": "place.ogg",
+    "trim_start": 0.188,
+    "trim_end": 0.39,
+    "gain_db": -1,
+    "note": "以落牌主瞬态为起点，去除其前约 0.15 秒轻微摩擦；1 毫秒淡入避免切口杂音。保留原音高、速度、尾音与 -1 dB 音量。",
+    "fade_in_ms": 1
+  }
+]

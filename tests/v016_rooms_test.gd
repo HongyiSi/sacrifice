@@ -1,0 +1,55 @@
+extends SceneTree
+const H = preload("res://tests/helpers.gd")
+const Rooms = preload("res://scripts/room_service.gd")
+var checks := 0
+var failures := 0
+func check(ok: bool, label: String) -> void:
+	checks += 1
+	if not ok: failures += 1; push_error("V016_FAIL "+label)
+func _initialize() -> void:
+	var service = Rooms.new()
+	var a: Dictionary = service.enter(2,Rooms.PROTOCOL,"一",true)
+	var b: Dictionary = service.enter(3,Rooms.PROTOCOL,"二",true)
+	check(a.room != b.room and Rooms.valid_code(a.room),"independent random rooms")
+	check(service.enter(4,"old","",false,a.room).has("error"),"version check")
+	check(service.enter(4,Rooms.PROTOCOL,"",false,"BAD").has("error"),"bad room rejected")
+	service.enter(4,Rooms.PROTOCOL,"三",false,a.room)
+	check(service.enter(5,Rooms.PROTOCOL,"",false,a.room).has("error"),"third player refused")
+	# Random starting Sapphires can pause the first round's deal for animation.
+	for _i in range(80):
+		if service.rooms[a.room].game.animation.is_empty():break
+		service.rooms[a.room].game.advance_animation()
+	var view: Dictionary = service.view(2)
+	check(view.team == 0 and service.view(4).team == 1,"server assigns teams")
+	check(view.state.characters[0].hand.size() >= 4 and view.state.characters[3].hand.is_empty(),"opponent hands private after initial passive draws")
+	check(service.view(3).state.is_empty(),"other room unaffected")
+	check(service.act(77,"plan",[0,0,0],1,1,0) != "","outsider rejected")
+	check(service.act(2,"plan",[0,0,0],1,1,view.state.revision) == "","own plan accepted")
+	check(not service.view(4).state.ready[1] and service.view(4).state.my_plan.is_empty(),"cannot impersonate opponent")
+	check(service.leave(2) == [4] and service.rooms.has(a.room) and service.rooms.has(b.room),"disconnect preserves its room and other rooms")
+	# Amulets transfer first; their new holder controls the in-hand reaction.
+	var g = H.fixture(8)
+	var amulet: int = H.give(g,0,"holy_amulet")
+	var strike: int = H.give(g,1,"strike")
+	check(g.submit(0,[[amulet],strike,0]) == "","amulet no longer needs a planning pretarget")
+	g.submit(1,[0,0,0])
+	check(not g.snapshot(1).queue.filter(func(q):return q.actor == 0)[0].has("guard_target"),"guard target secret until used")
+	g.target(0,4);g.target(0,4)
+	check(g.phase == "responding" and g.request.team == 1,"recipient controls protection after transfer")
+	g.respond(1,g.request.options[0])
+	check(g.characters[4].hp == 8 and H.action_for(g,0).revealed and g.discard.has(amulet),"used guard reveals and consumes")
+	g = H.fixture(8)
+	H.begin(g,{0:H.give(g,0,"defense"),3:H.give(g,3,"strike")},false)
+	check(g.request.options.size() == 6 and g._info(g.input_action).key == "defense","defense selects any pawn")
+	g.target(0,4); g.target(1,4)
+	check(g.phase == "reacting" and g.request.team == 0,"defense controlled by caster rather than beneficiary")
+	g.defend(0,true)
+	check(g.characters[4].hp == 8 and g.characters[4].shield == 0,"targeted shield blocks once")
+	g = H.fixture(8)
+	H.begin(g,{0:H.give(g,0,"defense"),1:H.give(g,1,"defense"),3:H.give(g,3,"strike")},false)
+	g.target(0,4); g.target(0,4); g.target(1,4); g.defend(0,false)
+	check(g.phase == "reacting","decline allows second shield source to respond")
+	g.defend(0,true); check(g.characters[4].hp == 8,"second shield can cancel attack")
+	for c in g.characters: check(c.name == "棋子%d" % (c.id%3+1),"each team uses numbered pawns")
+	print("V016_ROOMS_RESULT checks=%d failures=%d" % [checks,failures])
+	quit(0 if failures == 0 else 1)

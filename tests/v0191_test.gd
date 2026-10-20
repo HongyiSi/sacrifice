@@ -1,0 +1,56 @@
+extends "res://tests/v018_test.gd"
+
+func _initialize() -> void:
+	var g = H.fixture(8)
+	g._draw(g.characters[0],7)
+	var previous: Array = g.characters[0].hand.duplicate()
+	var pile: Array = g.deck.duplicate()
+	g.presentation_enabled = true
+	g._push([{"op":"draw","target":0,"count":4}]);g._pump()
+	check(g.characters[0].hand.size() == 8 and previous.all(func(id):return g.characters[0].hand.has(id)),"only the vacant slot fills, existing cards stay")
+	check(g.characters[0].hand.back() == pile.back(),"first drawn card fills last available slot")
+	check(g.deck == pile.slice(0,pile.size()-1) and g.discard.is_empty(),"rejected cards restore original top order, never discard")
+	check(_conserved(g),"capped batch conserves every card")
+	check(g.animation.draws[0].returned == [false,true,true,true],"presentation records each return")
+	check(g.animation.draws[0].ids.slice(1) == [0,0,0],"rejected identities never enter animation metadata")
+	check(not g.snapshot(1).animation.draws[0].has("ids"),"opponent cannot see even accepted identities")
+	check(g.animation.travel_ms == 1650+1900,"only accepted flight and one dialogue affect duration")
+	while not g.animation.is_empty():g.advance_animation()
+	check(g.request.is_empty() and g.phase == "planning","draw overflow never opens discard selection")
+	for count in [1,5,20]:
+		pile = g.deck.duplicate();previous = g.characters[0].hand.duplicate()
+		g._draw(g.characters[0],count)
+		check(g.characters[0].hand == previous and g.deck == pile,"full-hand draw returns entire batch %d" % count)
+		check(_conserved(g),"full-hand return conserves cards %d" % count)
+	g = H.fixture(8);g._draw(g.characters[0],8);pile = g.deck.duplicate()
+	g.presentation_enabled = true
+	g._push([{"op":"draw","target":0,"count":2},{"op":"draw","target":1,"count":1}]);g._pump()
+	check(g.animation.draws.size() == 2 and g.characters[1].hand == [pile.back()],"following pawn can receive a returned card")
+	var first: Dictionary = g.animation.draws[0]
+	check(first.starts == [-1,-1] and g.animation.draws[1].starts[0] == 0,"refused draws never delay another pawn's accepted flight")
+	check(g.animation.pile_after == g.deck.size() and _conserved(g),"coalesced draw counts and ownership remain consistent")
+	g = H.fixture(8);g._draw(g.characters[0],7)
+	activate(g,3,"divinity");g.characters[3].hp = 0
+	g.presentation_enabled = true
+	g._push([{"op":"draw","target":0,"count":3}]);g._pump()
+	while not g.animation.is_empty():g.advance_animation()
+	check(g.request.type == "deck" and g.request.accept_count == 1,"divinity picker states how many chosen cards can fit")
+	var ids: Array = g.request.options.slice(0,3)
+	g.pick(1,ids)
+	check(g.characters[0].hand.has(ids[0]) and not g.characters[0].hand.has(ids[1]),"divinity admits chosen order up to capacity")
+	check(g.deck.back() == ids[1] and g.deck[g.deck.size()-2] == ids[2],"divinity returns the remaining cards in chosen order")
+	check(g.animation.draws[0].returned == [false,true,true] and g.animation.draws[0].ids == [ids[0],0,0],"divinity uses same return animation and privacy")
+	while not g.animation.is_empty():g.advance_animation()
+	check(g.request.is_empty() and _conserved(g),"divinity overflow finishes without discarding")
+	g = H.fixture(8)
+	for _i in range(9):g.characters[0].hand.append(g._generate_card(g.BOULDER))
+	pile = g.deck.duplicate();g._draw(g.characters[0],5)
+	check(g.characters[0].hand.size() == 9 and g.deck == pile and g.jobs.is_empty(),"already overfull locked hand returns draws without new choices")
+	g = H.fixture(8);g._draw(g.characters[0],8);activate(g,1,"prison",0);g.presentation_enabled = true
+	g._push([{"op":"draw","target":0,"count":3}]);g._pump()
+	check(g.animation.get("kind","") != "draw_cards","prison cancels draw before overflow flight")
+	g = H.fixture(8);g._draw(g.characters[0],7)
+	var last: int = g.deck.back();g.deck = [last];g.discard.clear();g._draw(g.characters[0],4)
+	check(g.characters[0].hand.size() == 8 and g.deck.is_empty(),"short pile draws only available cards")
+	print("V0191_RESULT checks=%d failures=%d" % [checks,failures])
+	quit(0 if failures == 0 else 1)

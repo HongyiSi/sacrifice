@@ -1,0 +1,14 @@
+[
+  {
+    "source": "音效收集/游戏/游戏胜利.wav",
+    "source_sha256": "8da83b49ceb580493ba7c7081ec3d176fe069d4505474b604f6fb08b339bd32a",
+    "output": "victory.wav",
+    "note": "使用用户提供的完整原始 WAV，保持原音高、速度和长度；不循环。"
+  },
+  {
+    "source": "音效收集/游戏/游戏失败.wav",
+    "source_sha256": "7827e9ed35b9d30241d098ab0ffa6b0bd3fcdea853cc235ffa9cdec2787b91c2",
+    "output": "defeat.wav",
+    "note": "使用用户提供的完整原始 WAV，保持原音高、速度和长度；不循环。"
+  }
+]

@@ -1,0 +1,10 @@
+Prophecy page-turn foley — approved and installed 2026-10-10.
+48 kHz stereo 16-bit PCM; byte-identical to the approved preview.
+Recorded paper: Tinysized SFX Library / Jan Schupke / CC0 1.0.
+Source recordings, license, hashes and source cuts:
+work/prophecy-pages-preview-oct10/audio_sources, audio-design.json.
+Reproducible composition and 24-bit master:
+work/prophecy-pages-preview-oct10/build_audio.py, audio_masters/pages.wav.
+Four page turns at 0.255, 0.3315, 0.408 and 0.4845 seconds.
+Original book animation and existing prophecy_chime.ogg retained unchanged.
+Approved preview: outputs/sacrifice/音效方案/预言_书本翻页音效演示_2026-10-10.

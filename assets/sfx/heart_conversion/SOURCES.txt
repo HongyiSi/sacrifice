@@ -1,0 +1,8 @@
+Approved heart-conversion animation/sound installed 2026-10-11.
+Eight WAV files are byte-identical to the approved preview recordings.
+Paper: Jan Schupke / Tinysized SFX Library / CC0, book-page-01/02.wav.
+Magic: user-provided local water, magic-orb and fine-chime recordings.
+Recovery: the existing approved heal_E_arrival.ogg, edited into short individual arrivals.
+Source recordings, provenance, hashes, original CC0 readme, processing and 24-bit masters:
+work/heart-conversion-preview-oct11/audio_sources, audio-design.json, build_audio.py, audio_masters.
+Timing and mix gains match the approved 15-second review exactly.

@@ -1,0 +1,200 @@
+# Sacrifice 广域网部署
+
+## 0.20.69 空白处收起提示与化牌为刃类型调整（2026-10-20，已发布）
+
+- 网页和服务端统一发布至 `/srv/sacrifice/releases/20261020-145729`，协议 `sacrifice-0.20.69`。发布前无在线连接，其他游戏服务及网页散列保持不变。
+- 鼠标点击或触摸空白处可关闭卡牌、状态说明及展开详情；按实际按下位置判断，不依赖触摸后可能过时的悬停控件；重绘不会让关闭的说明再次出现，功能按钮及目标选择照常使用。
+- 化牌为刃改为攻击牌，沿用单目标连续伤害；接入防御、攻击/神圣护符、保佑、战吼及毒药限制，并同步伤害显示和 AI 估值。本地 `../outputs/sacrifice/卡牌设计_含次优先级.docx` 仅更改该牌的类型单元格，保留原格式并渲染检查。
+- 340 项规则/界面回归检查通过；桌面 Web、移动 Web 和服务端包各 101 项检查通过。本地及公网移动 ETC2 模拟验证两种 AI 的刷新恢复、退出清档及过期处理；公网双客户端同步进入第 2 回合。线上包散列、协议日志及 gzip 响应正确，无服务异常重启。
+- 既有 10 份本地发行 ZIP 均未修改；已校验并清理本次服务器临时上传归档。记录、源码快照和截图见 `../work/deploy-v02069-oct20/`，交互测试及 Word 备份见 `../work/blank-dismiss-blades-oct20/`。本次未进行实体 iPhone Safari 测试。
+- 回退需分别恢复：`current` 为 `/srv/sacrifice/releases/20261017-145451`，`server` 为该目录下的 `server`，`web` 为 `/srv/sacrifice/web-releases/20261019-225056`，并重启 sacrifice 服务。部署前配置保存在 `/var/backups/sacrifice-20261020-145729`。
+
+## 0.20.68 内存优化与 AI 对局恢复（2026-10-19，已发布）
+
+- 网页目录 `/srv/sacrifice/web-releases/20261019-225056`；服务端仍为 `/srv/sacrifice/releases/20261017-145451/server`，协议仍为 `sacrifice-0.20.67`。只切换网页，服务 PID 3584240 未变，现有联机对局不中断。
+- 优先级光效复用 GPU 缓冲区，保留原有画面；普通 AI 与自学习 AI 在本机自动保存完整对局和未确认出牌，同一浏览器 30 分钟内重新打开可续局，主动退出或过期清理。包含此前本地已完成的 AI 改进和训练参数。规则和卡牌数据与服务端一致。
+- 两种正式 Web 包各 16 项检查通过；本地和公网移动 ETC2 浏览器验证了两种 AI 的刷新恢复、未确认出牌、主动退出清档及 31 分钟过期；公网双客户端同步进入第 2 回合。发布的 15 个文件散列及 gzip 响应通过验证，其他游戏、服务端包与 10 份本地发行 ZIP 未改变。
+- 公网首轮测试中的恢复与联机断言均通过，但收尾时尝试点击已进入对方离房状态的页面按钮超时；保留 `public-failure.json`、`public-initial-console.log`。针对联机和清理流程重跑通过，无页面或脚本错误。该发布检查使用电脑 Chromium 移动 ETC2 模拟；之前的 iPhone 候选对照见 `../work/mobile-memory-resume-oct19/RESULTS.txt`，不能据此断言所有 Safari 闪退已消除。
+- 发布时使用流式传输及相同文件硬链接，没有远端上传包残留。另将牺牲历史不可变版本中 84 份内容相同的运行时/音乐文件按 SHA256 合并存储，文件内容及版本路径全部保留，服务器剩余空间由约 80 MiB 恢复到约 1.6 GiB；记录 `static-deduplication.json`。这些发布文件应保持不可变，新发布创建新目录。
+- 回退网页：将 `/srv/sacrifice/web` 原子切换回 `/srv/sacrifice/releases/20261017-145451/web`，无需重启服务。完整发布记录、源码快照、验证脚本与截图：`../work/deploy-v02068-oct19/`。本地构建：`build/releases/20261019-225056`。
+
+## 0.20.65 持续亡语动画（2026-10-17，已发布）
+
+- 网页目录 `/srv/sacrifice/web-releases/20261017-141639`，保留服务端 `/srv/sacrifice/releases/20261017-140951/server` 和协议 `sacrifice-0.20.64`。仅原子切换 web 链接，服务 PID 3571133 未变，不中断已有对局。
+- 同步已批准的九种持续图案、前景大伞、逐棋子皇冠定位及完整静止底座；14 份批准源文件散列相同。保留当前取义规则。
+- 桌面与移动 Web 包各 60 项检查通过；本地网页及公网 ETC2 双客户端建房、第 2 回合同步、离房、本地 AI、音乐通过；线上文件散列、HTTPS 和压缩头正确。3 次可选诊断上报收到 HTTP 429，严格零控制台错误断言未通过；已核对仅日志接口限流，原始失败记录保留。其他游戏和原有 Windows ZIP 均未改变。
+- 7 份旧 `/tmp` 上传包在本地 `../work/deploy-death-art-oct17/server-temporary-backup` 留档并核对 SHA256 后清理；本次临时上传包也在验证后清理。所有已发布版本与配置备份保留。
+- 回退网页：恢复 web 链接为 `/srv/sacrifice/releases/20261017-140951/web`，无需重启服务。发布与复现记录：`../work/deploy-death-art-oct17/release.json`。移动测试为桌面 Chromium 触屏与 ETC2 环境，未测试实体 iPhone Safari。
+
+## 0.20.63 发牌出箱遮挡修复（2026-10-15，已发布）
+
+- 发布目录 `/srv/sacrifice/releases/20261015-160354`，协议 `sacrifice-0.20.63`。包含已确认的出箱遮挡修复以及此前 0.20.62 的苦肉玫瑰持续动画；原发牌节奏和音效保留。
+- 本地 840 项遮挡、双方视角、小窗口、房间及苦肉规则检查通过，三种资源包各 41 项检查通过；本地网页与公网移动 ETC2 双客户端验证成功，双方同步进入第 2 回合，离房、本地 AI 与音乐正常。服务器文件散列与构建一致，服务无异常重启，其他游戏服务及网页散列保持不变。
+- 部署前逐项核对本地副本的 SHA256 后清理三份旧 `/tmp` 上传包：`20261014-010120`、`20261014-141924`、`20261014-142850`；部署验证后清理本次临时上传包。历史发布目录和配置备份保留。
+- 回退版本 `/srv/sacrifice/releases/20261015-135531`；配置备份 `/var/backups/sacrifice-20261015-160354`。本地发布记录 `../work/deploy-v02063-oct15/release.json`，完整构建 `build/releases/20261015-160354`。既有 10 份 Windows ZIP 散列均未改变。
+- 已打开的网页刷新后载入新版本。浏览器验证为电脑 Chromium 触屏及 ETC2 渲染模拟，未进行实体 iPhone Safari 测试。
+
+## 0.20.61 恢复原有发牌节奏（2026-10-15，已发布）
+
+- 发布目录 `/srv/sacrifice/releases/20261015-135531`，协议 `sacrifice-0.20.61`。普通取牌路线、出口和速度恢复至 0.20.59 的实现，保留 0.20.60 的箱子/背包遮挡修复、预言范围及棋子身份改动。
+- 原有箱子界面测试 403 项检查通过；三份正式资源包各 38 项检查及本地网页运行通过。未更新本地发行 ZIP。
+- 公网移动 ETC2 双客户端建房、加入、同步至第 2 回合、离房以及本地 AI 验证通过。线上资源散列匹配，服务无异常重启，其他游戏服务及网页未改变；10 份既有本地 ZIP 散列均未变化。验证后已删除本次服务器临时上传文件。
+- 部署前核对本地副本散列后删除两份已部署的临时上传文件：`/tmp/sacrifice-20261013-160303.tar.gz`、`/tmp/sacrifice-20261013-212742.tar.gz`；历史发布目录和配置备份保留。可回退至 `/srv/sacrifice/releases/20261015-133523`，发布记录见 `../work/deploy-v02061-oct15/release.json`。
+
+## 0.20.60 预言范围、动画遮挡与棋子身份（2026-10-15，已发布）
+
+- 发布目录：`/srv/sacrifice/releases/20261015-133523`，协议 `sacrifice-0.20.60`。预言范围改为 1～10，修复箱子右沿和背包前沿的卡牌遮挡，棋子形象固定对应所属队伍。
+- 原生界面 331 项、预言规则 244 项、早有准备动画时序 269 项检查通过；正式桌面 Web、移动 Web、服务端包各 38 项检查通过。网页本地 AI 启动检查通过。
+- 公网移动 ETC2 双客户端建房、加入和第 2 回合同步通过，截图确认双方棋子身份一致；离房、本地 AI 与音乐检查通过。服务器资源散列匹配，服务无异常重启，新版诊断已写入；其他游戏服务及网页散列未改变。
+- 未构建或更新 Windows ZIP。部署前后全部 10 份既有 ZIP 的散列一致。
+- 服务器磁盘不足，核对本地副本与已发布目录后仅清理 `/tmp` 下 `20261013-133403`、`20261013-144406` 两份旧上传文件；保留历史发布目录和配置备份。
+- 发布验证完成后已删除本次临时上传文件，正式发布目录及本地部署副本保留。
+- 可回退至 `/srv/sacrifice/releases/20261015-013627`。发布及验证记录见 `../work/deploy-v02060-oct15/release.json`。
+
+## 0.20.59 卡牌同步、终舞选目标与伤害数字（2026-10-15，已发布）
+
+- 网页与服务端发布目录：`/srv/sacrifice/releases/20261015-013627`；版本及协议均为 `0.20.59`。包含化牌为刃、疯狂、凋萎的新规则，终舞先选齐五次目标再结算，以及伤害数字缺字修复。
+- 用户要求只上传服务器；未构建或替换 Windows ZIP，所有既有本地 ZIP 散列与部署前一致。
+- 两种 Web 包与 Linux 服务端包共 84 项检查通过。公网 ETC2 双客户端成功建房、加入、同步到第 2 回合；离房、本地 AI 和音乐通过，浏览器无错误。资源散列一致，服务无异常重启，新版诊断已落盘，其他游戏服务和网页散列未改变。
+- 部署前服务器仅余约 500 MiB。核对本地副本散列后删除三份旧 `/tmp/sacrifice-<stamp>.tar.gz`，验证完成后删除本次临时上传文件；未删除任何历史已发布目录或配置备份。
+- 旧版本 `/srv/sacrifice/releases/20261014-150949` 保留，可同时恢复 current/web/server 链接并重启 sacrifice 回退。发布与验证记录：`../work/deploy-v02059-oct15/release.json`。
+
+## 0.20.54 苦肉自动发动、网页音乐和显存优化（2026-10-13，已发布）
+
+- 发布目录 `/srv/sacrifice/releases/20261013-160303`；本地安装包 `../outputs/sacrifice/Sacrifice-0.20.54-Windows-x64.zip`。
+
+- 苦肉触发后直接进入摸牌及至多两张额外出牌的流程，取消发动确认，保留额外出牌选择和跳过；卡面与游戏内规则文字同步。
+- Web 背景音乐改为单个 HTMLAudioElement，经 MediaElementAudioSource / GainNode 控制音量。复用进入游戏时解锁的元素，原始 WAV/MP3 经内容散列缓存后用本地 Blob 播放；不再依赖 Godot 的逐帧流式混音，也不把整首音乐解码成大型音频缓冲。原音乐文件及桌面播放方式保留。新增 music-* 状态诊断。
+- 43 个图像导入配置改为显存压缩，导出桌面 S3TC 与移动端 ETC2，保留原图及分辨率。Windows 原始音乐及 43 张原图共 45 份源文件 SHA-256 未变化。目标轮廓读取时兼容压缩图片。
+- 崩溃相关日志拥有独立预留额度，普通状态/音乐日志不会耗尽其全部发送额度。
+- 真实 iPhone 日志在 15:46:36 和 15:49:40 留下最后检查点，随后在 15:46:43 和 15:49:43 开启新页面。没有对应 JS 异常、正常 pagehide 或 WebGL context lost；服务器 PID 未变、NRestarts=0，保留房间后重新入座。前一页面纹理最高约 287 MiB，另一页面约 257 MiB；这支持继续排查浏览器内存压力，不能单凭这些日志证明 iOS 因内存不足杀进程。
+- 本地 Chromium 触屏双端自动对局 360 秒 / 9 回合无页面崩溃及脚本异常，纹理峰值 80.3 MiB。该轮发现诊断限流遗漏，修正后最终构建另跑 90 秒，断线、刷新、强制丢失图形上下文、主动离开均通过。强制 ETC2 最初使用了不支持该格式的 D3D11，结果无效；之后在实际支持 ETC2 的 SwiftShader 环境重新验证并检查截图。没有真实 iPhone Safari 测试条件。
+- 音乐独立测试：主线程阻塞 2.1 秒期间仍输出 88,200 个采样，其中 88,185 个为非零；音量、静音、快速切换、断网缓存播放、循环、停止通过。
+- 规则专项 21 项、三种导出包共 39 项、自动重连 17 项通过。旧 all_deaths / all_normal 全量套件仍有 10 / 22 个失败，使用修改前代码复跑确认结果相同，未将其算作通过；旧 v010 套件在原有前置场景报错，未作为本次验证依据。
+- 工作与可复现测试保存在 `../work/mobile-audio-pain-oct13`。发布路径、散列和公网验证结果见该目录的 `release.json`。
+- Web 音乐文件现为 `music-lobby.wav` / `music-battle.mp3`；发布脚本随之更新。构建目录重用时删除过期的预压缩响应，部署重新生成 gzip。
+
+
+部署目标：https://sacrifice.shytomato.top/
+
+## 0.20.53 自动重连与手机诊断（2026-10-13，已发布）
+
+- 最终网页为 `/srv/sacrifice/web-releases/20261013-150955`，补充重连席位核对，服务 PID 2267593 保持不变。客户端构建位于 `build/releases/20261013-150955`，服务器仍为完整发布 `20261013-144406`；Windows 0.20.53 包使用最终客户端。
+- 最终公网检查全部对局、自动重连、刷新恢复、主动离开和音乐断言完成，服务器收到 47 条本次房间的诊断记录。浏览器另报 3 条临时 `ERR_NETWORK_CHANGED` 资源提示，导致测试脚本末尾“零控制台错误”断言未通过；记录单独保存在 `public-network-warnings.json`，未将其计为游戏脚本错误或 Safari 崩溃。服务端及客户端日志没有本次游戏脚本错误。
+
+- 已发布到 `/srv/sacrifice/releases/20261013-144406`。公网双客户端推进到第 2 回合，网络中断后自动重连、刷新原标签页后恢复、主动离开不重连、背景音乐播放均通过；已确认诊断日志在服务器落盘且没有手牌或昵称。牺牲与其他游戏服务正常，其他游戏资源散列未变化。
+
+- 完整构建 `build/releases/20261013-144406`，协议 `sacrifice-0.20.53`；Windows 包 `../outputs/sacrifice/Sacrifice-0.20.53-Windows-x64.zip`。工作与验证记录在 `../work/mobile-diagnostics-oct13`。
+- 网页每 10 秒上报检查点，通过独立 HTTPS `/client-diagnostics` 上报阶段变化、错误、图形上下文丢失、断线和页面恢复，不依赖游戏 WebSocket。`web_diagnostics.js` 由构建脚本嵌入，不额外下载脚本；只保存当前标签页的重连信息，不使用房间新建接口进行重连。
+- 客户端日志在 `/var/log/sacrifice-client/diagnostics.log`，JSON 行的 `data` 为 URL 编码 JSON。下载后用 `python deploy/read_client_diagnostics.py <日志文件> [房间号]` 解码；输出同时保留服务端接收时间和北京时间。`previous_page` 只是上次页面中断的证据，不能单独判定为崩溃。
+- 对局日志通过 `journalctl -u sacrifice` 查阅，前缀 `SACRIFICE_DIAGNOSTIC`；可按房间号关联客户端检查点。不会记录手牌、昵称或用户操作参数。浏览器被系统直接杀死时未必能发送最后一条日志；下一次重新加载会带回保留的检查点。
+- Nginx http 配置 `/etc/nginx/conf.d/sacrifice-diagnostics.conf` 提供独立日志格式及请求限流。`/etc/logrotate.d/sacrifice-diagnostics` 每日轮换，保留 7 份，超过 10 MiB 时在下次 logrotate 运行时提前轮换。安装与失败回退覆盖这两份新配置；其他游戏的配置不变。
+- 服务重启仍会结束现有房间；更新前告知测试者。旧版客户端需刷新／更新，新客户端会在房间不存在、版本不一致或两分钟仍未连通时停止自动重试。
+
+## 历史完整发布：0.20.52（2026-10-13）
+
+- 公网双客户端已完成第 2 回合、双方分别断线重进及双方离开后关闭房间检查，无浏览器错误；服务运行正常、无自动重启，其他游戏资源散列未变化。
+
+- current、web、server 分别指向 `/srv/sacrifice/releases/20261013-133403` 及其 web、server 子目录；协议 `sacrifice-0.20.52`。包含手机内存优化、掉线暂停及通过原房间号恢复原席位和对局。双方离开才删除房间；服务器重启不保留对局。
+- `web_mobile.js` 由 `prepare_web.ps1` 嵌入加载页，为触屏设备限制绘图分辨率；保留 `experimentalVK=true` 和现有按文件 SHA256 缓存机制。此次 PCK 内容有变化，首次打开新版需要重新下载 PCK，未变化的引擎和音乐继续复用缓存。
+- 本地双客户端断线重进、持续运行、房间与三端导出包检查通过；Safari 真机仍需用户复测。工作记录在 `../work/mobile-stability-oct13`，完整构建在 `build/releases/20261013-133403`。
+- Windows 包：`../outputs/sacrifice/Sacrifice-0.20.52-Windows-x64.zip`，122,421,872 字节；SHA256 `650999783d1ed8cf49d64c3c7c4f960196c468b8f9065fe3b089c95d6ff2e3cd`。网页版刷新、桌面客户端更新后使用新协议。
+- 配置备份 `/var/backups/sacrifice-20261013-133403`。上一版 current 为 `/srv/sacrifice/releases/20261012-162813`，web 为 `/srv/sacrifice/web-releases/20261013-130826`，server 为 `/srv/sacrifice/releases/20261012-162813/server`。回退需同时恢复三处链接并重启 sacrifice；回退脚本存于本次工作记录目录。
+
+WebSocket 入口：wss://sacrifice.shytomato.top/game
+
+## 当前网页修复：手机键盘（2026-10-13）
+
+- 当前网页目录 `/srv/sacrifice/web-releases/20261013-130826`。`prepare_web.ps1` 将 `experimentalVK` 设为 true，与 `export_presets.cfg` 一致，修复触屏设备点击昵称、房间号无法请求虚拟键盘的问题；后续构建自动保留此设置。
+- 相比前一网页版本，仅 `index.html` 的启动配置改变。游戏版本、联机协议和完整服务端发布仍为 0.20.51；PCK、WASM、音乐散列不变，继续复用浏览器缓存。牺牲服务 PID 1960084 未重启，其他游戏服务正常。
+- 横屏与竖屏触摸模拟输入、切换和重新聚焦检查通过；公网两名触屏模拟玩家实际填写昵称、房间号后成功开始对局，姓名同步正确，核心资源来自缓存，无浏览器错误。自动化不能验证实体手机系统键盘的可见性，仍需真机复核。
+- 发布记录在 `../work/mobile-keyboard-oct13`。回退仅需恢复网页链接到 `/srv/sacrifice/web-releases/20261012-192949`，无需重启服务；该目录保存回退脚本。
+
+## 完整游戏发布及缓存修复：0.20.51（2026-10-12）
+
+- 完整游戏与服务端发布目录：`/srv/sacrifice/releases/20261012-162813`；联机协议 `sacrifice-0.20.51`。包含最新卡牌优先级、遗产重做、天眼／神化的生效条件调整及 0.20.50 的技能牌圆框。
+- 网页加载页面已更新至 `/srv/sacrifice/web-releases/20261012-192949`，使用按文件 SHA256 区分内容的 CacheStorage。引擎、PCK 和两首音乐可在刷新及浏览器重启后复用；HTML 仍正常重新验证，不安装 Service Worker。文件校验失败会重下；存储被禁用或空间不足时回退到联网加载；新版本启动后清理旧文件缓存。
+- 缓存更新仅改变 `index.html`，其余发布文件逐项散列一致；服务进程仍为 1960084。公网刷新进大厅 1.93 秒、重启浏览器后 2.59 秒，核心文件网络下载为 0；首次访问 76.7 秒。12 项缓存集成检查与公网双人第 2 回合、双方音乐验证通过。构建及完整网页归档在 `build/releases/20261012-192949`，记录在 `../work/web-cache-oct12`。
+- 本次网页回退只需将 `/srv/sacrifice/web` 恢复到 `/srv/sacrifice/releases/20261012-162813/web`，不需重启服务。首次完整网页包上传超时，实际发布复用了服务器上的相同游戏资源并仅替换加载页面，发布日志和操作脚本保存在上述工作记录目录。
+- Windows 64 位免安装包：`../outputs/sacrifice/Sacrifice-0.20.51-Windows-x64.zip`，122,417,592 字节，SHA256 `5f451710a919b703b9a093ff24a51938c9dcecb6d377a88633408b73a3450bd5`。需完整解压并使用同版本客户端；网页版刷新后更新。
+- 构建目录 `build/releases/20261012-162813`，记录 `../work/deploy-v02051-oct12`。三端导出包 63 项检查通过；Windows 发布程序可启动；本地、公网双浏览器均完成建房、加入、确认出牌、进入第 2 回合和音乐检查。导出的 Windows PCK 通过同版原生运行时与网页在公网同房并同步至第 2 回合。
+- Web PCK 91,743,120 字节，线上 gzip 76,879,516 字节。HTTPS、WASM 类型、压缩与缓存头检查通过。牺牲服务重启后正常，红心大战和大富豪资源散列未变。
+- 配置备份 `/var/backups/sacrifice-20261012-162813`。上一版本的 current、web、server 分别为 `/srv/sacrifice/releases/20261011-230139`、该目录的 `web`、该目录的 `server`；回退脚本保存在本次发布记录中。
+
+## 历史发布：0.20.49（2026-10-11）
+
+- 网页与服务端共同发布到 `/srv/sacrifice/releases/20261011-230139`，协议为 `sacrifice-0.20.49`，包含“早有准备”的背包动画与七段拟音。
+- 本次更新需要重启牺牲服务，旧版客户端会收到刷新/更新提示。其余游戏资源散列未变。
+- 配置备份：`/var/backups/sacrifice-20261011-230139`。回退时恢复 current 为 `/srv/sacrifice/releases/20261011-195250`，web 为 `/srv/sacrifice/web-releases/20261011-203425`，server 为 `/srv/sacrifice/releases/20261011-195250/server`，然后重启 sacrifice。
+- 发布包：`build/releases/20261011-230139/sacrifice-release.tar.gz`；日志与验证：`../work/deploy-v02049-oct11`。公网双浏览器验证建房、加入、同步推进至第 2 回合和音乐正常。
+- Windows 免安装包：`../outputs/sacrifice/Sacrifice-0.20.49-Windows-x64.zip`。采用官方 4.7.1 Windows x86_64 release 导出模板，不包含编辑器、设计文件或用户设置。解压后通过线上对战及房间号连接同一个服务器，目前需手动下载后续新版本。
+- Windows 发布 EXE 启动及大厅截图通过；导出的桌面 PCK 由同版 Windows 原生 Godot 运行时加载，与网页客户端连接公网 WSS，成功同房并同步到第 2 回合。测试脚本、结果、模板来源及安装包 SHA256 均保留在本次发布记录中。
+
+## 前一版网页：0.20.48（2026-10-11）
+
+- 资源精简版已发布到 `/srv/sacrifice/web-releases/20261011-203425`，网页 PCK 为 86,870,464 字节，线上 gzip 下载体积为 72,175,822 字节，比上一版减少约 12.2%。
+- 此次仅切换 web 链接，联机服务继续使用 `sacrifice-0.20.47` 协议，进程未重启；current 和 server 链接仍指向 20261011-195250 的完整发布。
+- 前一版网页保留在 `/srv/sacrifice/releases/20261011-195250/web`，回退仅需恢复 web 链接，无需重启对局服务。服务器记录在 `/srv/sacrifice/web-releases/previous-20261011-203425.txt`。
+- 本地包为 `build/resource-trim-v02048/sacrifice-web-release.tar.gz`，发布记录位于 `../work/deploy-v02048-oct11/`。网页打包脚本支持以构建目录为首个参数，避免误用旧的 `build/web`。
+- 已打开的网页刷新后即可载入精简版。
+- 公网双浏览器已验证 0.20.48 建房、邀请加入、确认出牌、同步进入第 2 回合及双方音乐加载；浏览器无错误。部署前后联机服务 PID 一致，其他游戏资源散列保持不变。
+
+## 上一次完整发布：0.20.47（2026-10-11）
+
+- 网页和服务端已同时发布，协议为 `sacrifice-0.20.47`，包含“早有准备”及此前已实装内容。
+- 当前版本目录：`/srv/sacrifice/releases/20261011-195250`。
+- 配置备份：`/var/backups/sacrifice-20261011-195250`。
+- 本地发布包：`build/releases/20261011-195250/sacrifice-release.tar.gz`。
+- 发布记录、源码散列、浏览器验证和截图：工作区 `work/deploy-v02047-oct11/`。
+- 旧版本保留：current 原指向 `/srv/sacrifice/releases/20260926-210651`；web 原指向 `/srv/sacrifice/web-releases/20260926-210947`；server 原指向 `/srv/sacrifice/releases/20260926-210651/server`。回退时需一起恢复这三个链接，并重启 `sacrifice`。
+- 已打开的旧网页需刷新，使客户端与服务端版本一致。
+- 验证通过：107 项房间/新卡逻辑检查；本地发布包及公网 HTTPS 下双浏览器建房、邀请加入、确认出牌、同步至第 2 回合和战斗音乐播放；JS/WASM/PCK 压缩及音乐响应头正确。服务无自动重启，红心大战与大富豪的网页资源散列保持不变。
+
+参考《红心大战》《大富豪》的 Godot 专用服务器 + Nginx HTTPS/WSS 方式。Sacrifice 使用独立域名、HTTPS 证书、服务和目录。
+
+## 服务器
+
+- Ubuntu：43.132.196.80，登录用户 ubuntu。
+- systemd：sacrifice；专用进程只监听 127.0.0.1:7002。
+- /srv/sacrifice/releases/<时间戳> 保存版本，current 指向当前版本，web 和 server 链接到当前目录。
+- /etc/systemd/system/sacrifice.service。
+- /etc/nginx/sites-available/sacrifice 使用独立的 HTTP/HTTPS 配置，引用 /etc/nginx/snippets/sacrifice-game.locations。
+- 原 heart.shytomato.top/sacrifice/ 临时路径仅保留跳转，红心大战入口和 /game 不变。
+- /var/backups/sacrifice-<时间戳> 保存部署前配置；安装失败时脚本恢复配置与旧版本。
+- 每房间两人，最多 32 个房间；房间状态仅驻留内存。一方离线暂停并保留房间，通过原房间号加入空缺席位后继续；双方都离开才关闭房间，服务器重启会结束所有 Sacrifice 对局。
+
+## 构建与安装
+
+运行 deploy/build.ps1，导出网页和 Linux 服务端资源包。默认使用工作区 work/sacrifice-godot/Godot.exe，运行时复用本机参考项目中的同版本 Godot 4.7.1；可通过参数指定 Web 运行时目录。
+
+构建末尾调用 `prepare_web.ps1`，读取本次 Web 导出的 PCK、WASM 和两首音乐的实际长度与 SHA256，并把文件清单及 `web_cache.js` 内嵌进 `index.html`。相同内容继续复用原缓存，不依赖手工修改游戏版本号。仅调整加载逻辑时可对同版现有 Web 目录重新运行该脚本；资源发生改变时必须重新生成 HTML。CacheStorage 使用 `sacrifice-resources-v1`，只缓存清单中同源 GET 资源，不干预 WebSocket、范围请求或其他 URL。网络响应保持流式读取与进度，完整下载后校验散列；写入缓存失败不会阻止游戏运行。浏览器清理站点存储后需要重新下载。
+
+随后运行 deploy/package.py，生成 build/sacrifice-release.tar.gz 并输出 SHA256。构建包不含密钥、设计 Word、本地偏好或测试脚本。
+
+为避免混入旧构建，正式发布建议给 `build.ps1` 传入新的 `-OutputDirectory`（绝对路径，例如项目的 `build/releases/YYYYMMDD-HHMMSS`），随后将同一个目录作为 `package.py` 的首个参数。包内排除 `.import`、`.tmp` 和日志；网页同时携带字体许可及当前音效来源记录。
+
+通过 SSH/SCP 上传归档和 install.sh；以 sudo 运行 install.sh，参数依次为远程归档路径、SHA256、YYYYMMDD-HHMMSS 时间戳。安装脚本只接受限定路径并校验归档散列。首次部署前应确认 7002 未占用、已有两个游戏健康、Nginx HTTPS 配置路径正确。
+
+首次上线：先为 sacrifice 添加指向 43.132.196.80 的 A 记录；安装脚本配置独立 HTTP 网站后，运行 certbot --nginx -d sacrifice.shytomato.top --non-interactive --agree-tos --redirect 申请证书。后续更新保留 Certbot 加入的 HTTPS 配置。
+
+私钥留在本机 D:/TencentCVM，不能复制进项目、归档或网页目录。已配置的服务器主机指纹必须通过 StrictHostKeyChecking 验证。部署结束可以删除专用密钥副本；保留原部署密钥。
+
+## 验证与维护
+
+上线后检查 HTTPS 页面、WASM 类型、静态资源压缩及缓存头；用两个浏览器上下文建房、通过邀请链接加入并提交回合。确认 systemctl is-active sacrifice heart daifugo nginx 全部正常，原游戏资源散列未变化。
+
+日志：journalctl -u sacrifice。服务：systemctl restart sacrifice。更新必须先告知正在对局的测试者，因为当前不支持跨服务重启恢复对局。
+
+本地验证：tests/v016_rooms_test.gd、tests/v016_ui_test.gd、tests/network_v016_peer.gd；工作区 work/run_v016_network.ps1 运行两个房间四客户端，work/run_v016_browser.ps1 验证网页实际输入、邀请和回合同步。
+
+## 浏览器
+
+建议桌面浏览器横屏。点击「进入游戏」允许音频播放。0.16.1 起昵称与房间号直接使用 Godot 自带输入框和 Web IME，不再叠加额外 HTML 输入框。中文输入与房间号粘贴均已验证。音乐保持初版，不随死亡变化。鸣谢见网页 CREDITS.txt 和 OFL.txt。
+
+0.16.2 在现有字体子集、静态 gzip 压缩的基础上，将两首音乐移出 Web 初始 PCK。build.ps1 从 Godot 已导入的资源中原样复制 music-lobby.res 和 music-battle.res，必须与 index.html 一同发布；无需重新编码音乐。Web 导出排除 assets/music/*，桌面及服务端的导出行为不变。用户点击进入后，只按当前大厅/对局上下文异步请求对应音乐；成功后缓存在内存，网络失败最多重试两次，界面和联机无需等待。已处理大厅下载较慢、进对局后才完成的竞态。Nginx 为 .res 提供 application/octet-stream 和 no-cache（允许存储并通过 ETag 验证更新）。
+
+纯界面更新可使用 package_web.py 打包 build/web，上传后调用 update_web.sh，参数为归档路径、SHA256、时间戳。该脚本只切换网页目录，不重启对局服务；需要修改规则或协议时仍使用完整安装流程。网页当前版本和服务端协议版本允许独立维护。
+
+音乐资源内部已压缩，Nginx 的 .res 位置单独关闭外层 gzip，JS/WASM/PCK 继续使用静态 gzip。Web HTTPRequest 同时关闭自身的自动解压，避免浏览器已经解压后再次处理；音乐文件先写入临时文件并关闭，再加载资源。发布后须验证真实 HTTPS 环境下的音乐播放，不能只验证本地未压缩响应。自动测试 work/sacrifice_music_loading.cjs 覆盖延迟完成、缓存返回、断网重试和双人回合；本地测试服务器特意对音乐使用 gzip，以覆盖反向代理压缩的兼容情况。
+
+0.17 修改服务器规则与实体卡牌分配，网页与服务端必须同时发布，协议为 sacrifice-0.17。旧客户端会收到版本提示。完整部署会重启牺牲服务；安装失败时同时恢复之前独立的网页、服务端与 current 链接。此前仅网页更新的版本不会因回滚丢失。

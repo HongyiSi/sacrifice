@@ -1,0 +1,5 @@
+Approved blue brush strokes, revision 2, 2026-10-10.
+Generated with the built-in image_gen tool, transparent PNG, unchanged original pixels.
+Prompt, source image path and hashes: work/anticipation-polish-preview-v2-oct10/image-generation.json and verification.json.
+Two natural cobalt-blue paintbrush strokes, with bristle grain, uneven pressure and frayed ends.
+Runtime atlas crops and shader reveal use the exact approved v2 parameters and timing.

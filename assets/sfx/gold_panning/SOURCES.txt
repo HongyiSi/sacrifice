@@ -1,0 +1,8 @@
+Gold panning Foley — approved preview, 2026-10-09.
+Recorded material: Jan Schupke / Tinysized SFX Library; CC0 1.0.
+Full license, original recordings and hashes: work/gold-panning-sound-preview-oct09/sources.
+Approved design / 24-bit masters: work/gold-panning-sound-preview-oct09/build.py and stems.
+Runtime: 48 kHz 16-bit PCM, no loop/compression/normalization. All approved gain/EQ retained.
+filter_0/2/3/4/5: same approved filter, pitch-preserving retime to actual animation duration.
+Discard voices use 1/sqrt(count) gain compensation for several simultaneous cards.
+Backups and reproducible installation: work/gold-panning-sound-install-oct09.

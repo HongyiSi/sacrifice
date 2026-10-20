@@ -1,0 +1,10 @@
+Warcry — approved sounds, installed 2026-10-10.
+48 kHz stereo 16-bit PCM; byte-identical to approved preview.
+Hunting horn tone / Alon-De-Lon / CC0 1.0:
+https://commons.wikimedia.org/wiki/File:Hunting_horn_tone.ogg
+Air and cloth / Jan Schupke / Tinysized SFX Library / CC0 1.0.
+Drum and magical shimmer: user-provided collection.
+Edits: warm EQ, natural blown note, three subtle wave swells, short reflections.
+Original sources, license pages, hashes, mixing timings and 24-bit masters:
+work/warcry-sound-preview-oct10/audio_sources, audio-design.json, audio_masters.
+Reproducible composition: work/warcry-sound-preview-oct10/build_audio.py.

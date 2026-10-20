@@ -1,0 +1,6 @@
+Anticipation — approved observe and seal sounds, 2026-10-10.
+48 kHz stereo 16-bit PCM; byte-identical to approved preview revision 2.
+Metal, air and paper recordings: Jan Schupke / Tinysized SFX Library (CC0 1.0).
+Magic layers: user-provided collection, rotation magic and soft bell-like swish.
+Full originals, attribution, hashes and mix timings: work/anticipation-polish-preview-v2-oct10/audio_sources and audio-design.json.
+Reproducible sound composition: work/anticipation-polish-preview-oct10/build_audio.py.

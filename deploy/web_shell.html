@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="icon" href="icon.svg"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#3e332c"><title>牺牲 · Sacrifice</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#241f20;font-family:system-ui,"Microsoft YaHei",sans-serif}#canvas{display:block;width:100%;height:100%;opacity:0;outline:none}#canvas.ready{opacity:1}#status{position:fixed;inset:0;display:grid;place-items:center;color:#f1e3c8;background:radial-gradient(ellipse,#65503a,#241f20)}.box{width:min(540px,85vw);text-align:center;padding:48px;border:1px solid #ac8c5c;border-radius:18px;background:#332d29}h1{font-size:48px;margin:0;letter-spacing:.2em}small{letter-spacing:.3em;color:#c9ae77}progress{width:100%;height:12px;accent-color:#d7b266;margin:30px 0 12px}#notice{white-space:pre-wrap;font-size:15px}button{padding:10px 24px;border:1px solid #ac8c5c;border-radius:8px;background:#ead9b8;color:#3e332c;cursor:pointer}#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);padding:12px 22px;background:#f1e3c8;color:#3e332c;border-radius:8px;z-index:20;display:none}
+</style></head><body>
+<canvas id="canvas" tabindex="0"></canvas><div id="toast"></div>
+<div id="status"><div class="box"><h1>牺牲</h1><small>SACRIFICE</small><progress id="progress" max="1"></progress><div id="notice">正在准备棋盘…</div><p>每人控制三个棋子，凭房间号邀请好友。</p><button id="start" hidden>进入游戏</button><button id="retry" hidden onclick="location.reload()">重新加载</button></div></div>
+<script>
+__RESOURCE_CACHE__
+window.sacrificeAssetCache=SacrificeResourceCache.install(__ASSET_MANIFEST__);
+__CLIENT_DIAGNOSTICS__
+__WEB_MUSIC__
+</script>
+<script src="index.js"></script><script>
+__MOBILE_SUPPORT__
+__PACK_SUPPORT__
+const config=__CONFIG__,canvas=document.getElementById('canvas');
+configureSacrificeMobile(config,canvas);
+selectSacrificePack(config,window.sacrificeAssetCache.manifest);
+const engine=new Engine(config);
+window.sacrificeRuntimeMetrics=()=>({wasm_bytes:engine.rtenv?.HEAP8?.buffer.byteLength || 0,pack_bytes:window.sacrificePack.bytes,pack_name:window.sacrificePack.name});
+function toast(message){const t=document.getElementById('toast');t.textContent=message;t.style.display='block';setTimeout(()=>t.style.display='none',2500)}
+window.sacrificeCopy=async text=>{try{await navigator.clipboard.writeText(text);toast('已复制')}catch{prompt('请复制以下内容',text)}};
+window.sacrificeLastRoom=()=>{try{return localStorage.getItem('sacrifice-last-room')||''}catch{return ''}};
+window.sacrificeRememberRoom=code=>{try{if(localStorage.getItem('sacrifice-last-room')!==code)localStorage.setItem('sacrifice-last-room',code)}catch{}};
+window.sacrificeDownloadLog=text=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));a.download='sacrifice-战况.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),5000)};
+const notice=document.getElementById('notice'),start=document.getElementById('start');
+canvas.addEventListener('webglcontextlost',()=>{document.getElementById('status').style.display='grid';start.hidden=true;notice.textContent='图形显示已中断，请重新加载。对方仍在房间时，可以用原房间号继续对局。';document.getElementById('retry').hidden=false;});
+waitForSacrificeVisibility().then(()=>engine.startGame({canvas,onProgress(current,total){if(total){document.getElementById('progress').value=current/total;notice.textContent='正在载入 '+Math.round(current/total*100)+'%'}},onPrintError:window.sacrificeDiagnosticError})).then(()=>{notice.textContent='棋盘已准备好';start.hidden=false;window.sacrificeMusic.prepare();window.sacrificeAssetCache.ready();window.sacrificeDiagnostic('engine_ready');start.onclick=()=>{window.sacrificeMusic.unlock();document.getElementById('status').style.display='none';canvas.classList.add('ready');canvas.focus();window.sacrificeReady=true;window.sacrificeDiagnostic('entered')}}).catch(error=>{window.sacrificeDiagnostic('load_failure',error.message);notice.textContent='加载失败：'+error.message;document.getElementById('retry').hidden=false});
+</script></body></html>

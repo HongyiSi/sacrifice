@@ -1,0 +1,7 @@
+Approved preview installed in 0.20.43 on 2026-10-11.
+All six 48 kHz stereo PCM16 WAV files are byte-identical to the approved preview.
+Flight, landing timing, gain and softened highs are preserved. Material landings include paper contact.
+Original provenance retained below:
+Preview only, 2026-10-11. Liquid, glass, soil, air and paper: Tinysized / Jan Schupke, CC0. Stone dropping: alegemaate, CC0, https://freesound.org/people/alegemaate/sounds/364711/. Stone on grass: dichardson, CC0, https://freesound.org/people/dichardson/sounds/570976/. Magic-water source supplied by user. Kenney pack was evaluated but not used. Source copies, page snapshots, licenses, exact cuts and masters: work/poison-obstruct-preview-oct11.
+Approved outputs: outputs/sacrifice/动画方案/下毒与阻碍_2026-10-11.
+Installation backups and checks: work/poison-obstruct-install-oct11.

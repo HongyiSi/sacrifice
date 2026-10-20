@@ -1,0 +1,14 @@
+/var/log/sacrifice-client/diagnostics.log {
+    daily
+    maxsize 10M
+    rotate 7
+    missingok
+    notifempty
+    compress
+    delaycompress
+    create 0640 www-data adm
+    sharedscripts
+    postrotate
+        if systemctl is-active --quiet nginx; then systemctl kill -s USR1 --kill-who=main nginx; fi
+    endscript
+}

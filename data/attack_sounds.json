@@ -1,0 +1,100 @@
+{
+  "cards": {
+    "strike": {
+      "rise": "",
+      "travel": "res://assets/sfx/attacks/strike_travel.ogg",
+      "impact": "res://assets/sfx/attacks/strike_impact.ogg",
+      "travel_ms": 764,
+      "death": "res://assets/sfx/attacks/strike_death.ogg"
+    },
+    "double_strike": {
+      "rise": "res://assets/sfx/attacks/double_strike_rise.ogg",
+      "travel": "res://assets/sfx/attacks/double_strike_travel.ogg",
+      "impact": "res://assets/sfx/attacks/double_strike_impact.ogg",
+      "travel_ms": 764,
+      "death": "res://assets/sfx/attacks/double_strike_death.ogg"
+    },
+    "triple_strike": {
+      "rise": "res://assets/sfx/attacks/triple_strike_rise.ogg",
+      "travel": "res://assets/sfx/attacks/triple_strike_travel.ogg",
+      "impact": "res://assets/sfx/attacks/triple_strike_impact.ogg",
+      "travel_ms": 764,
+      "death": "res://assets/sfx/attacks/triple_strike_death.ogg"
+    },
+    "quick_strike": {
+      "rise": "res://assets/sfx/attacks/quick_strike_rise.ogg",
+      "travel": "res://assets/sfx/attacks/quick_strike_travel.ogg",
+      "impact": "res://assets/sfx/attacks/quick_strike_impact.ogg",
+      "travel_ms": 500,
+      "death": "res://assets/sfx/attacks/quick_strike_death.ogg"
+    },
+    "precise_strike": {
+      "rise": "res://assets/sfx/attacks/precise_strike_rise.ogg",
+      "travel": "res://assets/sfx/attacks/precise_strike_travel.ogg",
+      "impact": "res://assets/sfx/attacks/precise_strike_impact.ogg",
+      "travel_ms": 764,
+      "death": "res://assets/sfx/attacks/precise_strike_death.ogg"
+    },
+    "area_strike": {
+      "rise": "res://assets/sfx/attacks/area_strike_rise.ogg",
+      "travel": "res://assets/sfx/attacks/area_strike_travel.ogg",
+      "impact": "res://assets/sfx/attacks/area_strike_impact.ogg",
+      "travel_ms": 764,
+      "death": "res://assets/sfx/attacks/area_strike_death.ogg"
+    },
+    "godslayer": {
+      "rise": "res://assets/sfx/attacks/godslayer_rise.ogg",
+      "travel": "res://assets/sfx/attacks/godslayer_travel.ogg",
+      "impact": "res://assets/sfx/attacks/godslayer_impact.ogg",
+      "travel_ms": 764,
+      "death": "res://assets/sfx/attacks/godslayer_death.ogg"
+    },
+    "holy_strike": {
+      "rise": "res://assets/sfx/attacks/holy_strike_rise.ogg",
+      "travel": "res://assets/sfx/attacks/holy_strike_travel.ogg",
+      "impact": "res://assets/sfx/attacks/holy_strike_impact.ogg",
+      "travel_ms": 1080,
+      "death": "res://assets/sfx/attacks/holy_strike_death.ogg"
+    },
+    "bounty": {
+      "rise": "res://assets/sfx/attacks/bounty_rise.ogg",
+      "travel": "res://assets/sfx/attacks/bounty_travel.ogg",
+      "impact": "res://assets/sfx/attacks/bounty_impact.ogg",
+      "travel_ms": 764,
+      "death": "res://assets/sfx/attacks/bounty_death.ogg"
+    },
+    "glory": {
+      "rise": "res://assets/sfx/attacks/glory_rise.ogg",
+      "travel": "res://assets/sfx/attacks/glory_travel.ogg",
+      "impact": "res://assets/sfx/attacks/glory_impact.ogg",
+      "travel_ms": 764,
+      "death": "res://assets/sfx/attacks/glory_death.ogg"
+    },
+    "hasty_spell": {
+      "rise": "res://assets/sfx/attacks/hasty_spell_rise.ogg",
+      "travel": "res://assets/sfx/attacks/hasty_spell_travel.ogg",
+      "impact": "res://assets/sfx/attacks/hasty_spell_impact.ogg",
+      "travel_ms": 600,
+      "death": "res://assets/sfx/attacks/hasty_spell_death.ogg"
+    },
+    "magic_strike": {
+      "rise": "res://assets/sfx/attacks/magic_strike_rise.ogg",
+      "travel": "res://assets/sfx/attacks/magic_strike_travel.ogg",
+      "impact": "res://assets/sfx/attacks/magic_strike_impact.ogg",
+      "travel_ms": 864,
+      "death": "res://assets/sfx/attacks/magic_strike_death.ogg"
+    },
+    "judgment": {
+      "rise": "res://assets/sfx/attacks/judgment_rise.ogg",
+      "travel": "res://assets/sfx/attacks/judgment_travel.ogg",
+      "impact": "res://assets/sfx/attacks/judgment_impact.ogg",
+      "travel_ms": 720,
+      "death": "res://assets/sfx/attacks/judgment_death.ogg"
+    }
+  },
+  "rewards": {
+    "bounty_depart": "res://assets/sfx/attacks/bounty_depart.ogg",
+    "bounty_arrive": "res://assets/sfx/attacks/bounty_arrive.ogg",
+    "glory_badge": "res://assets/sfx/attacks/glory_badge.ogg"
+  }
+}

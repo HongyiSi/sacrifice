@@ -1,0 +1,59 @@
+{
+  "supplied_by": "user",
+  "files": [
+    {
+      "file": "collect_success.ogg",
+      "source": "音效收集/魔法/叮铃-成功音效.wav",
+      "source_sha256": "1403241fba1db6b31e464e99e8e6fd694950e30f8ba148e8ec8de7d38da2d85c",
+      "trim_leading_seconds": 0,
+      "gain_db": -1,
+      "processing": "Ogg Vorbis quality 6, 44.1 kHz stereo; original pitch and playback speed; full trailing decay retained",
+      "file_sha256": "833dc74913f5c359e60d05d536002e7da975c51523991ff18b52f3a5116b5235"
+    },
+    {
+      "file": "gambler_roll.ogg",
+      "source": "音效收集/物理/骰子.mp3",
+      "source_sha256": "dcb77fbb6c40563249db034c61a0330113575541dd65d04b54d4f139da3dd739",
+      "trim_leading_seconds": 0,
+      "gain_db": -1,
+      "processing": "Ogg Vorbis quality 6, 44.1 kHz stereo; original pitch and playback speed; full trailing decay retained",
+      "file_sha256": "7b05c70188e65fbf60f36ae13caee836a9762e3ebadf1ba1bc63cfa3dacbfcfe"
+    },
+    {
+      "file": "prophecy_chime.ogg",
+      "source": "音效收集/魔法/清脆叮铃.wav",
+      "source_sha256": "075587aa657c4e63c043edfbc2d990e7651d4959f8f8a8f006fff913a4907fe3",
+      "trim_leading_seconds": 0.18,
+      "gain_db": -1,
+      "processing": "Ogg Vorbis quality 6, 44.1 kHz stereo; original pitch and playback speed; full trailing decay retained",
+      "file_sha256": "37995816eba1870747d1fdf4a11763d1beb5172d5114c5adaf4c120991837f3e"
+    },
+    {
+      "file": "mirror_ripple.ogg",
+      "source": "音效收集/魔法/魔法-水波.wav",
+      "source_sha256": "739017d977684fc7255e1a6f26437b4a7b67266e1890c567d277bb6d3f22b8b5",
+      "trim_leading_seconds": 0.08,
+      "gain_db": -1,
+      "processing": "Ogg Vorbis quality 6, 44.1 kHz stereo; original pitch and playback speed; full trailing decay retained",
+      "file_sha256": "e380905640a9e1c6757296abf865bacfd5aaea95adafc320ff39076c979eca27"
+    },
+    {
+      "file": "amulet_burn.ogg",
+      "source": "音效收集/魔法/火球声或水声（轻）.wav",
+      "source_sha256": "27f574f4a35c633c3f26016b62e4cfe8d53b2523e47b9045b164e7dff946c032",
+      "trim_leading_seconds": 0.12,
+      "gain_db": -1,
+      "processing": "Ogg Vorbis quality 6, 44.1 kHz stereo; original pitch and playback speed; full trailing decay retained",
+      "file_sha256": "471536b7c7742d2cadce3acba8fb7981d12bf8828660d0e87a6b2326224e8a20"
+    },
+    {
+      "file": "divinity_lift.ogg",
+      "source": "音效收集/魔法/mixkit-metal-tunnel-swish-1505.wav",
+      "source_sha256": "26dc4213500c95594d5c0cbddbfafc1d511af2ec569b5e779979f989bca804d3",
+      "trim_leading_seconds": 0.17,
+      "gain_db": -1,
+      "processing": "Ogg Vorbis quality 6, 44.1 kHz stereo; original pitch and playback speed; full trailing decay retained",
+      "file_sha256": "0b6784802fa960bfd06b87f3c49968559f4286f1504d0f6eff300ceeafbe3ea7"
+    }
+  ]
+}

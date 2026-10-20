@@ -1,0 +1,23 @@
+[Unit]
+Description=Sacrifice multiplayer game server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sacrifice
+Group=sacrifice
+WorkingDirectory=/srv/sacrifice/server
+Environment=HOME=/var/lib/sacrifice
+StateDirectory=sacrifice
+ExecStart=/srv/sacrifice/server/godot-server.x86_64 --headless --main-pack /srv/sacrifice/server/sacrifice-server.pck -- --server --port=7002 --bind=127.0.0.1
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target

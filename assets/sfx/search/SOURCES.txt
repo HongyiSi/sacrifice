@@ -1,0 +1,4 @@
+Approved Search compass Foley, 2026-10-09.
+Recorded brass, paper, wood and cloth: Jan Schupke / Tinysized SFX, CC0. Quiet air layer: user-provided recording.
+Full original recordings, license, trims, equalization, SHA256 and timings: work/search-compass-preview-oct09/audio_sources/index.json and audio-report.json.
+Integration and backup: work/search-compass-install-oct09.

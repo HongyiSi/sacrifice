@@ -1,0 +1,11 @@
+Gift revision 2 — approved animation and Foley, 2026-10-10.
+Runtime stems are byte-identical to the approved v2 preview (48 kHz stereo 16-bit PCM).
+Real cardboard opening and taps: newagesoup, CC0 1.0, public high-quality MP3 sources.
+https://freesound.org/people/newagesoup/sounds/364740/
+https://freesound.org/people/newagesoup/sounds/364932/
+Paper: Jan Schupke / Tinysized SFX Library, CC0 1.0.
+No leather, cloth or tube-whoosh layer from the rejected first preview.
+Full source files, archived license pages, media URLs, hashes and layer design:
+work/gift-polish-preview-v2-oct10/audio_sources and audio-design.json.
+24-bit masters and reproducible composition: same directory, audio_masters and build_audio.py.
+Installation backups and verification: work/gift-polish-install-oct10.

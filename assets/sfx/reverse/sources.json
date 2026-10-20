@@ -1,0 +1,11 @@
+{
+  "approved_preview": "D:\\Godot projects\\sacrifice\\outputs\\sacrifice\\动画方案\\扭转乾坤打磨演示_2026-10-09\\配音柔和版\\扭转乾坤_高频柔和版_音效演示.mp4",
+  "source_record": "D:\\Godot projects\\sacrifice\\work\\reverse-sound-preview-oct09\\build-report.json",
+  "softening_record": "D:\\Godot projects\\sacrifice\\work\\reverse-sound-soften-oct09\\verification.json",
+  "processing": "Only +6.0206 dB gain before Vorbis q7, so default game volume 0.5 matches the approved preview. No pitch, duration or EQ change.",
+  "files": {
+    "rotation": "e481d27590618dca44731e13fb115c8080f121b4bb7ba82b1104281113d8b6b2",
+    "purple": "86cb4e7d45538357acce739e8a52e90fa5bfd47654731213a0612079a1ce3bed",
+    "restoration": "6b025ae3e2a54dd2749b78f63a4fb06f20525399082f82316be7d25494390e1f"
+  }
+}

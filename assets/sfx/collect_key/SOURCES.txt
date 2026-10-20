@@ -1,0 +1,8 @@
+Collect key/chest approved sound, installed 2026-10-10. Byte-identical to the approved preview.
+Key insertion and turning: Tinysized SFX Library / Jan Schupke / CC0 1.0.
+Chest creak: ssierra1202, https://freesound.org/people/ssierra1202/sounds/391947/ (CC0).
+Hinge: soundofsong, https://freesound.org/people/soundofsong/sounds/647648/ (CC0).
+Wooden jewellery box: randbsoundbites, https://freesound.org/people/randbsoundbites/sounds/795444/ (CC0).
+Chest sources are public high-quality MP3 previews, not original lossless recordings.
+Originals, license-page snapshots, hashes and reproducible layer editing retained under work/collect-key-sound-preview-oct10/audio_sources.
+Timing and mixing: audio-design.json; 24-bit masters: audio_masters.

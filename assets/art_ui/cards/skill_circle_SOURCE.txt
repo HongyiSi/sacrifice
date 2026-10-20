@@ -1,0 +1,17 @@
+Skill illustration circle border, approved and integrated 2026-10-12.
+
+Original generated art: skill_circle_source.png (1052 x 1495, unchanged).
+Generated using the built-in image-generation tool from the project's existing
+painted card-frame reference; approved by the user before integration.
+Prompt, original frame reference, native Godot preview renderer and approved
+images: work/skill-circle-preview-oct12 under the workspace root
+(D:/Godot projects/sacrifice).
+
+The shader replaces only the illustration area's parchment and ornamentation;
+the existing outer priority frame, labels and illustration remain native.
+skill_circle_flight.png is a Godot-rendered miniature-frame texture derived from
+the same shader and the project's original normal frame, without illustration.
+Rebuild: work/skill-circle-install-oct12/bake_flight.gd.
+
+Approved previews: outputs/sacrifice/卡面方案/技能牌圆框_2026-10-12.
+Implementation checks and baseline backups: work/skill-circle-install-oct12.

@@ -1,0 +1,578 @@
+{
+  "approved_preview": "outputs/sacrifice/动画方案/三种护符重置演示_2026-10-09/第二版",
+  "design": "Exact accepted layers split into charge/beam, impact/burn, and actual discard. Outward and return motion foley absent; overlapping tails retained. Voice gain 2 at default volume 0.5 reproduces preview amplitude.",
+  "sample_rate": 48000,
+  "entries": {
+    "holy_amulet": {
+      "travel": {
+        "file": "res://assets/sfx/amulets/holy_amulet_travel.wav",
+        "seconds": 2.024395833333333,
+        "start": 1.08,
+        "peak_db": -5.3637973142254625,
+        "sha256": "fbb2304423b23c0b5a6e9e2b84301a26a4c527e2e052ce0c15f8650103e046cf"
+      },
+      "impact": {
+        "file": "res://assets/sfx/amulets/holy_amulet_impact.wav",
+        "seconds": 2.6213333333333333,
+        "start": 2.1,
+        "peak_db": -4.651289546425131,
+        "sha256": "e7a68254fcae88fbc4491d31a87d2c8d7f7dfdecee61ed8e3d9a31f391292071"
+      },
+      "discard": {
+        "file": "res://assets/sfx/amulets/holy_amulet_discard.wav",
+        "seconds": 0.36314583333333333,
+        "start": 5.01,
+        "peak_db": -20.7774806051126,
+        "sha256": "9364e1909d86b2615f730973fe16e099f6988bd98e10ed0355c91b7a98520662"
+      }
+    },
+    "attack_amulet": {
+      "travel": {
+        "file": "res://assets/sfx/amulets/attack_amulet_travel.wav",
+        "seconds": 2.0246875,
+        "start": 1.08,
+        "peak_db": -5.504460435364623,
+        "sha256": "4c467538df3b9451a6a04a2311640053f618cdf0889af1f0907eefa66967789d"
+      },
+      "impact": {
+        "file": "res://assets/sfx/amulets/attack_amulet_impact.wav",
+        "seconds": 2.305375,
+        "start": 2.1,
+        "peak_db": -4.093149161297161,
+        "sha256": "a6c134b9fae2d75c3fc66d2a61107c8f9339ae28f57627e1746c4f6cfec80439"
+      },
+      "discard": {
+        "file": "res://assets/sfx/amulets/attack_amulet_discard.wav",
+        "seconds": 0.36314583333333333,
+        "start": 5.01,
+        "peak_db": -20.7774806051126,
+        "sha256": "9364e1909d86b2615f730973fe16e099f6988bd98e10ed0355c91b7a98520662"
+      }
+    },
+    "magic_amulet": {
+      "travel": {
+        "file": "res://assets/sfx/amulets/magic_amulet_travel.wav",
+        "seconds": 2.0245625,
+        "start": 1.08,
+        "peak_db": -6.206241422395009,
+        "sha256": "4c589d1b618efeb1fe183aa477ba202103f736be93cfe2f6486cb160f690dfee"
+      },
+      "impact": {
+        "file": "res://assets/sfx/amulets/magic_amulet_impact.wav",
+        "seconds": 2.5884791666666667,
+        "start": 2.1,
+        "peak_db": -6.472294381334239,
+        "sha256": "f3eda91dc87e9f3426ff507bbbb3d7dffbb61a5ad301d6a7c4932b98b7061a85"
+      },
+      "discard": {
+        "file": "res://assets/sfx/amulets/magic_amulet_discard.wav",
+        "seconds": 0.36314583333333333,
+        "start": 5.01,
+        "peak_db": -20.7774806051126,
+        "sha256": "9364e1909d86b2615f730973fe16e099f6988bd98e10ed0355c91b7a98520662"
+      }
+    }
+  },
+  "cues": [
+    {
+      "key": "holy_amulet",
+      "stage": "travel",
+      "label": "胸前蓄能共鸣",
+      "at": 1.08,
+      "seconds": 1.3
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "travel",
+      "label": "发射前聚能",
+      "at": 1.23,
+      "seconds": 0.61
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "travel",
+      "label": "光束发射与飞行",
+      "at": 1.85,
+      "seconds": 0.49
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "travel",
+      "label": "持续光束能量",
+      "at": 1.94,
+      "seconds": 1.16
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "命中点火",
+      "at": 2.1,
+      "seconds": 0.64
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "纸面燃起的短促脆响",
+      "at": 2.1,
+      "seconds": 0.13
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "焚烧持续与火焰收尾",
+      "at": 2.14,
+      "seconds": 2.3
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 2.36,
+      "seconds": 0.11870833333333333
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 2.59,
+      "seconds": 0.12116666666666667
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 2.83,
+      "seconds": 0.10270833333333333
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.07,
+      "seconds": 0.1535
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.34,
+      "seconds": 0.18335416666666668
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.64,
+      "seconds": 0.1185
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.92,
+      "seconds": 0.11070833333333334
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "impact",
+      "label": "余烬的细微魔法泛音",
+      "at": 3.48,
+      "seconds": 1.3
+    },
+    {
+      "key": "holy_amulet",
+      "stage": "discard",
+      "label": "护符卡弃置掠过",
+      "at": 5.01,
+      "seconds": 0.4
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "travel",
+      "label": "胸前蓄能共鸣",
+      "at": 1.08,
+      "seconds": 1.2
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "travel",
+      "label": "发射前聚能",
+      "at": 1.23,
+      "seconds": 0.61
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "travel",
+      "label": "光束发射与飞行",
+      "at": 1.85,
+      "seconds": 0.49
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "travel",
+      "label": "持续光束能量",
+      "at": 1.94,
+      "seconds": 1.16
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "命中点火",
+      "at": 2.1,
+      "seconds": 0.64
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "纸面燃起的短促脆响",
+      "at": 2.1,
+      "seconds": 0.13
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "焚烧持续与火焰收尾",
+      "at": 2.14,
+      "seconds": 2.3
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 2.36,
+      "seconds": 0.16564583333333333
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 2.59,
+      "seconds": 0.1581875
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 2.83,
+      "seconds": 0.1196875
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.07,
+      "seconds": 0.10260416666666666
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.34,
+      "seconds": 0.14908333333333335
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.64,
+      "seconds": 0.127
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.92,
+      "seconds": 0.153375
+    },
+    {
+      "key": "attack_amulet",
+      "stage": "discard",
+      "label": "护符卡弃置掠过",
+      "at": 5.01,
+      "seconds": 0.4
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "travel",
+      "label": "胸前蓄能共鸣",
+      "at": 1.08,
+      "seconds": 1.36
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "travel",
+      "label": "发射前聚能",
+      "at": 1.23,
+      "seconds": 0.61
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "travel",
+      "label": "光束发射与飞行",
+      "at": 1.85,
+      "seconds": 0.49
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "travel",
+      "label": "持续光束能量",
+      "at": 1.94,
+      "seconds": 1.16
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "命中点火",
+      "at": 2.1,
+      "seconds": 0.64
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "纸面燃起的短促脆响",
+      "at": 2.1,
+      "seconds": 0.13
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "焚烧持续与火焰收尾",
+      "at": 2.14,
+      "seconds": 2.3
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 2.36,
+      "seconds": 0.11391666666666667
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 2.59,
+      "seconds": 0.17616666666666667
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 2.83,
+      "seconds": 0.11677083333333334
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.07,
+      "seconds": 0.13316666666666666
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.34,
+      "seconds": 0.10966666666666666
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.64,
+      "seconds": 0.17547916666666666
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "焦化纸纤维细响",
+      "at": 3.92,
+      "seconds": 0.10122916666666666
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "impact",
+      "label": "余烬的细微魔法泛音",
+      "at": 3.48,
+      "seconds": 1.3
+    },
+    {
+      "key": "magic_amulet",
+      "stage": "discard",
+      "label": "护符卡弃置掠过",
+      "at": 5.01,
+      "seconds": 0.4
+    }
+  ],
+  "sources": [
+    {
+      "key": "church",
+      "source": "D:\\Godot projects\\sacrifice\\音效收集\\魔法\\clinclin+教堂哦音.wav",
+      "duration": 4.090354166666667,
+      "active": [
+        0,
+        3.02
+      ],
+      "peak_time": 1.1,
+      "peak_db": -0.9187610149383545,
+      "sha256": "0cda8e9acea384705dd9bd2be3e594aed2d19006b3ed8f4fc4775985c97a55a1",
+      "provenance": "User-provided audio collection"
+    },
+    {
+      "key": "fire",
+      "source": "D:\\Godot projects\\sacrifice\\work\\attack-sfx-c-crisp\\sources\\1328.wav",
+      "duration": 3.6319375,
+      "active": [
+        0.69,
+        2.61
+      ],
+      "peak_time": 1.04,
+      "peak_db": -0.03918538987636566,
+      "sha256": "bd8f1f083f552928695fca320fba1c649cb2982a13c849adf1baf2626701087a",
+      "provenance": "Mixkit SFX Free License; existing local records.json and license.html retained"
+    },
+    {
+      "key": "fire_attack",
+      "source": "D:\\Godot projects\\sacrifice\\work\\attack-sfx-c-crisp\\sources\\1345.wav",
+      "duration": 3.185770833333333,
+      "active": [
+        0.17,
+        1.18
+      ],
+      "peak_time": 0.65,
+      "peak_db": -1.6381539106369019,
+      "sha256": "6fd2d1930fcbbe56f371b83248bddeb25ffec110fb28e943515b13f78dededfa",
+      "provenance": "Mixkit SFX Free License; existing local records.json and license.html retained"
+    },
+    {
+      "key": "leather",
+      "source": "D:\\Godot projects\\sacrifice\\work\\strike-foley-preview\\sources\\tiny\\sfx-cc0\\arrow-grab-from-quiver-01.wav",
+      "duration": 0.623875,
+      "active": [
+        0,
+        0.51
+      ],
+      "peak_time": 0.13,
+      "peak_db": 0.04766380041837692,
+      "sha256": "1364a2223fa59834325f56c25eb5ad3a96cec19a3b2f8d97f0449d3fc25ad5cc",
+      "provenance": "Tinysized SFX CC0; local readme retained"
+    },
+    {
+      "key": "match",
+      "source": "D:\\Godot projects\\sacrifice\\work\\strike-foley-preview\\sources\\tiny\\sfx-cc0\\match-light-01.wav",
+      "duration": 0.758875,
+      "active": [
+        0.02,
+        0.15
+      ],
+      "peak_time": 0.05,
+      "peak_db": 0.43003642559051514,
+      "sha256": "328c652eec7f5cbe6d63a3bc29d973e7391dca9d10da323a0cc37b994c02c536",
+      "provenance": "Tinysized SFX CC0; local readme retained"
+    },
+    {
+      "key": "metal",
+      "source": "D:\\Godot projects\\sacrifice\\音效收集\\物理\\金属叮.wav",
+      "duration": 0.7709791666666667,
+      "active": [
+        0.08,
+        0.37
+      ],
+      "peak_time": 0.1,
+      "peak_db": -3.5149736404418945,
+      "sha256": "ea2eab749fd9c1ef07884f403251c1e5d0c89301c4a08dc54b93ec0532819d5b",
+      "provenance": "User-provided audio collection"
+    },
+    {
+      "key": "orb",
+      "source": "D:\\Godot projects\\sacrifice\\音效收集\\魔法\\魔法球音.wav",
+      "duration": 1.1043125,
+      "active": [
+        0,
+        0.43000000000000005
+      ],
+      "peak_time": 0.01,
+      "peak_db": -0.49084511399269104,
+      "sha256": "ce09b5473e141a141a308d337d34341026295a61d969b899307e7fde0eb77a3d",
+      "provenance": "User-provided audio collection"
+    },
+    {
+      "key": "paper",
+      "source": "D:\\Godot projects\\sacrifice\\work\\strike-foley-preview\\sources\\tiny\\sfx-cc0\\cover-paper-tear-01.wav",
+      "duration": 1.2622083333333334,
+      "active": [
+        0.09,
+        1.1300000000000001
+      ],
+      "peak_time": 0.41,
+      "peak_db": -0.7345283627510071,
+      "sha256": "2df88e5c0c0fce2b4ca056cbd80ddd0d8725355a3092b45205b63ecb060a02a8",
+      "provenance": "Tinysized SFX CC0; local readme retained"
+    },
+    {
+      "key": "shimmer",
+      "source": "D:\\Godot projects\\sacrifice\\音效收集\\魔法\\魔法-唰~-碎铃感.wav",
+      "duration": 3.5,
+      "active": [
+        0.02,
+        1.62
+      ],
+      "peak_time": 0.45,
+      "peak_db": -5.975208759307861,
+      "sha256": "321d550c25ec93fa49e7c2a03bbbe99f2a483575109700e589dd3eb4d2e781c6",
+      "provenance": "User-provided audio collection"
+    },
+    {
+      "key": "soft_fire",
+      "source": "D:\\Godot projects\\sacrifice\\音效收集\\魔法\\火球声或水声（轻）.wav",
+      "duration": 2.2833958333333335,
+      "active": [
+        0.13,
+        1.58
+      ],
+      "peak_time": 0.21,
+      "peak_db": -11.361534118652344,
+      "sha256": "27f574f4a35c633c3f26016b62e4cfe8d53b2523e47b9045b164e7dff946c032",
+      "provenance": "User-provided audio collection"
+    },
+    {
+      "key": "sparkle",
+      "source": "D:\\Godot projects\\sacrifice\\音效收集\\魔法\\清脆碎屑.wav",
+      "duration": 6.0,
+      "active": [
+        0.84,
+        3.84
+      ],
+      "peak_time": 1.82,
+      "peak_db": -13.697027206420898,
+      "sha256": "9ff3492b4558dbf3ccc4c20b5461896272f0157cd98132f46b09e575bfaf0651",
+      "provenance": "User-provided audio collection"
+    },
+    {
+      "key": "swirl",
+      "source": "D:\\Godot projects\\sacrifice\\音效收集\\魔法\\旋转魔法音.wav",
+      "duration": 1.4376666666666666,
+      "active": [
+        0,
+        1.05
+      ],
+      "peak_time": 0.17,
+      "peak_db": -1.9599871635437012,
+      "sha256": "d5a812f907923a1d3895dafa3e08670026b34634365b942542068a1dfb9de0cc",
+      "provenance": "User-provided audio collection"
+    },
+    {
+      "key": "wizard",
+      "source": "D:\\Godot projects\\sacrifice\\work\\attack-sfx-c-crisp\\sources\\1326.wav",
+      "duration": 1.0876875,
+      "active": [
+        0,
+        0.45999999999999996
+      ],
+      "peak_time": 0.11,
+      "peak_db": -0.26380664110183716,
+      "sha256": "8e54b60edf419ba4484711b1c162e03a3bb0725636dc668c08dfebd1303eeb9e",
+      "provenance": "Mixkit SFX Free License; existing local records.json and license.html retained"
+    }
+  ]
+}

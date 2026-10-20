@@ -1,0 +1,4 @@
+Approved death sound suite installed in local version 0.20.45 on 2026-10-11.
+All 38 WAV files are byte-identical to the approved preview.
+Recorded Foley: Jan Schupke / Tinysized (CC0 1.0), plus user-supplied magic recordings. Exact sources, license, layer parameters and 24-bit masters remain in work/death-sounds-preview-oct11/audio_sources, audio_masters and audio-design.json.
+Installation backup and checks: work/death-sounds-install-oct11.

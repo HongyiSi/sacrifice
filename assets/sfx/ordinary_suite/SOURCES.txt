@@ -1,0 +1,4 @@
+Approved ordinary suite installed in 0.20.44 on 2026-10-11.
+All 23 WAV files are byte-identical to the approved preview.
+Recorded Foley: Jan Schupke / Tinysized, CC0 1.0; user-supplied magic recordings. Exact sources, license, hashes, cuts and layer levels retained in work/ordinary-suite-preview-oct11/audio_sources and audio-design.json. No synthesized note placeholders. Preview only.
+Installation backup and checks: work/ordinary-suite-install-oct11.

@@ -1,0 +1,1 @@
+Approved early-preparation backpack sounds, byte-identical to work/prepared-polish-preview-oct11/game/assets/sfx/prepared_preview. Recorded Foley by Jan Schupke / Tinysized, CC0 1.0. Originals, license, cuts and masters retained in that preview directory. Art: built-in image_gen; original transparent PNGs and prompts retained in art_sources. No remote deployment.

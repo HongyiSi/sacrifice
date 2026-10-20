@@ -1,0 +1,4 @@
+Approved suppression Foley from work/suppression-polish-preview-oct09.
+Recorded wood, paper, brass and mechanical layers from Jan Schupke / Tinysized SFX, CC0, plus user-provided quiet fire/water recording.
+Exact source paths, SHA256, trims, equalization, timing, archived recordings and license: work/suppression-polish-preview-oct09/audio-report.json and audio_sources/index.json.
+Integration and backups: work/suppression-install-oct09. No flight or hold loop.

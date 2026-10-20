@@ -1,0 +1,18 @@
+# Godot cache and exported builds
+.godot/
+build/
+export_templates/
+
+# Local saves and verification output
+test-results/
+local-data/
+*.tmp
+
+# Local credentials
+export_credentials.cfg
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+!.env.sample

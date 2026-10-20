@@ -1,0 +1,9 @@
+Approved defense/strike review installed 2026-10-10.
+All five WAV files byte-identical to the approved guard-strikes-preview-oct10 recordings.
+Physical sword whoosh: outputs/sacrifice/音效方案/打击-金属实录版/打击-挥刀.wav.
+Quiet lift: Tinysized / Jan Schupke / CC0 seax-unsheathe-01.wav.
+Source recordings, licenses, hashes and reproducible processing:
+work/guard-strikes-preview-oct10/audio_sources, audio-design.json, build_audio.py.
+Existing contact OGG files retained unchanged; each actual blade schedules its own contact.
+Double contacts: 0, 0.210 s. Triple: 0, 0.1495, 0.299 s after first impact.
+Both clients use public animation clocks; volume and natural tails match the approved review.

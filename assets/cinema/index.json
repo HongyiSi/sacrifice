@@ -1,0 +1,857 @@
+{
+  "strike": {
+    "atlas": "weapons.png",
+    "rect": [
+      138,
+      13,
+      160,
+      318
+    ]
+  },
+  "double_strike": {
+    "atlas": "weapons.png",
+    "rect": [
+      524,
+      13,
+      135,
+      318
+    ]
+  },
+  "triple_strike": {
+    "atlas": "weapons.png",
+    "rect": [
+      900,
+      11,
+      124,
+      319
+    ]
+  },
+  "quick_strike": {
+    "atlas": "weapons.png",
+    "rect": [
+      1244,
+      13,
+      143,
+      317
+    ]
+  },
+  "area_strike": {
+    "atlas": "weapons.png",
+    "rect": [
+      161,
+      350,
+      144,
+      313
+    ]
+  },
+  "precise_strike": {
+    "atlas": "weapons.png",
+    "rect": [
+      508,
+      348,
+      142,
+      310
+    ]
+  },
+  "godslayer": {
+    "atlas": "weapons.png",
+    "rect": [
+      877,
+      336,
+      180,
+      326
+    ]
+  },
+  "holy_strike": {
+    "atlas": "weapons.png",
+    "rect": [
+      1228,
+      337,
+      199,
+      324
+    ]
+  },
+  "magic_strike": {
+    "atlas": "weapons.png",
+    "rect": [
+      123,
+      667,
+      229,
+      327
+    ]
+  },
+  "bounty": {
+    "atlas": "weapons.png",
+    "rect": [
+      519,
+      666,
+      132,
+      332
+    ]
+  },
+  "glory": {
+    "atlas": "weapons.png",
+    "rect": [
+      865,
+      665,
+      279,
+      333
+    ]
+  },
+  "final_strike": {
+    "atlas": "weapons.png",
+    "rect": [
+      1245,
+      660,
+      162,
+      347
+    ]
+  },
+  "defense": {
+    "atlas": "props.png",
+    "rect": [
+      47,
+      29,
+      259,
+      295
+    ]
+  },
+  "holy_amulet": {
+    "atlas": "props.png",
+    "rect": [
+      358,
+      46,
+      251,
+      270
+    ]
+  },
+  "attack_amulet": {
+    "atlas": "attack_amulet_ruby.png",
+    "rect": [
+      0,
+      0,
+      1059,
+      1485
+    ]
+  },
+  "magic_amulet": {
+    "atlas": "props.png",
+    "rect": [
+      986,
+      37,
+      212,
+      283
+    ]
+  },
+  "heal": {
+    "atlas": "props.png",
+    "rect": [
+      66,
+      343,
+      230,
+      279
+    ]
+  },
+  "heal_other": {
+    "atlas": "props.png",
+    "rect": [
+      382,
+      336,
+      224,
+      290
+    ]
+  },
+  "team_heal": {
+    "atlas": "props.png",
+    "rect": [
+      653,
+      343,
+      265,
+      276
+    ]
+  },
+  "spare_food": {
+    "atlas": "props.png",
+    "rect": [
+      951,
+      396,
+      278,
+      210
+    ]
+  },
+  "spare_supplies": {
+    "atlas": "props.png",
+    "rect": [
+      41,
+      642,
+      275,
+      263
+    ]
+  },
+  "chest_closed": {
+    "atlas": "props.png",
+    "rect": [
+      348,
+      667,
+      272,
+      236
+    ]
+  },
+  "collect": {
+    "atlas": "props.png",
+    "rect": [
+      665,
+      632,
+      261,
+      275
+    ]
+  },
+  "gift_closed": {
+    "atlas": "props.png",
+    "rect": [
+      976,
+      647,
+      236,
+      257
+    ]
+  },
+  "gift": {
+    "atlas": "props.png",
+    "rect": [
+      23,
+      923,
+      318,
+      286
+    ]
+  },
+  "gambler": {
+    "atlas": "props.png",
+    "rect": [
+      365,
+      940,
+      232,
+      254
+    ]
+  },
+  "plunder": {
+    "atlas": "props.png",
+    "rect": [
+      632,
+      916,
+      286,
+      293
+    ]
+  },
+  "gold_panning": {
+    "atlas": "props.png",
+    "rect": [
+      934,
+      964,
+      308,
+      217
+    ]
+  },
+  "book_closed": {
+    "atlas": "artifacts.png",
+    "rect": [
+      28,
+      40,
+      260,
+      280
+    ]
+  },
+  "prophecy": {
+    "atlas": "artifacts.png",
+    "rect": [
+      318,
+      70,
+      349,
+      244
+    ]
+  },
+  "mirror": {
+    "atlas": "artifacts.png",
+    "rect": [
+      716,
+      15,
+      178,
+      333
+    ]
+  },
+  "reverse": {
+    "atlas": "reverse.png",
+    "rect": [
+      0,
+      0,
+      221,
+      307
+    ]
+  },
+  "skip_death": {
+    "atlas": "artifacts.png",
+    "rect": [
+      59,
+      340,
+      187,
+      285
+    ]
+  },
+  "ignore": {
+    "atlas": "artifacts.png",
+    "rect": [
+      325,
+      341,
+      296,
+      290
+    ]
+  },
+  "suppress": {
+    "atlas": "artifacts.png",
+    "rect": [
+      654,
+      360,
+      287,
+      264
+    ]
+  },
+  "late_suppress": {
+    "atlas": "artifacts.png",
+    "rect": [
+      967,
+      356,
+      261,
+      276
+    ]
+  },
+  "anticipation": {
+    "atlas": "artifacts.png",
+    "rect": [
+      18,
+      659,
+      292,
+      241
+    ]
+  },
+  "peek": {
+    "atlas": "artifacts.png",
+    "rect": [
+      373,
+      636,
+      239,
+      265
+    ]
+  },
+  "silence": {
+    "atlas": "artifacts.png",
+    "rect": [
+      650,
+      631,
+      285,
+      290
+    ]
+  },
+  "defile": {
+    "atlas": "artifacts.png",
+    "rect": [
+      975,
+      625,
+      268,
+      290
+    ]
+  },
+  "warcry": {
+    "atlas": "artifacts.png",
+    "rect": [
+      21,
+      934,
+      325,
+      284
+    ]
+  },
+  "rally": {
+    "atlas": "artifacts.png",
+    "rect": [
+      342,
+      895,
+      285,
+      330
+    ]
+  },
+  "overload": {
+    "atlas": "artifacts.png",
+    "rect": [
+      661,
+      920,
+      245,
+      298
+    ]
+  },
+  "badge": {
+    "atlas": "artifacts.png",
+    "rect": [
+      985,
+      918,
+      212,
+      310
+    ]
+  },
+  "sapphire": {
+    "atlas": "gem_sapphire.png",
+    "rect": [
+      0,
+      0,
+      252,
+      295
+    ]
+  },
+  "ruby": {
+    "atlas": "gem_ruby.png",
+    "rect": [
+      0,
+      0,
+      266,
+      265
+    ]
+  },
+  "amethyst": {
+    "atlas": "gem_amethyst.png",
+    "rect": [
+      0,
+      0,
+      252,
+      295
+    ]
+  },
+  "topaz": {
+    "atlas": "gem_topaz.png",
+    "rect": [
+      0,
+      0,
+      252,
+      295
+    ]
+  },
+  "emerald": {
+    "atlas": "gem_emerald.png",
+    "rect": [
+      0,
+      0,
+      252,
+      295
+    ]
+  },
+  "amber": {
+    "atlas": "gem_amber.png",
+    "rect": [
+      0,
+      0,
+      266,
+      265
+    ]
+  },
+  "boulder": {
+    "atlas": "gems.png",
+    "rect": [
+      645,
+      333,
+      285,
+      271
+    ]
+  },
+  "poison": {
+    "atlas": "gems.png",
+    "rect": [
+      987,
+      301,
+      220,
+      307
+    ]
+  },
+  "hasty_spell": {
+    "atlas": "gems.png",
+    "rect": [
+      47,
+      599,
+      240,
+      309
+    ]
+  },
+  "judgment": {
+    "atlas": "gems.png",
+    "rect": [
+      325,
+      600,
+      307,
+      308
+    ]
+  },
+  "bloodletting": {
+    "atlas": "gems.png",
+    "rect": [
+      665,
+      615,
+      253,
+      299
+    ]
+  },
+  "heart": {
+    "atlas": "gems.png",
+    "rect": [
+      960,
+      614,
+      265,
+      284
+    ]
+  },
+  "elegy": {
+    "atlas": "gems.png",
+    "rect": [
+      31,
+      912,
+      303,
+      304
+    ]
+  },
+  "feign": {
+    "atlas": "gems.png",
+    "rect": [
+      364,
+      922,
+      246,
+      277
+    ]
+  },
+  "frenzy": {
+    "atlas": "gems.png",
+    "rect": [
+      657,
+      921,
+      254,
+      287
+    ]
+  },
+  "search": {
+    "atlas": "gems.png",
+    "rect": [
+      961,
+      898,
+      280,
+      297
+    ]
+  },
+  "ghost": {
+    "atlas": "souls.png",
+    "rect": [
+      37,
+      14,
+      266,
+      296
+    ]
+  },
+  "reaper": {
+    "atlas": "souls.png",
+    "rect": [
+      325,
+      9,
+      300,
+      310
+    ]
+  },
+  "scythe": {
+    "atlas": "souls.png",
+    "rect": [
+      646,
+      9,
+      275,
+      311
+    ]
+  },
+  "lantern": {
+    "atlas": "souls.png",
+    "rect": [
+      994,
+      9,
+      187,
+      306
+    ]
+  },
+  "phoenix_up": {
+    "atlas": "souls.png",
+    "rect": [
+      12,
+      310,
+      284,
+      327
+    ]
+  },
+  "phoenix_mid": {
+    "atlas": "souls.png",
+    "rect": [
+      297,
+      335,
+      385,
+      289
+    ]
+  },
+  "phoenix_down": {
+    "atlas": "souls.png",
+    "rect": [
+      699,
+      332,
+      198,
+      301
+    ]
+  },
+  "blood_rite": {
+    "atlas": "souls.png",
+    "rect": [
+      987,
+      323,
+      221,
+      300
+    ]
+  },
+  "legacy": {
+    "atlas": "souls.png",
+    "rect": [
+      17,
+      643,
+      306,
+      265
+    ]
+  },
+  "greed": {
+    "atlas": "souls.png",
+    "rect": [
+      334,
+      633,
+      289,
+      283
+    ]
+  },
+  "prison": {
+    "atlas": "souls.png",
+    "rect": [
+      645,
+      627,
+      301,
+      293
+    ]
+  },
+  "mediocrity": {
+    "atlas": "souls.png",
+    "rect": [
+      960,
+      625,
+      259,
+      313
+    ]
+  },
+  "privilege": {
+    "atlas": "souls.png",
+    "rect": [
+      13,
+      915,
+      289,
+      310
+    ]
+  },
+  "blessing": {
+    "atlas": "souls.png",
+    "rect": [
+      314,
+      922,
+      314,
+      303
+    ]
+  },
+  "curse": {
+    "atlas": "souls.png",
+    "rect": [
+      630,
+      927,
+      295,
+      311
+    ]
+  },
+  "pain": {
+    "atlas": "souls.png",
+    "rect": [
+      955,
+      920,
+      284,
+      319
+    ]
+  },
+  "last_dance": {
+    "atlas": "extras.png",
+    "rect": [
+      12,
+      49,
+      316,
+      375
+    ]
+  },
+  "eye": {
+    "atlas": "extras.png",
+    "rect": [
+      333,
+      93,
+      306,
+      322
+    ]
+  },
+  "divinity": {
+    "atlas": "extras.png",
+    "rect": [
+      665,
+      43,
+      280,
+      413
+    ]
+  },
+  "legacy_open": {
+    "atlas": "extras.png",
+    "rect": [
+      955,
+      92,
+      297,
+      345
+    ]
+  },
+  "ghost_left": {
+    "atlas": "extras.png",
+    "rect": [
+      17,
+      503,
+      285,
+      327
+    ]
+  },
+  "ghost_right": {
+    "atlas": "extras.png",
+    "rect": [
+      316,
+      503,
+      293,
+      318
+    ]
+  },
+  "reaper_windup": {
+    "atlas": "extras.png",
+    "rect": [
+      638,
+      480,
+      297,
+      353
+    ]
+  },
+  "reaper_follow": {
+    "atlas": "extras.png",
+    "rect": [
+      940,
+      485,
+      308,
+      353
+    ]
+  },
+  "flame_squash": {
+    "atlas": "extras.png",
+    "rect": [
+      24,
+      982,
+      287,
+      193
+    ]
+  },
+  "flame_bloom": {
+    "atlas": "extras.png",
+    "rect": [
+      341,
+      878,
+      297,
+      321
+    ]
+  },
+  "flame_rise": {
+    "atlas": "extras.png",
+    "rect": [
+      684,
+      852,
+      226,
+      368
+    ]
+  },
+  "eye_closed": {
+    "atlas": "extras.png",
+    "rect": [
+      946,
+      903,
+      293,
+      293
+    ]
+  },
+  "chest_open": {
+    "atlas": "props.png",
+    "rect": [
+      665,
+      632,
+      261,
+      275
+    ]
+  },
+  "draw_chest_base": {
+    "atlas": "draw_chest.png",
+    "rect": [
+      27,
+      282,
+      732,
+      464
+    ]
+  },
+  "draw_chest_lid": {
+    "atlas": "draw_chest.png",
+    "rect": [
+      806,
+      336,
+      699,
+      344
+    ]
+  },
+  "collection_key": {
+    "atlas": "collection_key.png",
+    "rect": [
+      71,
+      78,
+      1113,
+      1097
+    ]
+  },
+  "draw_chest_right_base": {
+    "atlas": "chest_compact_right.png",
+    "rect": [
+      243,
+      202,
+      882,
+      805
+    ]
+  },
+  "prepared": {
+    "atlas": "prepared.png",
+    "rect": [
+      0,
+      0,
+      1254,
+      1254
+    ]
+  },
+  "prepared_open": {
+    "atlas": "prepared_open.png",
+    "rect": [
+      0,
+      0,
+      1254,
+      1254
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "strike": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_standard.wav",
+    "impact": "res://assets/sfx/attacks/strike_impact.ogg"
+  },
+  "double_strike": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_standard.wav",
+    "impact": "res://assets/sfx/attacks/strike_impact.ogg"
+  },
+  "triple_strike": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_standard.wav",
+    "impact": "res://assets/sfx/attacks/strike_impact.ogg"
+  },
+  "quick_strike": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_quick.wav",
+    "impact": "res://assets/sfx/attacks/quick_strike_impact.ogg"
+  },
+  "area_strike": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_standard.wav",
+    "impact": "res://assets/sfx/attacks/area_strike_impact.ogg"
+  },
+  "precise_strike": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_standard.wav",
+    "impact": "res://assets/sfx/attacks/precise_strike_impact.ogg"
+  },
+  "godslayer": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_standard.wav",
+    "impact": "res://assets/sfx/attacks/godslayer_impact.ogg"
+  },
+  "holy_strike": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_holy.wav",
+    "impact": "res://assets/sfx/attacks/holy_strike_impact.ogg"
+  },
+  "bounty": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_standard.wav",
+    "impact": "res://assets/sfx/attacks/bounty_impact.ogg"
+  },
+  "glory": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_standard.wav",
+    "impact": "res://assets/sfx/attacks/glory_impact.ogg"
+  },
+  "final_strike": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_standard.wav",
+    "impact": "res://assets/sfx/attacks/strike_impact.ogg"
+  },
+  "judgment": {
+    "lift": "res://assets/sfx/strike_sync/lift.wav",
+    "flight": "res://assets/sfx/strike_sync/flight_judgment.wav",
+    "impact": "res://assets/sfx/attacks/judgment_impact.ogg"
+  }
+}

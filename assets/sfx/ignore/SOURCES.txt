@@ -1,0 +1,11 @@
+Ignore — approved sounds, installed 2026-10-10.
+48 kHz stereo 16-bit PCM; byte-identical to the approved preview.
+Paper, cloth, soft air and muted brass: Tinysized SFX Library / Jan Schupke / CC0 1.0.
+Magic layers: user-provided sound collection.
+No normalization, additional processing, or change to the approved mix on installation.
+Original recordings, license files and hashes:
+work/ignore-sound-preview-oct10/audio_sources, audio-design.json.
+Reproducible mix and 24-bit masters:
+work/ignore-sound-preview-oct10/build_audio.py, audio_masters.
+Approved preview: outputs/sacrifice/音效方案/忽视音效演示_2026-10-10.
+Travel: paper lift, two timed erasures and muted stops; impact: natural settling tail.

@@ -1,0 +1,10 @@
+Peek V3 soft magic sound approved and installed 2026-10-11.
+48 kHz stereo 16-bit PCM, 1.42 seconds; byte-identical to approved V3 preview.
+Sources: user supplied sound collection, magic-water ripple, quick magic,
+and magic-whoosh broken-bell sustained tails. No physical tube swish or metal contacts.
+Soft attacks, smoothed texture, softened highs and quiet diffuse tails preserved.
+Single continuous cue during lens travel; no separate impact sound.
+Original recordings, hashes, cuts, processing and 24-bit masters retained in:
+work/peek-soft-magic-preview-v3-oct11/audio_sources, audio-design.json,
+build_audio.py, foley_helpers.py.txt, audio_masters.
+Approved outputs: outputs/sacrifice/动画方案/窥探_动画与音效_v3_2026-10-11.

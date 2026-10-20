@@ -1,0 +1,4 @@
+# Compatibility for links shared before Sacrifice received its own domain.
+# No game content or WebSocket proxy remains under the Heart origin.
+location = /sacrifice { return 302 https://sacrifice.shytomato.top/$is_args$args; }
+location ^~ /sacrifice/ { return 302 https://sacrifice.shytomato.top/$is_args$args; }

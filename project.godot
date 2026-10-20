@@ -1,0 +1,28 @@
+; Sacrifice online and local multiplayer.
+config_version=5
+
+[application]
+config/name="牺牲 · Sacrifice"
+config/version="0.20.69"
+run/main_scene="res://scenes/bootstrap.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://assets/icon.svg"
+
+[display]
+window/size/viewport_width=1440
+window/size/viewport_height=960
+window/size/window_width_override=1200
+window/size/window_height_override=800
+window/size/min_width=960
+window/size/min_height=640
+window/stretch/mode="canvas_items"
+
+[rendering]
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.032, 0.043, 0.067, 1)
+
+[network]
+limits/debugger/max_chars_per_second=32768

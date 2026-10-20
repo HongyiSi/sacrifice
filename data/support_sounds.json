@@ -1,0 +1,305 @@
+{
+  "cards": {
+    "defense": {
+      "rise": "res://assets/sfx/support/defense_rise.ogg",
+      "travel": "res://assets/sfx/support/defense_flight.ogg",
+      "impact": "res://assets/sfx/support/defense_apply.ogg",
+      "travel_ms": 850
+    },
+    "heal": {
+      "rise": "res://assets/sfx/support/heal_rise.ogg",
+      "travel": "res://assets/sfx/support/heal_flight.ogg",
+      "impact": "res://assets/sfx/support/heal_E_arrival.ogg",
+      "travel_ms": 850
+    },
+    "team_heal": {
+      "rise": "res://assets/sfx/support/heal_rise.ogg",
+      "travel": "res://assets/sfx/support/heal_flight.ogg",
+      "impact": "res://assets/sfx/support/heal_E_arrival.ogg",
+      "travel_ms": 850
+    },
+    "heal_other": {
+      "rise": "res://assets/sfx/support/heal_rise.ogg",
+      "travel": "res://assets/sfx/support/heal_flight.ogg",
+      "impact": "res://assets/sfx/support/heal_E_arrival.ogg",
+      "travel_ms": 850
+    },
+    "immortal": {
+      "rise": "",
+      "travel": "res://assets/sfx/support/heal_flight.ogg",
+      "impact": "res://assets/sfx/support/heal_E_arrival.ogg"
+    },
+    "blood_rite": {
+      "rise": "",
+      "travel": "res://assets/sfx/support/heal_flight.ogg",
+      "impact": "res://assets/sfx/support/heal_E_arrival.ogg"
+    },
+    "collect": {
+      "rise": "",
+      "travel": "",
+      "impact": "",
+      "mechanism": "res://assets/sfx/collect_key/mechanism.wav",
+      "open": "res://assets/sfx/collect_key/open.wav",
+      "peek": "res://assets/sfx/collect_key/peek.wav"
+    },
+    "gambler": {
+      "rise": "",
+      "travel": "res://assets/sfx/collected/gambler_roll.ogg",
+      "impact": ""
+    },
+    "prophecy": {
+      "rise": "",
+      "travel": "res://assets/sfx/prophecy/pages.wav",
+      "impact": "res://assets/sfx/collected/prophecy_chime.ogg"
+    },
+    "mirror": {
+      "rise": "",
+      "travel": "",
+      "impact": "res://assets/sfx/collected/mirror_ripple.ogg"
+    },
+    "divinity": {
+      "rise": "",
+      "travel": "res://assets/sfx/collected/divinity_lift.ogg",
+      "impact": ""
+    },
+    "holy_amulet": {
+      "rise": "",
+      "travel": "res://assets/sfx/amulets/holy_amulet_travel.wav",
+      "impact": "res://assets/sfx/amulets/holy_amulet_impact.wav",
+      "discard": "res://assets/sfx/amulets/holy_amulet_discard.wav"
+    },
+    "attack_amulet": {
+      "rise": "",
+      "travel": "res://assets/sfx/amulets/attack_amulet_travel.wav",
+      "impact": "res://assets/sfx/amulets/attack_amulet_impact.wav",
+      "discard": "res://assets/sfx/amulets/holy_amulet_discard.wav"
+    },
+    "magic_amulet": {
+      "rise": "",
+      "travel": "res://assets/sfx/amulets/magic_amulet_travel.wav",
+      "impact": "res://assets/sfx/amulets/magic_amulet_impact.wav",
+      "discard": "res://assets/sfx/amulets/holy_amulet_discard.wav"
+    },
+    "reverse": {
+      "rise": "",
+      "travel": "res://assets/sfx/reverse/rotation.ogg",
+      "impact": "res://assets/sfx/reverse/purple.ogg",
+      "restore": "res://assets/sfx/reverse/restoration.ogg"
+    },
+    "suppress": {
+      "rise": "",
+      "travel": "res://assets/sfx/suppression/suppress.wav",
+      "impact": ""
+    },
+    "late_suppress": {
+      "rise": "",
+      "travel": "res://assets/sfx/suppression/late_suppress.wav",
+      "impact": ""
+    },
+    "search": {
+      "rise": "",
+      "travel": "res://assets/sfx/search/arrival.wav",
+      "impact": "",
+      "depart": "res://assets/sfx/search/confirm.wav",
+      "draw": "res://assets/sfx/search/draw.wav"
+    },
+    "gold_panning": {
+      "rise": "",
+      "travel": "",
+      "impact": "",
+      "prepare": "res://assets/sfx/gold_panning/prepare.wav",
+      "filter": "res://assets/sfx/gold_panning/filter.wav",
+      "discard": "res://assets/sfx/gold_panning/discard.wav",
+      "filter_0": "res://assets/sfx/gold_panning/filter_0.wav",
+      "filter_2": "res://assets/sfx/gold_panning/filter_2.wav",
+      "filter_3": "res://assets/sfx/gold_panning/filter_3.wav",
+      "filter_4": "res://assets/sfx/gold_panning/filter_4.wav",
+      "filter_5": "res://assets/sfx/gold_panning/filter_5.wav"
+    },
+    "bloodletting": {
+      "rise": "",
+      "travel": "",
+      "impact": "",
+      "knife": "res://assets/sfx/bloodletting/knife.wav",
+      "flourish": "res://assets/sfx/bloodletting/flourish.wav",
+      "open": "res://assets/sfx/bloodletting/open.wav",
+      "deal_0": "res://assets/sfx/bloodletting/deal_0.wav",
+      "deal_1": "res://assets/sfx/bloodletting/deal_1.wav",
+      "deal_2": "res://assets/sfx/bloodletting/deal_2.wav",
+      "close": "res://assets/sfx/bloodletting/close.wav"
+    },
+    "gift": {
+      "rise": "",
+      "travel": "",
+      "impact": "",
+      "unfold": "res://assets/sfx/gift/unfold.wav",
+      "pack_0": "res://assets/sfx/gift/pack_0.wav",
+      "pack_1": "res://assets/sfx/gift/pack_1.wav",
+      "close": "res://assets/sfx/gift/close.wav",
+      "carry": "res://assets/sfx/gift/carry.wav",
+      "open": "res://assets/sfx/gift/open.wav",
+      "unpack_0": "res://assets/sfx/gift/unpack_0.wav",
+      "unpack_1": "res://assets/sfx/gift/unpack_1.wav"
+    },
+    "anticipation": {
+      "rise": "",
+      "observe": "res://assets/sfx/anticipation/observe.wav",
+      "seal": "res://assets/sfx/anticipation/seal.wav"
+    },
+    "warcry": {
+      "rise": "",
+      "travel": "res://assets/sfx/warcry/call.wav",
+      "impact": "res://assets/sfx/warcry/empower.wav"
+    },
+    "ruby": {
+      "rise": "",
+      "travel": "",
+      "impact": "res://assets/sfx/gems/ruby.wav",
+      "shimmer": "res://assets/sfx/gems/shimmer.wav"
+    },
+    "amber": {
+      "rise": "",
+      "travel": "",
+      "impact": "res://assets/sfx/gems/amber.wav",
+      "shimmer": "res://assets/sfx/gems/shimmer.wav"
+    },
+    "sapphire": {
+      "rise": "",
+      "travel": "",
+      "impact": "res://assets/sfx/gems/sapphire.wav",
+      "shimmer": "res://assets/sfx/gems/shimmer.wav"
+    },
+    "emerald": {
+      "rise": "",
+      "travel": "",
+      "impact": "res://assets/sfx/gems/emerald.wav",
+      "shimmer": "res://assets/sfx/gems/shimmer.wav"
+    },
+    "amethyst": {
+      "rise": "",
+      "travel": "",
+      "impact": "res://assets/sfx/gems/amethyst.wav",
+      "shimmer": "res://assets/sfx/gems/shimmer.wav"
+    },
+    "topaz": {
+      "rise": "",
+      "travel": "",
+      "impact": "res://assets/sfx/ordinary_suite/badge.wav",
+      "shimmer": "res://assets/sfx/gems/shimmer.wav"
+    },
+    "ignore": {
+      "rise": "",
+      "travel": "res://assets/sfx/ignore/bookmarks.wav",
+      "impact": "res://assets/sfx/ignore/settle.wav"
+    },
+    "silence": {
+      "rise": "",
+      "travel": "res://assets/sfx/silence/bell_dampen.wav",
+      "impact": "res://assets/sfx/silence/seal.wav"
+    },
+    "peek": {
+      "rise": "",
+      "travel": "res://assets/sfx/peek/lens_sweep.wav",
+      "impact": ""
+    },
+    "poisoning": {
+      "rise": "",
+      "travel": "",
+      "impact": "",
+      "flight": "res://assets/sfx/curse_placement/poison_flight.wav",
+      "land": "res://assets/sfx/curse_placement/poison_land.wav"
+    },
+    "obstruct": {
+      "rise": "",
+      "travel": "",
+      "impact": "",
+      "flight_0": "res://assets/sfx/curse_placement/stone_flight_0.wav",
+      "flight_1": "res://assets/sfx/curse_placement/stone_flight_1.wav",
+      "land_0": "res://assets/sfx/curse_placement/stone_land_0.wav",
+      "land_1": "res://assets/sfx/curse_placement/stone_land_1.wav"
+    }
+  },
+  "defense_block": "res://assets/sfx/support/defense_block.ogg",
+  "card_movement": {
+    "play": "res://assets/sfx/cards/play.ogg",
+    "place": "res://assets/sfx/cards/place.ogg"
+  },
+  "gem_movement": {
+    "deal": "res://assets/sfx/gems/deal.wav",
+    "discard": "res://assets/sfx/gems/discard.wav"
+  },
+  "ordinary_suite": {
+    "ink_fly": "res://assets/sfx/ordinary_suite/ink_fly.wav",
+    "ink_stroke": "res://assets/sfx/ordinary_suite/ink_stroke.wav",
+    "flag": "res://assets/sfx/ordinary_suite/flag.wav",
+    "rally_arrive": "res://assets/sfx/ordinary_suite/rally_arrive.wav",
+    "soul_return": "res://assets/sfx/ordinary_suite/soul_return.wav",
+    "revive": "res://assets/sfx/ordinary_suite/revive.wav",
+    "overload": "res://assets/sfx/ordinary_suite/overload.wav",
+    "charged": "res://assets/sfx/ordinary_suite/charged.wav",
+    "badge": "res://assets/sfx/ordinary_suite/badge.wav",
+    "hook_out": "res://assets/sfx/ordinary_suite/hook_out.wav",
+    "hook_catch": "res://assets/sfx/ordinary_suite/hook_catch.wav",
+    "hook_return": "res://assets/sfx/ordinary_suite/hook_return.wav",
+    "box_lift": "res://assets/sfx/ordinary_suite/box_lift.wav",
+    "box_card": "res://assets/sfx/ordinary_suite/box_card.wav",
+    "box_work": "res://assets/sfx/ordinary_suite/box_work.wav",
+    "death_card": "res://assets/sfx/ordinary_suite/death_card.wav",
+    "mask_fly": "res://assets/sfx/ordinary_suite/mask_fly.wav",
+    "mask_hurt": "res://assets/sfx/ordinary_suite/mask_hurt.wav",
+    "hourglass": "res://assets/sfx/ordinary_suite/hourglass.wav",
+    "frenzy": "res://assets/sfx/ordinary_suite/frenzy.wav",
+    "bread": "res://assets/sfx/ordinary_suite/bread.wav",
+    "supplies": "res://assets/sfx/ordinary_suite/supplies.wav",
+    "discard": "res://assets/sfx/ordinary_suite/discard.wav"
+  },
+  "death_suite": {
+    "shears_open": "res://assets/sfx/death/shears_open.wav",
+    "shears_cut": "res://assets/sfx/death/shears_cut.wav",
+    "severed_cards": "res://assets/sfx/death/severed_cards.wav",
+    "reaper_arrive": "res://assets/sfx/death/reaper_arrive.wav",
+    "scythe_sweep": "res://assets/sfx/death/scythe_sweep.wav",
+    "reap_contact": "res://assets/sfx/death/reap_contact.wav",
+    "soul_release": "res://assets/sfx/death/soul_release.wav",
+    "dance_sweep_0": "res://assets/sfx/death/dance_sweep_0.wav",
+    "dance_hit_0": "res://assets/sfx/death/dance_hit_0.wav",
+    "dance_sweep_1": "res://assets/sfx/death/dance_sweep_1.wav",
+    "dance_hit_1": "res://assets/sfx/death/dance_hit_1.wav",
+    "dance_sweep_2": "res://assets/sfx/death/dance_sweep_2.wav",
+    "dance_hit_2": "res://assets/sfx/death/dance_hit_2.wav",
+    "ghost_rise": "res://assets/sfx/death/ghost_rise.wav",
+    "ghost_blade": "res://assets/sfx/death/ghost_blade.wav",
+    "legacy_open": "res://assets/sfx/death/legacy_open.wav",
+    "legacy_pages": "res://assets/sfx/death/legacy_pages.wav",
+    "greed_pouch": "res://assets/sfx/death/greed_pouch.wav",
+    "cage_fall": "res://assets/sfx/death/cage_fall.wav",
+    "cage_lock": "res://assets/sfx/death/cage_lock.wav",
+    "vines_grow": "res://assets/sfx/death/vines_grow.wav",
+    "thorns_tighten": "res://assets/sfx/death/thorns_tighten.wav",
+    "lantern_soul": "res://assets/sfx/death/lantern_soul.wav",
+    "vanish_portal": "res://assets/sfx/death/vanish_portal.wav",
+    "vanish_paper": "res://assets/sfx/death/vanish_paper.wav",
+    "blessing_unfurl": "res://assets/sfx/death/blessing_unfurl.wav",
+    "blessing_settle": "res://assets/sfx/death/blessing_settle.wav",
+    "heart_flow": "res://assets/sfx/death/heart_flow.wav",
+    "heartbeat": "res://assets/sfx/death/heartbeat.wav",
+    "drain_tendrils": "res://assets/sfx/death/drain_tendrils.wav",
+    "drain_contact": "res://assets/sfx/death/drain_contact.wav",
+    "life_return": "res://assets/sfx/death/life_return.wav",
+    "curse_carry": "res://assets/sfx/death/curse_carry.wav",
+    "curse_wither": "res://assets/sfx/death/curse_wither.wav",
+    "eye_open": "res://assets/sfx/death/eye_open.wav",
+    "eye_sweep": "res://assets/sfx/death/eye_sweep.wav",
+    "crown_ascend": "res://assets/sfx/death/crown_ascend.wav",
+    "crown_settle": "res://assets/sfx/death/crown_settle.wav"
+  },
+  "prepared": {
+    "carry": "res://assets/sfx/prepared/carry.wav",
+    "close": "res://assets/sfx/prepared/close.wav",
+    "disappear": "res://assets/sfx/prepared/disappear.wav",
+    "lift": "res://assets/sfx/prepared/lift.wav",
+    "open": "res://assets/sfx/prepared/open.wav",
+    "paper_in": "res://assets/sfx/prepared/paper_in.wav",
+    "paper_out": "res://assets/sfx/prepared/paper_out.wav"
+  }
+}

@@ -1,0 +1,8 @@
+Silence sound review approved and installed 2026-10-11.
+48 kHz stereo 16-bit PCM; both WAVs byte-identical to the approved preview.
+Recorded metal bell/body and magic: user supplied sound collection.
+Air/cloth: Tinysized / Jan Schupke / CC0 1.0.
+Natural tails, volume, softened highs and animation timings preserved.
+Original recordings, license, hashes, exact cuts, script and 24-bit masters:
+work/silence-sound-preview-oct11/audio_sources, audio-design.json, build_audio.py, audio_masters.
+Approved video and audio: outputs/sacrifice/音效方案/沉默音效演示_2026-10-11.

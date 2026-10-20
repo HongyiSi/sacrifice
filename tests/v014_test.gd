@@ -1,0 +1,58 @@
+extends SceneTree
+const H = preload("res://tests/helpers.gd")
+var checks := 0
+var failures := 0
+func check(ok: bool, label: String) -> void:
+	checks += 1
+	if not ok: failures += 1; push_error("V014_FAIL "+label)
+func _initialize() -> void:
+	var g = H.fixture(8)
+	H.begin(g,{0:H.give(g,0,"holy_amulet"),1:H.give(g,1,"collect"),3:H.give(g,3,"strike"),4:H.give(g,4,"magic_strike")})
+	check(g.phase == "targeting" and g.input_action.actor == 3,"draw and reveal do not ask unrelated holy holder")
+	g.target(1,1)
+	check(g.phase == "targeting" and g.characters[1].hp == 7,"attacking another ally does not ask holy holder")
+	g.target(1,0)
+	check(g.phase == "responding" and g.characters[0].hp == 8,"targeted ordinary skill offers holy before damage")
+	g.respond(0,g.request.options[0])
+	check(g.phase == "review" and g.characters[0].hp == 8,"holy cancels targeted skill")
+	for key in ["holy_amulet","attack_amulet"]:
+		for owner in [0,1,2]:
+			g = H.fixture(8)
+			H.begin(g,{owner:H.give(g,owner,key),3:H.give(g,3,"area_strike")})
+			check(g.phase == "responding" and g.characters.slice(0,3).all(func(c): return c.hp == 8),"group response before first hit "+key+str(owner))
+			g.respond(0,g.request.options[0])
+			check(g.phase == "review" and g.characters.slice(0,3).all(func(c): return c.hp == 8),"whole group card cancelled "+key+str(owner))
+	g = H.fixture(8)
+	H.begin(g,{0:H.give(g,0,"attack_amulet"),1:H.give(g,1,"attack_amulet"),3:H.give(g,3,"area_strike")})
+	check(g.input_action.actor == 3,"group source preserved")
+	var first: int = g.request.options[0]
+	g.respond(0,0)
+	check(g.phase == "responding" and g.request.options[0] != first,"decline offers next affected guard once")
+	g.respond(0,g.request.options[0])
+	check(g.phase == "review" and g.characters[0].hp == 8,"second guard protects all targets")
+	g = H.fixture(8)
+	H.begin(g,{0:H.give(g,0,"attack_amulet"),3:H.give(g,3,"area_strike")})
+	g.respond(0,0)
+	check(g.phase == "review" and g.characters.slice(0,3).all(func(c): return c.hp == 7),"declined area hits each once, no repeated prompts")
+	g = H.fixture(8)
+	g._activate({"actor":3,"card":101},3) # Privilege makes source outrank amulet.
+	H.give_death(g,3,"privilege")
+	H.begin(g,{0:H.give(g,0,"holy_amulet"),3:H.give(g,3,"strike")}); g.target(1,0)
+	check(g.phase == "review" and g.characters[0].hp == 7,"strict higher priority still required")
+	g = H.fixture(1)
+	H.give_death(g,0,"immortal")
+	H.begin(g,{3:H.give(g,3,"strike"),4:H.give(g,4,"double_strike")})
+	g.target(1,0)
+	check(g.death_events == 1 and g.characters[0].hp == 1,"instant revival still records a death")
+	g.target(1,0)
+	check(g.death_events == 2 and g.snapshot(0).death_events == g.snapshot(1).death_events,"repeat death counter authoritative on both views")
+	g = H.fixture(1)
+	H.begin(g,{3:H.give(g,3,"strike"),4:H.give(g,4,"double_strike")}); g.target(1,0); g.target(1,0)
+	check(g.death_events == 1,"corpse hits never increment death count")
+	g = H.fixture(1)
+	H.begin(g,{3:H.give(g,3,"area_strike")})
+	check(g.death_events == 3,"all group casualties counted")
+	g.start(42,2)
+	check(g.death_events == 0 and g.snapshot(0).death_events == 0,"new match resets deaths")
+	print("V014_RESULT checks=%d failures=%d" % [checks,failures])
+	quit(0 if failures == 0 else 1)

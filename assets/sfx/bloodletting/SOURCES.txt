@@ -1,0 +1,9 @@
+Bloodletting — approved animation and Foley, 2026-10-09.
+Runtime stems are byte-identical to the approved preview (48 kHz stereo 16-bit PCM).
+Knife, contact, lock and paper: Jan Schupke / Tinysized SFX Library, CC0 1.0.
+Wood/hinge: archived CC0 recordings 391947 (ssierra1202), 647648 (soundofsong), 795444 (randbsoundbites).
+Quiet magical air layer: user-provided 音效收集/魔法/火球声或水声（轻）.wav.
+Full original files, archived license/source pages, hashes and layer design:
+work/bloodletting-polish-preview-oct09/audio_sources and audio-design.json.
+24-bit masters and reproducible composition: same preview directory, audio_masters and build_audio.py.
+Installation backups and verification: work/bloodletting-polish-install-oct09.

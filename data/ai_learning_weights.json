@@ -1,0 +1,64 @@
+{
+  "format": 2,
+  "label": "selfplay-20261017-fullsearch-v2",
+  "method": "evolutionary tuning of 16 policy and board-value weights with full deployed search; frozen selection before held-out testing",
+  "status": "experimental: improved against original local AI on paired held-out deals; lost direct matchup against previous learned checkpoint",
+  "training_seed": 17102026,
+  "training_games": 96,
+  "validation_games": 128,
+  "held_out_games": 160,
+  "parent_checkpoint_sha256": "6307284fef5f559d504a5bbe3d414ed92464a2a8f1a8c3418ec04d14b638b25c",
+  "selected_candidate_sha256": "fd97bc014b3ac4e29366e23bb88bb9d7aa7bf4f349ae4b35ddf3e9cbbca99034",
+  "evaluation": {
+    "selected": "candidate-01",
+    "candidate_vs_original": [
+      41,
+      23,
+      0
+    ],
+    "previous_vs_original": [
+      29,
+      33,
+      2
+    ],
+    "candidate_vs_previous": [
+      13,
+      19,
+      0
+    ],
+    "paired_improvement": 0.171875,
+    "paired_improvement_bootstrap_95": [
+      0.03125,
+      0.3125
+    ],
+    "head_to_head_bootstrap_95": [
+      0.25,
+      0.5625
+    ],
+    "all_test_invalid_simulations": 0,
+    "test_games": 160,
+    "all_finished": true,
+    "candidate_score_rate": 0.640625,
+    "candidate_win_rate": 0.640625,
+    "previous_score_rate": 0.46875,
+    "previous_win_rate": 0.453125
+  },
+  "weights": {
+    "attack": 2.3148356626120887,
+    "badges": 1.3614663144072496,
+    "control": 0.491828997036895,
+    "death_caution": 0.8282226136053967,
+    "death_setup": 1.5239783825359552,
+    "drawing": 1.1231134440641735,
+    "healing": 0.7718087154745036,
+    "information": 1.3900311955966644,
+    "pain_combo": 0.3565043668516305,
+    "tempo": 0.42017482747239737,
+    "board_alive": 0.7105494951664996,
+    "board_hp": 0.7525989650997229,
+    "board_hand": 0.35,
+    "board_badges": 0.7233299773874539,
+    "board_effects": 0.7623873024809502,
+    "board_tempo": 1.321711036838465
+  }
+}
