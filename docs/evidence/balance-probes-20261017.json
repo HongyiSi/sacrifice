@@ -1,0 +1,1889 @@
+{
+	"failures": [],
+	"rows": [
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "sacrifice_badges",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					4
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "徽章",
+				"winner": 1
+			},
+			"visible": false
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "sacrifice_badges",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					4
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "徽章",
+				"winner": 1
+			},
+			"visible": false
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "sacrifice_badges",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "sacrifice_badges",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "sacrifice_badges",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					4
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "徽章",
+				"winner": 1
+			},
+			"visible": true
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "sacrifice_badges",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "death_sentence",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": false
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "death_sentence",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": false
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "death_sentence",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "death_sentence",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": true
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "death_sentence",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": true
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "death_sentence",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "last_dance",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": false
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "last_dance",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": false
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "last_dance",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "last_dance",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": true
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "last_dance",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": true
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "last_dance",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "life_steal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					5,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": false
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "life_steal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					5,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": false
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "life_steal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "life_steal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					5,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": true
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "life_steal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					0,
+					0,
+					0,
+					5,
+					7,
+					0
+				],
+				"phase": "ended",
+				"reason": "全灭",
+				"winner": 1
+			},
+			"visible": true
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "life_steal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "immortal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "immortal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "immortal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "immortal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "immortal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "immortal",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "blood_rite",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					9,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "blood_rite",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					9,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "blood_rite",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "blood_rite",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					9,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "blood_rite",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					9,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "blood_rite",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "divinity",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"divinity"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "divinity",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"divinity"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "divinity",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "divinity",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"divinity"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "divinity",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"divinity"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "divinity",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "greed",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"greed"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "greed",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"greed"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "greed",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "greed",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"greed"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "greed",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"greed"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "greed",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "privilege",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"privilege"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "privilege",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"privilege"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "privilege",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": false
+		},
+		{
+			"branch": "ai",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "privilege",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"privilege"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "kill",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"death": "privilege",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [
+					"privilege"
+				],
+				"hp": [
+					3,
+					0,
+					0,
+					0,
+					7,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"branch": "spare",
+			"choice": {
+				"kind": "target",
+				"payload": [
+					4
+				]
+			},
+			"death": "privilege",
+			"probe": "death_threat",
+			"result": {
+				"badges": [
+					0,
+					2
+				],
+				"effects": [],
+				"hp": [
+					3,
+					0,
+					0,
+					1,
+					6,
+					0
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			},
+			"visible": true
+		},
+		{
+			"ai_choice": {
+				"kind": "target",
+				"payload": [
+					3
+				]
+			},
+			"hand_after_trigger": 3,
+			"human_ally_target_result": {
+				"can_skip": true,
+				"count": 2,
+				"description": "棋子1：选择至多两张普通牌，立即打出并翻开",
+				"options": [
+					45,
+					69,
+					148
+				],
+				"skip_prompt": true,
+				"target": 0,
+				"team": 0,
+				"type": "bonus"
+			},
+			"probe": "pain"
+		},
+		{
+			"id": 106,
+			"probe": "peek_memory",
+			"seen_during": [
+				106
+			],
+			"visible_after": []
+		},
+		{
+			"ai_plan": {
+				"kind": "plan",
+				"payload": [
+					[
+						82
+					],
+					[],
+					[]
+				]
+			},
+			"feign_id": 82,
+			"probe": "feign_sacrifice",
+			"result": {
+				"badges": [
+					4,
+					0
+				],
+				"effects": [],
+				"hp": [
+					5,
+					7,
+					7,
+					7,
+					7,
+					7
+				],
+				"phase": "ended",
+				"reason": "徽章",
+				"winner": 0
+			}
+		},
+		{
+			"hands": [
+				0,
+				2,
+				2,
+				1,
+				1,
+				1
+			],
+			"limits": [
+				1,
+				2,
+				2,
+				1,
+				1,
+				1
+			],
+			"probe": "greed_next_round"
+		},
+		{
+			"hands": [
+				[],
+				[
+					"gambler"
+				],
+				[
+					"gambler"
+				],
+				[
+					"godslayer"
+				],
+				[
+					"godslayer"
+				],
+				[
+					"judgment"
+				]
+			],
+			"probe": "divinity_all_draws",
+			"requests": [
+				{
+					"controller": 0,
+					"count": 1,
+					"recipient": 1
+				},
+				{
+					"controller": 0,
+					"count": 1,
+					"recipient": 2
+				},
+				{
+					"controller": 0,
+					"count": 1,
+					"recipient": 3
+				},
+				{
+					"controller": 0,
+					"count": 1,
+					"recipient": 4
+				},
+				{
+					"controller": 0,
+					"count": 1,
+					"recipient": 5
+				}
+			]
+		},
+		{
+			"hand_before": 2,
+			"hand_next": 4,
+			"hp_after": 5,
+			"hp_before": 4,
+			"probe": "gems_passive"
+		},
+		{
+			"cards": [
+				"prepared",
+				"prepared"
+			],
+			"final": 2,
+			"initial": 3,
+			"probe": "prepared_capacity",
+			"reserve": false
+		},
+		{
+			"cards": [
+				"strike",
+				"strike",
+				"strike",
+				"strike",
+				"prepared",
+				"prepared"
+			],
+			"final": 6,
+			"initial": 7,
+			"probe": "prepared_capacity",
+			"reserve": false
+		},
+		{
+			"cards": [
+				"strike",
+				"strike",
+				"strike",
+				"strike",
+				"strike",
+				"prepared"
+			],
+			"final": 6,
+			"initial": 8,
+			"probe": "prepared_capacity",
+			"reserve": false
+		},
+		{
+			"cards": [
+				"strike",
+				"strike",
+				"strike",
+				"strike",
+				"strike",
+				"prepared",
+				"prepared",
+				"prepared"
+			],
+			"final": 8,
+			"initial": 8,
+			"probe": "prepared_capacity",
+			"reserve": true
+		},
+		{
+			"probe": "warcry_area",
+			"result": {
+				"badges": [
+					0,
+					0
+				],
+				"effects": [],
+				"hp": [
+					7,
+					7,
+					7,
+					3,
+					3,
+					3
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			}
+		},
+		{
+			"after_hand": 3,
+			"before_hand": 2,
+			"bonus_windows": 3,
+			"corpse_hits": 3,
+			"probe": "pain_chain",
+			"result": {
+				"badges": [
+					0,
+					0
+				],
+				"effects": [
+					"pain"
+				],
+				"hp": [
+					7,
+					0,
+					7,
+					7,
+					7,
+					7
+				],
+				"phase": "review",
+				"reason": "",
+				"winner": -2
+			}
+		}
+	]
+}

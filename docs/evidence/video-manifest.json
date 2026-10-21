@@ -1,0 +1,17 @@
+{
+  "video": "sacrifice-system-design-demo.mp4",
+  "size_bytes": 5486888,
+  "duration_seconds": 59.266666666666666,
+  "fps": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "sha256": "5dad23bbf9a9e2dc8e44d9d0656072bff38352909700cc11d417879f600f4e17",
+  "rendered_gameplay_frames": 1448,
+  "music": "Woodland Fantasy — Matthew Pablo, CC BY 3.0; excerpt, gain and fades",
+  "assertions": [
+    "lethal attack grants enemy fourth badge",
+    "alternate target preserves enemy at two badges"
+  ]
+}

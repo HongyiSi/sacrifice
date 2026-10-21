@@ -1,0 +1,46 @@
+[
+  {
+    "test": "deathrattle_test",
+    "baseline_exit": 1,
+    "baseline_failures": [
+      "ERROR: DEATH_FAIL document priority 复活",
+      "ERROR: DEATH_FAIL document priority 消逝",
+      "ERROR: DEATH_FAIL blood rite heals living allies only",
+      "ERROR: DEATH_FAIL legacy only draws for living allies",
+      "ERROR: DEATH_FAIL legacy leaves opponents unchanged and recycles deck",
+      "ERROR: DEATH_FAIL new priority 18 resolves before pending priority 16",
+      "ERROR: DEATH_FAIL five damage then discard",
+      "ERROR: DEATH_FAIL higher priority new death waits until all dance hits finish",
+      "ERROR: DEATH_FAIL queued blood rite waits for fifth hit then heals allies"
+    ],
+    "candidate_failures": [
+      "ERROR: DEATH_FAIL document priority 复活",
+      "ERROR: DEATH_FAIL document priority 消逝",
+      "ERROR: DEATH_FAIL blood rite heals living allies only",
+      "ERROR: DEATH_FAIL legacy only draws for living allies",
+      "ERROR: DEATH_FAIL legacy leaves opponents unchanged and recycles deck",
+      "ERROR: DEATH_FAIL new priority 18 resolves before pending priority 16",
+      "ERROR: DEATH_FAIL five damage then discard",
+      "ERROR: DEATH_FAIL higher priority new death waits until all dance hits finish",
+      "ERROR: DEATH_FAIL queued blood rite waits for fifth hit then heals allies"
+    ],
+    "same_failures": true,
+    "script_error": false,
+    "candidate_script_error": false
+  },
+  {
+    "test": "passing_gems_test",
+    "baseline_exit": 1,
+    "baseline_failures": [
+      "ERROR: V018_FAIL skip only inactive death stages: skip",
+      "ERROR: V018_FAIL orange healing stops at maximum HP"
+    ],
+    "candidate_failures": [
+      "ERROR: V018_FAIL skip only inactive death stages: skip",
+      "ERROR: V018_FAIL orange healing stops at maximum HP"
+    ],
+    "same_failures": true,
+    "script_error": true,
+    "candidate_script_error": true
+  }
+]

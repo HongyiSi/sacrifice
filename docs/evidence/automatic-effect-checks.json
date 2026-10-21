@@ -1,0 +1,72 @@
+[
+  {
+    "test": "automatic_noop_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 310,
+    "failures": 0
+  },
+  {
+    "test": "pain_automatic_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 19,
+    "failures": 0
+  },
+  {
+    "test": "dead_passives_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 205,
+    "failures": 0
+  },
+  {
+    "test": "gems_balance_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 164,
+    "failures": 0
+  },
+  {
+    "test": "gem_rules_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 624,
+    "failures": 0
+  },
+  {
+    "test": "spare_supplies_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 48,
+    "failures": 0
+  },
+  {
+    "test": "blade_reserve_order_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 76,
+    "failures": 0
+  },
+  {
+    "test": "triggered_deaths_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 56,
+    "failures": 0
+  },
+  {
+    "test": "ai_immortal_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 62,
+    "failures": 0
+  },
+  {
+    "test": "gem_polish_test",
+    "exit": 0,
+    "passed": true,
+    "checks": 271,
+    "failures": 0
+  }
+]

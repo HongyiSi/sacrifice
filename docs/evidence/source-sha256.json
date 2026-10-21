@@ -1,0 +1,9 @@
+{
+  "scripts/rules.gd": "41642ff8517045254ddfbff3a4039949e281468e1e7f8dd0c5b59270b3ff448e",
+  "tests/automatic_noop_test.gd": "4d910e27264026d4eaa4b69178fcf187d55cfeba5eef2060b553dbda1879cab3",
+  "tests/gems_balance_test.gd": "744b318f4681e246914bd52ad2d4f90bbd690dde5de2cfafab0ef437813d1407",
+  "data/cards.json": "13d9d34b52d54c50d039c3c1a52acead628158ec20396d5a3d086d639688810e",
+  "data/deathrattles.json": "e8c4aed8629d9aaab24e3e50f481d239db859334d62eff52b8b71229cff59571",
+  "docs/demo-source/capture.gd": "e61ed227136c603191b0acacd5916e88c502c63c7e301b7e0f6a9d636664dcef",
+  "docs/demo-source/encode.py": "01b417d133a58f84962516876fe3a48fa995773e48ae24493ae41c70cd0d3c47"
+}

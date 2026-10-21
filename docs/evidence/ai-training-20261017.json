@@ -1,0 +1,34 @@
+{
+  "selected": "candidate-01",
+  "candidate_vs_original": [
+    41,
+    23,
+    0
+  ],
+  "previous_vs_original": [
+    29,
+    33,
+    2
+  ],
+  "candidate_vs_previous": [
+    13,
+    19,
+    0
+  ],
+  "paired_improvement": 0.171875,
+  "paired_improvement_bootstrap_95": [
+    0.03125,
+    0.3125
+  ],
+  "head_to_head_bootstrap_95": [
+    0.25,
+    0.5625
+  ],
+  "all_test_invalid_simulations": 0,
+  "test_games": 160,
+  "all_finished": true,
+  "candidate_score_rate": 0.640625,
+  "candidate_win_rate": 0.640625,
+  "previous_score_rate": 0.46875,
+  "previous_win_rate": 0.453125
+}

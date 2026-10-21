@@ -1,0 +1,11 @@
+{
+  "scripts/rules.gd": "e9c518c97d69efa993cddb3034c38ec466c092ee8581d73d17ba01cf6322092e",
+  "data/cards.json": "d48fda87bc352ded7d29cfb58f5c01659f31e3ad0768340798265793e9d3e322",
+  "data/deathrattles.json": "e8c4aed8629d9aaab24e3e50f481d239db859334d62eff52b8b71229cff59571",
+  "scripts/ai_policy.gd": "c43485f620ad25b744aec67f891a8f67981cf5659d39d947392a710a39a89cff",
+  "scripts/ai_search.gd": "332193f8fb8fa1e8d1b877f18dcc477d2d055f7cf0ec6fb971dcc2c908f427ab",
+  "scripts/local_ai.gd": "d8c7a16ced15f97b0ef75f985aac7e3d455a7af2cd7d0a113459a10e658eb868",
+  "scripts/ai_learning_policy.gd": "dd6d79d3ceb7d2ea90b3037584a1046f62d2d55012cb56eda5ec16e4dc638f72",
+  "scripts/ai_learning_model.gd": "daf67103d758d09b9725f3cfae2882f68338aa50ea2e0dc31ad439d84b3f8fbc",
+  "scripts/learning_ai.gd": "9fae0c1871b8df914cc583d9b84cce57185385b2de01f76d3cbc7dce50603031"
+}
