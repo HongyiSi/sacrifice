@@ -5,12 +5,14 @@ const S=preload("res://tests/reveal_scenarios.gd")
 const Card=preload("res://scripts/card_widget.gd")
 const Reveal=preload("res://scripts/card_reveal.gd")
 const Flight=preload("res://scripts/planning_flight.gd")
+const Cinema=preload("res://scripts/cinema/cinema.gd")
 const FPS=30
 var main
 var folder=ProjectSettings.globalize_path("res://test-results/portfolio-frames")
 var frame_no=0
 var chapter="planning"
 var timeline=[]
+var motion_evidence=[]
 var preview=false
 var serial=81000
 
@@ -46,21 +48,37 @@ func clip(g,seconds:float,label:String,refresh=true):
 	for n in nodes(main):
 		var props=n.get_property_list().map(func(p):return p.name)
 		if "elapsed" in props and n.has_method("_process"):
-			if "clock_started" in props:n.clock_started=-1
 			animated.append(n)
 	var count=maxi(1,roundi(seconds*FPS))
-	var samples=[0.0,0.5,0.98] if preview else range(count).map(func(i):return float(i)/count)
+	var samples=[0.0,0.25,0.5,0.7,0.88,0.98] if preview else range(count).map(func(i):return float(i)/count)
 	for fraction in samples:
 		var t=float(fraction)*seconds
-		for n in animated:
-			if is_instance_valid(n):n.elapsed=t;n._process(0)
+		# Move the real card before sampling effects that use its emblem as
+		# their origin. Only card_start/travel raises it; subsequent stages
+		# retain the settled location instead of restarting the lift.
 		for n in nodes(main):
 			if n is Reveal:n.set_progress(t/Reveal.DURATION)
 			if n is Flight:n.present(n.started+int(t*1000))
 			if n is Card and n.resolution_started>=0:
-				n.resolution_started=Time.get_ticks_msec()-int(t*1000);n._process(0)
+				var age=t if n.returning or (g.animation.get("kind","")=="card_start" and g.animation.get("stage","")=="travel") else t+1.0
+				n.resolution_started=Time.get_ticks_msec()-int(age*1000);n._process(0)
 			if n.get_script()==preload("res://scripts/phase_announcement.gd"):
 				n.started=Time.get_ticks_msec()-int(t*1000);n._process(0)
+		for n in animated:
+			if not is_instance_valid(n):continue
+			# Cinema derives its pose from wall-clock time in _process. Calling it
+			# with clock_started=-1 skipped the entire flight in the old capture.
+			# Drive its production presentation method with the sampled stage age.
+			if n is Cinema:
+				n.present(t)
+				assert(absf(n.t-t)<.0001 and absf(n.u-clampf(t/n.duration,0,1))<.0001)
+				if n.kind=="strike" and n.stage=="travel" and n.handler.has_method("path"):
+					var p:Vector2=n.handler.path(n.handler.progress(0),n.targets[0],0)
+					motion_evidence.append({"frame":frame_no,"style":n.key,"t":t,"u":n.u,"position":[p.x,p.y]})
+			else:
+				n.elapsed=t
+				if "clock_started" in n:n.clock_started=Time.get_ticks_msec()-roundi(t*1000)
+				n._process(0)
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_jpg(folder+"/frame-%05d.jpg"%frame_no,.94)
 		frame_no+=1
@@ -76,7 +94,8 @@ func play_out(g,target:int=3):
 		else:
 			await clip(g,0.7,"decision")
 			var error=""
-			if g.phase=="targeting" and g.request.options.has(target):error=g.target(g.request.team,target)
+			var chosen=target if g.request.get("team",0)==0 else 0
+			if g.phase=="targeting" and g.request.options.has(chosen):error=g.target(g.request.team,chosen)
 			else:error=S.step(g)
 			if not error.is_empty():push_error(error);quit(2);return
 	push_error("capture did not reach a stable state");quit(2)
@@ -116,6 +135,7 @@ func run():
 	chapter="priority"
 	H.begin(g,{0:strike,3:g.characters[3].hand.filter(func(id):return g.catalog[id].key=="magic_strike")[0]},false)
 	await play_out(g,3)
+	assert(g.characters[0].hp==5 and g.characters[3].hp==6,"opposing attacks must hit the other team")
 	await clip(g,2.0,"round-result")
 	chapter="death-risk"
 	g=threat();await clip(g,5.0,"two-badges-and-living-ally")
@@ -130,6 +150,6 @@ func run():
 	assert(g.phase=="review" and g.badges[1]==2 and g.characters[3].hp==1,"alternative must keep the threat alive")
 	await clip(g,3.0,"avoid-trigger")
 	var file=FileAccess.open(folder+"/timeline.json",FileAccess.WRITE)
-	file.store_string(JSON.stringify({"fps":FPS,"frames":frame_no,"preview":preview,"segments":timeline,"assertions":["lethal attack grants enemy fourth badge","alternate target preserves enemy at two badges"]},"  "));file.close()
+	file.store_string(JSON.stringify({"fps":FPS,"frames":frame_no,"preview":preview,"segments":timeline,"motion_evidence":motion_evidence,"assertions":["production cinema stage ages match sampled frames","lethal attack grants enemy fourth badge","alternate target preserves enemy at two badges"]},"  "));file.close()
 	print("PORTFOLIO_CAPTURE_OK frames=",frame_no)
 	main.queue_free();await process_frame;quit()

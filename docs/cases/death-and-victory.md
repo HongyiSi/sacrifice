@@ -2,7 +2,7 @@
 
 **设计目标：让玩家在“现在击杀”与“暂时保留敌人”之间做出有意义的取舍。**
 
-[返回首页](../../README.md) · [查看演示](../media/sacrifice-system-design-demo.mp4)
+[返回首页](../../README.md) · [查看演示](../media/sacrifice-gameplay-demo.mp4)
 
 ## 问题与设计
 

@@ -1,17 +1,1158 @@
 {
-  "video": "sacrifice-system-design-demo.mp4",
-  "size_bytes": 5486888,
-  "duration_seconds": 59.266666666666666,
+  "video": "sacrifice-gameplay-demo.mp4",
+  "size_bytes": 5574213,
+  "duration_seconds": 56.266666666666666,
   "fps": 30,
   "resolution": [
     1920,
     1080
   ],
-  "sha256": "5dad23bbf9a9e2dc8e44d9d0656072bff38352909700cc11d417879f600f4e17",
+  "sha256": "45f1c7ad9e72b28366cbeb3564d398277779b698c35f9f02fb7eb98aa36ce681",
+  "intro_seconds": 4.0,
+  "outro_seconds": 4.0,
   "rendered_gameplay_frames": 1448,
   "music": "Woodland Fantasy — Matthew Pablo, CC BY 3.0; excerpt, gain and fades",
+  "audio_note": "background music only; gameplay sound effects are not captured",
+  "segments": [
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "planning",
+      "event": "",
+      "first": 0,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "board",
+      "last": 104,
+      "phase": "planning",
+      "seconds": 3.5
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "planning",
+      "event": "",
+      "first": 105,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "stage-card",
+      "last": 146,
+      "phase": "planning",
+      "seconds": 1.4
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "planning",
+      "event": "",
+      "first": 147,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "planned",
+      "last": 200,
+      "phase": "planning",
+      "seconds": 1.8
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "phase_change",
+      "first": 201,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "phase_change/travel",
+      "last": 245,
+      "phase": "animating",
+      "seconds": 1.5
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "phase_change",
+      "first": 246,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "phase_change/impact",
+      "last": 248,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "phase_change",
+      "first": 249,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "phase_change/travel",
+      "last": 280,
+      "phase": "animating",
+      "seconds": 1.05
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "phase_change",
+      "first": 281,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "phase_change/impact",
+      "last": 283,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "card_reveal",
+      "first": 284,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "card_reveal/travel",
+      "last": 303,
+      "phase": "animating",
+      "seconds": 0.68
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "card_start",
+      "first": 304,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "card_start/travel",
+      "last": 309,
+      "phase": "animating",
+      "seconds": 0.2
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "card_start",
+      "first": 310,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "card_start/impact",
+      "last": 312,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "",
+      "first": 313,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "decision",
+      "last": 333,
+      "phase": "targeting",
+      "seconds": 0.7
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "strike",
+      "first": 334,
+      "hp": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "label": "strike/travel",
+      "last": 356,
+      "phase": "animating",
+      "seconds": 0.764
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "strike",
+      "first": 357,
+      "hp": [
+        7,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "strike/impact",
+      "last": 371,
+      "phase": "animating",
+      "seconds": 0.514
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "phase_change",
+      "first": 372,
+      "hp": [
+        7,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "phase_change/travel",
+      "last": 403,
+      "phase": "animating",
+      "seconds": 1.05
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "phase_change",
+      "first": 404,
+      "hp": [
+        7,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "phase_change/impact",
+      "last": 406,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "card_reveal",
+      "first": 407,
+      "hp": [
+        7,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "card_reveal/travel",
+      "last": 426,
+      "phase": "animating",
+      "seconds": 0.68
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "card_start",
+      "first": 427,
+      "hp": [
+        7,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "card_start/travel",
+      "last": 432,
+      "phase": "animating",
+      "seconds": 0.2
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "card_start",
+      "first": 433,
+      "hp": [
+        7,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "card_start/impact",
+      "last": 435,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "",
+      "first": 436,
+      "hp": [
+        7,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "decision",
+      "last": 456,
+      "phase": "targeting",
+      "seconds": 0.7
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "strike",
+      "first": 457,
+      "hp": [
+        7,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "strike/travel",
+      "last": 482,
+      "phase": "animating",
+      "seconds": 0.864
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "strike",
+      "first": 483,
+      "hp": [
+        5,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "strike/impact",
+      "last": 500,
+      "phase": "animating",
+      "seconds": 0.6
+    },
+    {
+      "badges": [
+        0,
+        0
+      ],
+      "chapter": "priority",
+      "event": "",
+      "first": 501,
+      "hp": [
+        5,
+        7,
+        7,
+        6,
+        7,
+        7
+      ],
+      "label": "round-result",
+      "last": 560,
+      "phase": "review",
+      "seconds": 2.0
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "",
+      "first": 561,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "two-badges-and-living-ally",
+      "last": 710,
+      "phase": "planning",
+      "seconds": 5.0
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "phase_change",
+      "first": 711,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "phase_change/travel",
+      "last": 755,
+      "phase": "animating",
+      "seconds": 1.5
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "phase_change",
+      "first": 756,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "phase_change/impact",
+      "last": 758,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "phase_change",
+      "first": 759,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "phase_change/travel",
+      "last": 790,
+      "phase": "animating",
+      "seconds": 1.05
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "phase_change",
+      "first": 791,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "phase_change/impact",
+      "last": 793,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "card_reveal",
+      "first": 794,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "card_reveal/travel",
+      "last": 813,
+      "phase": "animating",
+      "seconds": 0.68
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "card_start",
+      "first": 814,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "card_start/travel",
+      "last": 819,
+      "phase": "animating",
+      "seconds": 0.2
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "card_start",
+      "first": 820,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "card_start/impact",
+      "last": 822,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "",
+      "first": 823,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "decision",
+      "last": 843,
+      "phase": "targeting",
+      "seconds": 0.7
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "strike",
+      "first": 844,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "strike/travel",
+      "last": 866,
+      "phase": "animating",
+      "seconds": 0.764
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "strike",
+      "first": 867,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "strike/impact",
+      "last": 881,
+      "phase": "animating",
+      "seconds": 0.514
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "card_effect",
+      "first": 882,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "card_effect/travel",
+      "last": 896,
+      "phase": "animating",
+      "seconds": 0.51
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "card_effect",
+      "first": 897,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "card_effect/impact",
+      "last": 917,
+      "phase": "animating",
+      "seconds": 0.7
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "phase_change",
+      "first": 918,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "phase_change/travel",
+      "last": 962,
+      "phase": "animating",
+      "seconds": 1.5
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "phase_change",
+      "first": 963,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "phase_change/impact",
+      "last": 965,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "card_start",
+      "first": 966,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "card_start/travel",
+      "last": 971,
+      "phase": "animating",
+      "seconds": 0.2
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "card_start",
+      "first": 972,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "card_start/impact",
+      "last": 974,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "death-risk",
+      "event": "card_effect",
+      "first": 975,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "card_effect/travel",
+      "last": 1000,
+      "phase": "animating",
+      "seconds": 0.85
+    },
+    {
+      "badges": [
+        0,
+        4
+      ],
+      "chapter": "death-risk",
+      "event": "card_effect",
+      "first": 1001,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "card_effect/impact",
+      "last": 1021,
+      "phase": "animating",
+      "seconds": 0.7
+    },
+    {
+      "badges": [
+        0,
+        4
+      ],
+      "chapter": "death-risk",
+      "event": "",
+      "first": 1022,
+      "hp": [
+        7,
+        7,
+        7,
+        0,
+        7,
+        7
+      ],
+      "label": "kill-loses",
+      "last": 1111,
+      "phase": "ended",
+      "seconds": 3.0
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "",
+      "first": 1112,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "same-starting-position",
+      "last": 1186,
+      "phase": "planning",
+      "seconds": 2.5
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "phase_change",
+      "first": 1187,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "phase_change/travel",
+      "last": 1231,
+      "phase": "animating",
+      "seconds": 1.5
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "phase_change",
+      "first": 1232,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "phase_change/impact",
+      "last": 1234,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "phase_change",
+      "first": 1235,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "phase_change/travel",
+      "last": 1266,
+      "phase": "animating",
+      "seconds": 1.05
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "phase_change",
+      "first": 1267,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "phase_change/impact",
+      "last": 1269,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "card_reveal",
+      "first": 1270,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "card_reveal/travel",
+      "last": 1289,
+      "phase": "animating",
+      "seconds": 0.68
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "card_start",
+      "first": 1290,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "card_start/travel",
+      "last": 1295,
+      "phase": "animating",
+      "seconds": 0.2
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "card_start",
+      "first": 1296,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "card_start/impact",
+      "last": 1298,
+      "phase": "animating",
+      "seconds": 0.1
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "",
+      "first": 1299,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "decision",
+      "last": 1319,
+      "phase": "targeting",
+      "seconds": 0.7
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "strike",
+      "first": 1320,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        7,
+        7
+      ],
+      "label": "strike/travel",
+      "last": 1342,
+      "phase": "animating",
+      "seconds": 0.764
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "strike",
+      "first": 1343,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        6,
+        7
+      ],
+      "label": "strike/impact",
+      "last": 1357,
+      "phase": "animating",
+      "seconds": 0.514
+    },
+    {
+      "badges": [
+        0,
+        2
+      ],
+      "chapter": "alternative",
+      "event": "",
+      "first": 1358,
+      "hp": [
+        7,
+        7,
+        7,
+        1,
+        6,
+        7
+      ],
+      "label": "avoid-trigger",
+      "last": 1447,
+      "phase": "review",
+      "seconds": 3.0
+    }
+  ],
   "assertions": [
+    "production cinema stage ages match sampled frames",
     "lethal attack grants enemy fourth badge",
     "alternate target preserves enemy at two badges"
-  ]
+  ],
+  "motion_sample_count": 95
 }

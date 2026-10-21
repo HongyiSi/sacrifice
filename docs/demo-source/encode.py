@@ -9,6 +9,7 @@ parser.add_argument('--output',required=True,type=Path)
 parser.add_argument('--ffmpeg',required=True,type=Path)
 parser.add_argument('--font',default='C:/Windows/Fonts/msyh.ttc')
 parser.add_argument('--bold-font',default='C:/Windows/Fonts/msyhbd.ttc')
+parser.add_argument('--install',action='store_true',help='Copy reviewed media into docs/media')
 args=parser.parse_args()
 W=args.work.resolve();P=args.project.resolve();OUT=args.output.resolve();OUT.mkdir(parents=True,exist_ok=True)
 MEDIA=P/'docs/media';MEDIA.mkdir(parents=True,exist_ok=True)
@@ -39,7 +40,7 @@ def panel(key):
  lines(d,(42,448),body,24,cream)
  lines(d,(42,638),tag,23,gold,True)
  lines(d,(42,684),result,24,cream)
- lines(d,(42,925),'系统策划作品 · 开发中',21,gold)
+ lines(d,(42,925),'双人卡牌策略 · 开发中',21,gold)
  lines(d,(42,967),'预设局面 / 正式规则结算\n画面来自当前游戏引擎',18,muted,gap=1.5)
  d.rectangle((438,58,1882,1022),outline='#92734b',width=2)
  return im
@@ -48,24 +49,24 @@ def title(end=False):
  shot=Image.open(W/'frames/frame-00001.jpg').convert('RGB').resize((1152,768))
  im.paste(shot,(728,155));d=ImageDraw.Draw(im)
  d.rectangle((0,0,7,1080),fill=gold)
- lines(d,(64,83),'SACRIFICE  /  DEVELOPMENT SHOWCASE',25,gold)
+ lines(d,(64,83),'SACRIFICE  /  GAMEPLAY',25,gold)
  lines(d,(57,203),'牺牲',104,cream,True)
- lines(d,(64,373),'死亡，是另一种行动。' if not end else '把设计问题\n变成可验证的局面。',43,cream,True)
- lines(d,(64,550),'双人卡牌策略游戏\n游戏策划 / 系统策划作品',29,cream)
- lines(d,(64,710),'同时选牌 · 优先级结算 · 亡语博弈' if not end else '规则设计 · 对照测试 · 体验迭代',25,gold)
- lines(d,(64,813),'演示使用预设局面与正式游戏逻辑。\n当前版本仍在打磨，不提供稳定试玩承诺。',22,muted)
+ lines(d,(64,373),'死亡，是另一种行动。' if not end else '击杀之前，\n想想它的亡语。',43,cream,True)
+ lines(d,(64,550),'双人卡牌策略游戏\n击败敌方全队，或集齐四枚徽章。',29,cream)
+ lines(d,(64,710),'同时选牌 · 优先级结算 · 亡语博弈' if not end else '与朋友对战，也可挑战本地 AI',25,gold)
+ lines(d,(64,813),'开发中 · 预设局面演示\nsacrifice.shytomato.top',22,muted)
  lines(d,(64,953),'HongyiSi / sacrifice   ·   2026.10',25,gold)
  lines(d,(730,957),'音乐：Woodland Fantasy — Matthew Pablo · CC BY 3.0',19,muted)
  return im
 
 info=json.loads((W/'frames/timeline.json').read_text(encoding='utf8'))
-intro_n=150;end_n=180;total=intro_n+info['frames']+end_n
-output=OUT/'sacrifice-system-design-demo.mp4'
+intro_n=120;end_n=120;total=intro_n+info['frames']+end_n
+output=OUT/'sacrifice-gameplay-demo.mp4'
 cmd=[str(FF),'-y','-v','warning','-f','rawvideo','-pix_fmt','rgb24','-s','1920x1080','-r',str(FPS),'-i','pipe:0','-stream_loop','-1','-i',str(P/'assets/music/woodland_fantasy.mp3'),'-map','0:v:0','-map','1:a:0','-c:v','libx264','-preset','fast','-crf','21','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-af',f'volume=0.24,afade=t=in:d=1.5,afade=t=out:st={total/FPS-3}:d=3','-t',str(total/FPS),'-movflags','+faststart',str(output)]
 with (W/'encode.log').open('wb') as log:
  proc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=log,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
  def write(im):proc.stdin.write(im.tobytes())
- cover=title();cover.save(OUT/'portfolio-cover.jpg',quality=94);cover.save(MEDIA/'portfolio-cover.jpg',quality=94)
+ cover=title();cover.save(OUT/'gameplay-cover.jpg',quality=94)
  for i in range(intro_n):write(cover)
  panels={k:panel(k) for k in spec}
  for seg in info['segments']:
@@ -77,9 +78,10 @@ with (W/'encode.log').open('wb') as log:
  for i in range(end_n):write(final)
  proc.stdin.close();result=proc.wait(timeout=120)
  if result:raise RuntimeError('encoding failed; see encode.log')
-shutil.copy2(output,MEDIA/output.name)
-shutil.copy2(W/'frames/frame-00001.jpg',MEDIA/'gameplay.jpg')
-manifest={'video':output.name,'size_bytes':output.stat().st_size,'duration_seconds':total/FPS,'fps':FPS,'resolution':SIZE,'sha256':hashlib.sha256(output.read_bytes()).hexdigest(),'rendered_gameplay_frames':info['frames'],'music':'Woodland Fantasy — Matthew Pablo, CC BY 3.0; excerpt, gain and fades','segments':info['segments'],'assertions':info['assertions']}
+shutil.copy2(W/'frames/frame-00001.jpg',OUT/'gameplay.jpg')
+if args.install:
+ for name in [output.name,'gameplay-cover.jpg','gameplay.jpg']:shutil.copy2(OUT/name,MEDIA/name)
+manifest={'video':output.name,'size_bytes':output.stat().st_size,'duration_seconds':total/FPS,'fps':FPS,'resolution':SIZE,'sha256':hashlib.sha256(output.read_bytes()).hexdigest(),'intro_seconds':intro_n/FPS,'outro_seconds':end_n/FPS,'rendered_gameplay_frames':info['frames'],'music':'Woodland Fantasy — Matthew Pablo, CC BY 3.0; excerpt, gain and fades','audio_note':'background music only; gameplay sound effects are not captured','segments':info['segments'],'assertions':info['assertions'],'motion_sample_count':len(info.get('motion_evidence',[]))}
 (OUT/'video-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
 (W/'video-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
 print(json.dumps({k:v for k,v in manifest.items() if k not in ['segments']},ensure_ascii=False),flush=True)
