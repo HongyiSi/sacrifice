@@ -402,12 +402,12 @@ func _begin_round() -> void:
 		c.shield = 0
 		c.shield_sources = []
 		c.prediction = 0
-		if c.hand.has(104):
+		if c.hp > 0 and c.hand.has(104):
 			c.curse_exposed = true
 			var curse := {"actor":c.id,"card":104,"death":true,"id":-1,"status":"active","environment":true}
 			jobs.append({"op":"damage","a":curse,"target":c.id,"amount":3})
 			jobs.append({"op":"curse_after","a":curse,"target":c.id})
-	# Each held sapphire offers its extra draw, including at the hand limit.
+	# Eligibility is checked when each gem resolves; reserve the normal round draw.
 	for c in characters:
 		for id in c.hand:
 			if catalog.has(id) and catalog[id].key == "sapphire": jobs.append({"op":"gem_trigger","target":c.id,"card":id})
@@ -571,6 +571,7 @@ func _pump() -> void:
 			break
 		if not request.is_empty() or jobs.is_empty() or phase == "ended": break
 		var job: Dictionary = jobs.pop_front()
+		if not _automatic_job_has_effect(job): continue
 		if presentation_enabled and _present_job(job): continue
 		_run_job(job)
 	pumping = false
@@ -848,11 +849,37 @@ func _visual_counts(id: int) -> Dictionary:
 	var c: Dictionary = characters[id]
 	return {"hp":c.hp,"hand":c.hand.size(),"deaths":c.deathrattles.size()}
 
+func _can_auto_heal(c: Dictionary) -> bool:
+	return c.hp > 0 and c.hp < c.max_hp and not _has_effect("blessing",c.id)
+
+func _can_auto_draw(c: Dictionary, reserved: int = 0) -> bool:
+	return c.hp > 0 and c.hand.size()+reserved < HAND_LIMIT and not _draw_blocked(c) and deck.size()+discard.size() > reserved
+
+func _automatic_job_has_effect(j: Dictionary) -> bool:
+	# Only automatic passives are gated. A chosen action may still be useful
+	# for its cost, transfer, information or follow-up even if one part misses.
+	if j.op == "gem_trigger": return _gem_valid(j)
+	if j.op == "discard_passive":
+		var c: Dictionary = characters[j.target]
+		var card: Dictionary = catalog[j.card]
+		return _can_auto_heal(c) if card.discard_effect == "heal" else _can_auto_draw(c)
+	if j.op == "pain_offer":
+		var c: Dictionary = characters[j.attacker]
+		var can_play: bool = c.hp > 0 and play_limit(c) > 0 and not reveal_locked_teams[c.team] and c.hand.any(func(id): return _can_play_hand_card(c,id))
+		return _has_effect("pain",j.victim) and characters[j.victim].hp == 0 and (_can_auto_draw(c) or can_play)
+	var a: Dictionary = j.get("a",{})
+	if j.op == "damage" and a.get("environment",false) and a.get("card",0) == 104:
+		return characters[j.target].hp > 0 and characters[j.target].hand.has(104)
+	return true
+
 func _gem_valid(j: Dictionary) -> bool:
 	var holder: Dictionary = characters[j.target]
 	if not holder.hand.has(j.card) or not catalog.has(j.card) or catalog[j.card].key not in GEMS: return false
-	# Amethyst explicitly triggers while dead; other hand passives require life.
-	return holder.hp == 0 if catalog[j.card].key == "amethyst" else holder.hp > 0
+	match catalog[j.card].key:
+		"amethyst": return holder.hp == 0 # Explicit death exception.
+		"ruby": return _can_auto_heal(holder)
+		"sapphire": return _can_auto_draw(holder,1+_greed_bonus(holder))
+	return false
 
 func _advance_healing_gem() -> void:
 	var c: Dictionary = characters[animation.action.actor]
@@ -1245,6 +1272,12 @@ func _mirror_flip(id: int) -> void:
 			_queue_visual(_visual_action("mirror",link.actor),"mirror",link.actor,"复制牌已翻开",{"copied_key":catalog[original.card].key})
 
 func _start_effect(a: Dictionary, continuation: Dictionary = {}) -> void:
+	if a.get("death",false) and not _automatic_death_has_effect(a):
+		# Keep an unused one-shot card; this is neither a completed trigger nor
+		# a paid discard. Later deaths can make it eligible again.
+		a.status = "returned"
+		_push([{"op":"advance"} if continuation.is_empty() else continuation])
+		return
 	a.status = "active"
 	if a.get("origin","") == "ghost": _queue_visual(_visual_action("ghost",a.actor),"ghost",a.actor,"幽灵 · 代为打出"+_info(a).name)
 	_note("%s 结算%s %s [%d]。" % [characters[a.actor].name,"亡语" if a.get("death",false) else "普通牌",_info(a).name,a.main])
@@ -1255,6 +1288,17 @@ func _start_effect(a: Dictionary, continuation: Dictionary = {}) -> void:
 	sequence.append(_job("complete",a))
 	sequence.append({"op":"advance"} if continuation.is_empty() else continuation)
 	_push(sequence)
+
+func _automatic_death_has_effect(a: Dictionary) -> bool:
+	var team: int = characters[a.actor].team
+	match _info(a).key:
+		"sacrifice_badges":
+			return characters.any(func(c): return c.id != a.actor and c.team == team and c.hp > 0)
+		"legacy":
+			return characters.any(func(c): return c.team == team and c.hp > 0 and (not _discardable_hand(c).is_empty() or _can_auto_draw(c)))
+	# Persistent activation, maximum-HP changes and player target choices can
+	# have consequences beyond an immediate heal/draw. Do not suppress them.
+	return true
 
 func _automatic_targets(a: Dictionary) -> Array:
 	if a.get("death",false): return []
@@ -1338,6 +1382,7 @@ func _effects_for(a: Dictionary) -> Array:
 		_: return [_job("ask_normal",a)]
 
 func _run_job(j: Dictionary) -> void:
+	if not _automatic_job_has_effect(j): return
 	var a: Dictionary = j.get("a",{})
 	if not a.is_empty() and a.get("status","") in ["blocked","declined","removed"] and j.op != "complete": return
 	match j.op:
@@ -2235,8 +2280,10 @@ func _damage(a: Dictionary, target_id: int, amount: int, hp_loss: bool = false) 
 		return false
 	if c.hp == 0:
 		if not hp_loss and not a.get("environment",false) and a.actor != target_id and characters[a.actor].team == c.team and _has_effect("pain",target_id):
-			_note("%s 对死亡的队友 %s 造成伤害，触发苦肉。" % [characters[a.actor].name,c.name])
-			_push([{"op":"pain_offer","victim":target_id,"attacker":a.actor}])
+			var offer := {"op":"pain_offer","victim":target_id,"attacker":a.actor}
+			if _automatic_job_has_effect(offer):
+				_note("%s 对死亡的队友 %s 造成伤害，触发苦肉。" % [characters[a.actor].name,c.name])
+				_push([offer])
 		else: _note("%s → %s：目标已死亡，生命值不变。" % [_info(a).name,c.name])
 		return false
 	c.hp = maxi(0,c.hp - amount)
@@ -2258,17 +2305,14 @@ func _damage(a: Dictionary, target_id: int, amount: int, hp_loss: bool = false) 
 func _try_immortal(target_id: int) -> void:
 	var c: Dictionary = characters[target_id]
 	if c.hp == 0 and c.deathrattles.has(120):
+		if not characters.any(func(other): return other.id != target_id and other.team == c.team and other.hp > 0): return
 		if not death_revealed.has(120): death_revealed.append(120)
 		_note("%s 的不死立刻触发。" % c.name)
 		# The immediate rule still resolves now; its card cue is replayed publicly.
 		if presentation_enabled and resolution_presentation_enabled:
 			visual_queue.append(_card_start_event(_visual_action("immortal",target_id)))
-		if characters.any(func(other): return other.id != target_id and other.team == c.team and other.hp > 0):
-			_revive(target_id,1)
-			_queue_visual(_visual_action("immortal",target_id),"immortal",target_id,"不死 · 立刻复活为 1 生命",{"revived":true})
-		else:
-			_queue_visual(_visual_action("immortal",target_id),"immortal",target_id,"没有存活队友 · 无法复活",{"revived":false})
-			if presentation_enabled: visual_queue[-1].motif = "soul"
+		_revive(target_id,1)
+		_queue_visual(_visual_action("immortal",target_id),"immortal",target_id,"不死 · 立刻复活为 1 生命",{"revived":true})
 
 func _heal(c: Dictionary, amount: int) -> void:
 	if c.hp == 0: return

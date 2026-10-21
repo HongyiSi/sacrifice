@@ -8,7 +8,7 @@ func _initialize()->void:
 			for i in range(count-1):G.give_copy(g,0,"strike")
 			g._begin_round();check(G.drain(g),"sapphire draw sequence finishes")
 			check(g.characters[0].hand.size()==mini(8,count+2),"sapphire extra draw obeys hand limit")
-			check(str(g.log_lines).contains("手牌中的蓝宝石触发"),"sapphire triggers even with seven or eight cards")
+			check(str(g.log_lines).contains("手牌中的蓝宝石触发")==(count<=6),"sapphire skips when normal round draw fills the last slot")
 			check(_conserved(g),"overflow returns cards without loss or duplication")
 		for owner in [0,3]:
 			for plays in [false,true]:
