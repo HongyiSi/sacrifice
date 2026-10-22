@@ -4,11 +4,21 @@
 
 棋子阵亡后仍可能通过亡语复活、改变资源或获得徽章。有时，留住一个濒死的敌人，比立刻击杀它更有利。
 
-**[浏览器游玩](https://sacrifice.shytomato.top/)** · **[下载 Windows 测试版](https://github.com/HongyiSi/sacrifice/releases/tag/v0.20.72-test.1)** · **[观看玩法演示](docs/demo.md)** · **[完整规则介绍](docs/rules.md)**
+**[浏览器游玩](https://sacrifice.shytomato.top/)** · **[下载 Windows 测试版](https://github.com/HongyiSi/sacrifice/releases/tag/v0.20.72-test.1)** · **[观看宣传片](docs/media/sacrifice-trailer.mp4)** · **[观看玩法演示](docs/demo.md)** · **[完整规则介绍](docs/rules.md)**
 
 > **可游玩的测试版 · 0.20.72**：包含新手教程、好友联机及本地 AI 对战。建议使用电脑浏览器或 Windows 版。iPhone Safari 偶发崩溃尚未确认解决，卡牌平衡和实验 AI 仍在调整；这不是稳定正式版。详见[版本说明与已知问题](docs/releases/v0.20.72-test.1.md)。
 
 ![牺牲游戏画面：双方各有三个棋子、独立手牌和亡语牌](docs/media/gameplay.jpg)
+
+## 宣传片
+
+[![《牺牲》宣传片：死亡，也是一步棋](docs/media/sacrifice-trailer-cover.jpg)](docs/media/sacrifice-trailer.mp4)
+
+[观看或下载宣传片](docs/media/sacrifice-trailer.mp4) · **66 秒 / 1080p / 有声**
+
+从同时出牌、优先级结算到亡语翻盘，再看看化牌为刃、神化和紫宝石怎样改变战局。视频由游戏工程录制，使用预设局面，保留实际卡牌效果和对应音效；展示的是开发中的测试版本。
+
+音乐：*Woodland Fantasy* — [Matthew Pablo](https://www.matthewpablo.com/)，[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)。[完整素材署名与发布说明](docs/media/sacrifice-trailer-credits.txt) · [字幕文件](docs/media/sacrifice-trailer.srt)
 
 ## 开始游戏
 

@@ -1,0 +1,27 @@
+﻿推荐标题
+《牺牲》实机宣传片｜死亡，也是一步棋
+
+简介
+只差一刀就能击倒对手，你真的应该出手吗？
+
+《牺牲》是一款双人回合制卡牌策略游戏。为三名棋子分别安排出牌，按优先级见招拆招。击败敌方全队，或集齐4枚胜利徽章即可获胜——但阵亡棋子的亡语，可能让胜负再次逆转。
+
+邀朋友联机，也可以先挑战本地AI，或跟随新手教程开始第一局。
+浏览器游玩：https://sacrifice.shytomato.top/
+Windows测试版：https://github.com/HongyiSi/sacrifice/releases/tag/v0.20.72-test.1
+项目与反馈：https://github.com/HongyiSi/sacrifice
+
+当前为开发中的可游玩测试版，建议使用电脑体验。片中为正式游戏工程录制的预设局面，展示实际规则与动画；剪去了部分等待与切换时间，不代表一场完整随机对局。
+
+音乐署名（发布时请随视频保留）
+Woodland Fantasy © Matthew Pablo
+作者：https://www.matthewpablo.com/
+来源：https://opengameart.org/content/woodland-fantasy
+许可：CC BY 3.0 https://creativecommons.org/licenses/by/3.0/
+使用原曲第24至90秒的片段；作截取、音量调整、音效避让及淡入淡出。作者未为本游戏背书。
+
+音效与其他素材
+使用游戏现有的出牌、盾牌、挥剑、命中、魔法、阵亡、徽章、神化和宝石音效。
+Mixkit素材按Mixkit Sound Effects Free License使用；Jan Schupke / Vehicle的Tinysized SFX为CC0。
+逐项来源与许可：https://github.com/HongyiSi/sacrifice/blob/main/assets/sfx/CREDITS.md
+画面、棋子、卡面和动画直接来自当前项目；未使用生成式视频替代游戏实录。
