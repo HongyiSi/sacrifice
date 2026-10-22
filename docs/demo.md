@@ -1,8 +1,8 @@
 # 开发中演示视频
 
-[返回首页](../README.md) · [观看 / 下载 MP4](media/sacrifice-gameplay-demo.mp4)
+[返回首页](../README.md) · [单独打开视频](https://github.com/user-attachments/assets/d7564f91-ac83-4ce5-a8b5-b951a8b9f5f8) · [下载 MP4](https://raw.githubusercontent.com/HongyiSi/sacrifice/main/docs/media/sacrifice-gameplay-demo.mp4)
 
-![视频封面](media/gameplay-cover.jpg)
+https://github.com/user-attachments/assets/d7564f91-ac83-4ce5-a8b5-b951a8b9f5f8
 
 **约 56 秒 · 1920 × 1080 · 30 FPS · H.264 / AAC。**
 
@@ -45,4 +45,4 @@
 
 本次检查包括：对攻与两个亡语分支的结果断言、特效采样时间与运动轨迹检查、成片完整解码、飞剑与魔法弹的连续帧检查，以及桌面浏览器的播放验证。补充音效后再次核对了全部 54 段画面的时间线、16 个声音事件、压缩后音轨和峰值；视频画面流与旧版相同，成片没有削波，桌面浏览器可正常有声播放。验证记录见 [demo-audio-checks.json](evidence/demo-audio-checks.json)。未进行手机端视频播放器兼容性实测。
 
-GitHub 页面不能直接播放时，可下载 MP4 后观看；当前仓库的可见性不会因这份作品页自动改变。
+点击页面上方的播放器即可在线观看，并可调节音量、拖动进度或全屏播放。GitHub 默认静音，点击播放器中的扬声器图标即可开启音乐和卡牌音效。如果网络或浏览器限制导致无法播放，也可使用顶部的 MP4 下载链接。

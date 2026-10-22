@@ -4,7 +4,7 @@
 
 棋子阵亡后仍可能通过亡语复活、改变资源或获得徽章。有时，留住一个濒死的敌人，比立刻击杀它更有利。
 
-**[浏览器游玩](https://sacrifice.shytomato.top/)** · **[下载 Windows 测试版](https://github.com/HongyiSi/sacrifice/releases/tag/v0.20.72-test.1)** · **[观看宣传片](docs/media/sacrifice-trailer.mp4)** · **[观看玩法演示](docs/demo.md)** · **[完整规则介绍](docs/rules.md)**
+**[浏览器游玩](https://sacrifice.shytomato.top/)** · **[下载 Windows 测试版](https://github.com/HongyiSi/sacrifice/releases/tag/v0.20.72-test.1)** · **[观看宣传片](#宣传片)** · **[观看玩法演示](#玩法演示)** · **[完整规则介绍](docs/rules.md)**
 
 > **可游玩的测试版 · 0.20.72**：包含新手教程、好友联机及本地 AI 对战。建议使用电脑浏览器或 Windows 版。iPhone Safari 偶发崩溃尚未确认解决，卡牌平衡和实验 AI 仍在调整；这不是稳定正式版。详见[版本说明与已知问题](docs/releases/v0.20.72-test.1.md)。
 
@@ -12,9 +12,11 @@
 
 ## 宣传片
 
-[![《牺牲》宣传片：死亡，也是一步棋](docs/media/sacrifice-trailer-cover.jpg)](docs/media/sacrifice-trailer.mp4)
+https://github.com/user-attachments/assets/38b53acc-e10f-48f5-b0be-abb7dc3abd78
 
-[观看或下载宣传片](docs/media/sacrifice-trailer.mp4) · **66 秒 / 1080p / 有声**
+**66 秒 / 720p / 有声** · [单独打开视频](https://github.com/user-attachments/assets/38b53acc-e10f-48f5-b0be-abb7dc3abd78) · [下载 1080p 高清原片](https://raw.githubusercontent.com/HongyiSi/sacrifice/main/docs/media/sacrifice-trailer.mp4)
+
+点击播放器即可观看。GitHub 默认静音，点击播放器中的扬声器图标即可开启音乐和音效。
 
 从同时出牌、优先级结算到亡语翻盘，再看看化牌为刃、神化和紫宝石怎样改变战局。视频由游戏工程录制，使用预设局面，保留实际卡牌效果和对应音效；展示的是开发中的测试版本。
 
@@ -62,9 +64,13 @@
 
 ## 玩法演示
 
-[![牺牲玩法演示封面](docs/media/gameplay-cover.jpg)](docs/media/sacrifice-gameplay-demo.mp4)
+https://github.com/user-attachments/assets/d7564f91-ac83-4ce5-a8b5-b951a8b9f5f8
 
-[观看或下载演示视频](docs/media/sacrifice-gameplay-demo.mp4)。视频展示出牌、优先级结算，以及面对「取义」时的两种选择。画面由当前游戏工程录制，使用预设局面；[录制说明](docs/demo.md)包含演示范围与素材署名。
+**约 56 秒 / 1080p / 有声** · [单独打开视频](https://github.com/user-attachments/assets/d7564f91-ac83-4ce5-a8b5-b951a8b9f5f8) · [下载演示视频](https://raw.githubusercontent.com/HongyiSi/sacrifice/main/docs/media/sacrifice-gameplay-demo.mp4)
+
+点击播放器即可观看；如未听到声音，请点击播放器中的扬声器图标取消静音。
+
+视频展示出牌、优先级结算，以及面对「取义」时的两种选择。画面由当前游戏工程录制，使用预设局面；[录制说明](docs/demo.md)包含演示范围与素材署名。
 
 ## 从源码运行
 
