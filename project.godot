@@ -3,7 +3,7 @@ config_version=5
 
 [application]
 config/name="牺牲 · Sacrifice"
-config/version="0.20.69"
+config/version="0.20.72"
 run/main_scene="res://scenes/bootstrap.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/icon.svg"

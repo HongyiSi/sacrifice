@@ -72,15 +72,23 @@ func _initialize() -> void:
 		g.characters[enemy].hp = 0
 		for id in range(owner,owner+3): g.characters[id].hp = 0
 		check(not g.early_end_available(team) and act(g,team,"end_round_early") != "","mutual wipe grants neither side a shortcut")
-	# A partially selected blade volley has paid its discard cost, but no damage.
-	var g = H.fixture(8)
+	# The whole volley now targets one pawn; end early before committing it.
+	var g = H.fixture(7)
 	for id in [3,4,5]: g.characters[id].hp = 0;g.characters[id].death_round = g.round_number
 	H.give_death(g,3,"resurrection")
 	var blade: int = H.give(g,0,"cards_to_blades")
 	H.give(g,0,"heal");H.give(g,0,"defense")
 	H.begin(g,{0:blade})
-	check(g.target(0,1) == "","one blade target selected")
-	check(act(g,0,"end_round_early") == "" and g.characters[1].hp == 8 and g.characters[0].hand.is_empty(),"early end keeps paid discard but cancels the pending volley")
+	check(g.phase=="targeting" and g.characters[0].hand.is_empty(),"blade conversion pays discard before choosing the single target")
+	check(act(g,0,"end_round_early") == "" and g.characters[1].hp == 7 and g.characters[0].hand.is_empty(),"early end keeps paid discard but cancels the uncommitted volley")
 	check(_conserved(g),"blade cost and skipped played card are conserved")
+	g=H.fixture(7)
+	for id in [3,4,5]: g.characters[id].hp=0;g.characters[id].death_round=g.round_number
+	H.give_death(g,3,"resurrection")
+	blade=H.give(g,0,"cards_to_blades")
+	H.give(g,0,"heal");H.give(g,0,"defense")
+	H.begin(g,{0:blade,1:H.give(g,1,"final_strike")})
+	check(g.target(0,1)=="" and g.characters[1].hp==5,"single target commits both blade hits")
+	check(act(g,0,"end_round_early")=="" and g.characters[1].hp==5 and _conserved(g),"ending later skips remaining cards without undoing committed damage")
 	print("EARLY_ROUND_END_RESULT checks=%d failures=%d" % [checks,failures])
 	quit(0 if failures == 0 else 1)

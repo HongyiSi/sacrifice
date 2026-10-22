@@ -336,8 +336,10 @@ func _render() -> void:
 		_header(outer)
 		_lobby(outer)
 	else:
+		if session.tutorial != null: session.tutorial.remember(session.game,choices)
 		board = TableUI.new(self)
 		board.build(page)
+		if session.tutorial != null: preload("res://scripts/tutorial_ui.gd").build(board)
 		if session.peer_missing or session.reconnecting:
 			board.canvas.process_mode = Node.PROCESS_MODE_DISABLED
 			_disconnected_overlay()
@@ -502,6 +504,7 @@ func _lobby(parent: VBoxContainer) -> void:
 		if not session.status.is_empty():
 			_paragraph(form, session.status, 16, EMBER)
 	if not session.active: _button(form, "返回线上对战", func(): local_lobby=false; _schedule_render())
+	if not session.active: _button(form,"新手教程",_start_tutorial).set_meta("tutorial_start",true)
 	if not notice.is_empty():
 		_paragraph(form, notice, 16, EMBER)
 	_label(parent, "每个棋子拥有独立手牌与亡语  /  可以攻击友方  /  亡语结束后判定全灭", 15, MUTED).horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -510,6 +513,9 @@ func _choose_target(id: int, displayed_revision: int = -1) -> void:
 	if submitting or session.state.is_empty() or (displayed_revision >= 0 and displayed_revision != session.state.revision):
 		return
 	if session.state.phase not in ["targeting", "death_targeting"] or not session.state.input.options.has(id): return
+	if session.tutorial != null and not session.tutorial.allows("target",[id]):
+		session.act("target",[id])
+		return
 	var c: Dictionary = session.state.characters[id]
 	var card: Dictionary = session.state.active_card
 	if c.team == session.team and card.key not in ["resurrection","raise_dead","heal_other","heart","blessing","privilege","greed","defense","gift","sapphire","ruby","amethyst"]:
@@ -626,6 +632,9 @@ func _click_hand(actor: int, card: int, displayed_revision: int) -> void:
 func _set_local_plan(actor: int, selected: Array) -> void:
 	var previous := _selected_cards(actor)
 	if selected == previous: return
+	if session.tutorial != null and not session.tutorial.accept_local_plan(actor,selected):
+		_schedule_render()
+		return
 	card_hover_blocked = true
 	if board != null: board.clear_card_hover()
 	# Capture the current visible position, including an interrupted flight.
@@ -831,6 +840,7 @@ func _online_lobby(form: VBoxContainer) -> void:
 		_button(buttons,"创建房间",func(): _connect_online(true),false,true).size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		_button(buttons,"加入房间",func(): _connect_online(false)).size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		_button(form,"本地 AI 对战",func(): _save_preferences(); notice=""; session.start_ai(saved_name)).set_meta("local_ai_start",true)
+		_button(form,"新手教程",_start_tutorial).set_meta("tutorial_start",true)
 		_button(form,"自学习 AI 对战（实验）",func(): _save_preferences(); notice=""; session.start_ai(saved_name,0,true)).set_meta("learning_ai_start",true)
 		var resume_hint := "用同一浏览器重新打开" if OS.has_feature("web") else "在本机重新打开游戏"
 		_paragraph(form,"AI 对局意外中断后，30 分钟内%s即可继续。\n房间号仅用于好友对战。" % resume_hint,16)
@@ -838,6 +848,25 @@ func _online_lobby(form: VBoxContainer) -> void:
 			_button(form,"本机 / 局域网测试",func(): local_lobby=true; _schedule_render())
 		if not session.status.is_empty(): _paragraph(form,session.status,16,EMBER)
 	if not notice.is_empty(): _paragraph(form,notice,16,EMBER)
+
+func _start_tutorial() -> void:
+	_save_preferences()
+	notice = ""
+	session.start_tutorial(saved_name)
+
+func _tutorial_previous() -> void:
+	if session.tutorial == null or session.tutorial.history.size() < 2: return
+	var restored: Array = session.tutorial.previous(session.game)
+	# Rebuild presentation clocks and selection state for the restored page.
+	# No old flight, hover, or animation can keep driving the rewound position.
+	if board != null: board.clear_card_hover()
+	hand_focus.clear(); card_hover_state.clear(); planning_motions.clear()
+	selection_round = ""; effect_key = ""; phase_banner_key = ""
+	attack_audio.reset()
+	session.animation_key = ""
+	session._broadcast()
+	choices = restored
+	_schedule_render()
 
 func _connect_online(create: bool) -> void:
 	_save_preferences()

@@ -5,12 +5,14 @@ signal changed
 signal problem(message: String)
 
 const Rules = preload("res://scripts/rules.gd")
-const PROTOCOL := "sacrifice-0.20.69"
+const PROTOCOL := "sacrifice-0.20.70"
 const Online = preload("res://scripts/online.gd")
 const Actions = preload("res://scripts/match_actions.gd")
 const LocalAI = preload("res://scripts/local_ai.gd")
 const LearningAI = preload("res://scripts/learning_ai.gd")
 const Checkpoint = preload("res://scripts/ai_checkpoint.gd")
+const Tutorial = preload("res://scripts/tutorial.gd")
+var tutorial: RefCounted
 var ai_checkpoint = Checkpoint.new()
 var ai_learned := false
 var ai_local_plan: Dictionary = {}
@@ -76,6 +78,7 @@ func _process(_delta: float) -> void:
 	if online_mode or dedicated: return
 	if joining and Time.get_ticks_msec() - connection_started > 10000:
 		_failed()
+	if tutorial != null and tutorial.holds_animation(): return
 	if hosting and active and game != null and not game.animation.is_empty():
 		var key := "%d/%d/%s" % [game.match_id,game.animation.id,game.animation.stage]
 		if animation_key != key:
@@ -85,7 +88,7 @@ func _process(_delta: float) -> void:
 			game.advance_animation()
 			_broadcast()
 	else: animation_key = ""
-	if hosting and active and game != null and game.phase == "review":
+	if tutorial == null and hosting and active and game != null and game.phase == "review":
 		if review_game != game or review_round != game.round_number:
 			review_game = game
 			review_round = game.round_number
@@ -96,7 +99,25 @@ func _process(_delta: float) -> void:
 	else:
 		review_game = null
 		review_round = -1
-	_process_ai()
+	if tutorial != null:
+		if tutorial.tick(game,Time.get_ticks_msec()): _broadcast()
+	else: _process_ai()
+
+func start_tutorial(nickname: String = "") -> void:
+	leave(false)
+	tutorial = Tutorial.new()
+	game = tutorial.create_game()
+	hosting = true; active = true; team = 0
+	player_name = _clean_name(nickname,"玩家")
+	names = [player_name,"练习对手"]
+	status = "新手教程"
+	_broadcast()
+
+func tutorial_next() -> void:
+	if tutorial == null or game == null: return
+	tutorial.next(game)
+	animation_key = ""
+	_broadcast()
 
 func start_ai(nickname: String, seed_value: int = 0, learned: bool = false) -> void:
 	leave()
@@ -217,7 +238,9 @@ func join_room(nickname: String, address: String, room_port: int) -> Error:
 	return OK
 
 func leave(clear_ai_save: bool = true) -> void:
-	if clear_ai_save: ai_checkpoint.clear()
+	# Tutorials neither overwrite nor erase an interrupted AI match.
+	if clear_ai_save and tutorial == null: ai_checkpoint.clear()
+	tutorial = null
 	ai_local_plan.clear(); ai_save_warning = false; ai_learned = false
 	ai_mode = false; ai_opponent = null; ai_next_action = 0; ai_failed_revision = -1; ai_thinking_view={}
 	if OS.has_feature("web"):
@@ -264,6 +287,10 @@ func _hello(protocol: String, nickname: String) -> void:
 	_broadcast()
 
 func act(kind: String, payload: Array = []) -> void:
+	if tutorial != null and not tutorial.allows(kind,payload):
+		tutorial.hint = "请先完成教程当前提示的操作。"
+		changed.emit()
+		return
 	if online_mode:
 		if peer_missing or reconnecting: return
 		online.send_action(kind,payload,state)
@@ -289,11 +316,14 @@ func _apply(actor_team: int, kind: String, payload: Array, match_serial: int, ro
 			problem.emit(error)
 		elif opponent_peer != 0:
 			_rejected.rpc_id(opponent_peer, error)
+	elif tutorial != null and actor_team == 0:
+		tutorial.action_done()
 	_broadcast()
 
 func _broadcast() -> void:
 	if game == null or not active:
 		return
+	if tutorial != null: tutorial.observe(game)
 	save_ai_checkpoint()
 	state = game.snapshot(0)
 	state.names = names.duplicate()

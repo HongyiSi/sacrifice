@@ -115,7 +115,7 @@ static func header(board):
 	board._button(parent,"规则",Rect2(1157,15,75,33),func():board.ui.tooltip_dialog.popup_centered(Vector2i(840,600)))
 	board._button(parent,"战况",Rect2(1241,15,75,33),board.ui._show_battle_log)
 	board._button(parent,"音乐",Rect2(1330,15,83,33),func():board.ui.music_dialog.popup_centered(Vector2i(720,440)))
-	board._button(parent,"退出对战" if board.ui.session.ai_mode else "离开房间",Rect2(1184,57,174,31),func():board.ui.session.leave();board.ui.choices=[0,0,0];board.ui.notice="")
+	board._button(parent,"退出教程" if board.ui.session.tutorial != null else "退出对战" if board.ui.session.ai_mode else "离开房间",Rect2(1184,57,174,31),func():board.ui.session.leave();board.ui.choices=[0,0,0];board.ui.notice="")
 static func nameplate(board,value,r,friendly,id):
 	var label=text(board.canvas,value,r,16,Color("365978") if friendly else Color("914831"),true);label.set_meta("pawn_title",id)
 	label.add_theme_color_override("font_outline_color",Color("f7e8ce"));label.add_theme_constant_override("outline_size",3)

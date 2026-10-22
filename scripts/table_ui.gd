@@ -703,6 +703,8 @@ func _resolution_destination(source: Control,dimensions: Vector2,actor: int) -> 
 	for x in range(144,1217,24):
 		for y in [335.0,365.0,405.0,435.0]: candidates.append(Vector2(x,y))
 	var obstacles := _presentation_obstacles(source)
+	if ui.session.tutorial != null:
+		obstacles.append(ui.session.tutorial.panel_rect().grow(12))
 	var best := preferred
 	var best_score := INF
 	for at in candidates:
@@ -964,7 +966,7 @@ func _action_bar() -> void:
 						choice.add_theme_stylebox_override("disabled",choice.get_theme_stylebox("pressed"))
 						choice.add_theme_color_override("font_disabled_color",choice.get_theme_color("font_pressed_color"))
 			if view.phase == "reacting":
-				_control(controls,"使用防御 · 取消攻击",func(): ui._send_choice("defend",1,int(view.revision)),true)
+				_control(controls,"使用防御 · 取消攻击",func(): ui._send_choice("defend",1,int(view.revision)),true).set_meta("tutorial_defend_button",true)
 				_control(controls,"承受攻击 · 保留防御",func(): ui._send_choice("defend",0,int(view.revision)))
 			if view.phase == "responding":
 				for id in view.input.options:

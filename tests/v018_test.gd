@@ -56,7 +56,7 @@ func _catalog() -> void:
 		check(not ranks.has(rank),"unique priority "+rank)
 		ranks[rank] = true
 	check(g.snapshot(0).catalog[104].key == "curse" and not g.snapshot(0).catalog[104].playable,"curse remains unplayable after deck expansion")
-	for data in [["cards_to_heart",10],["cards_to_blades",12],["late_suppress",14]]:
+	for data in [["cards_to_heart",10],["cards_to_blades",2],["late_suppress",14]]:
 		var id: int = H.give(g,0,data[0],data[1])
 		check(g.snapshot(0).catalog[id].key == data[0],"new high ID reaches snapshot "+data[0])
 	check(g.catalog[H.give(g,1,"suppress")].name == "先手压制","early suppression renamed")

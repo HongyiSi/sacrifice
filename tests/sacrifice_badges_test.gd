@@ -31,7 +31,7 @@ func _initialize():
 				var played=settle(g)
 				check(g.badges[team]==(4 if allies>0 else 2),"only living teammates enable the two badges")
 				check(g.winner==(team if allies>0 else 1-team),"a wiped team cannot win with disabled badges")
-				check(g.death_discard.has(106),"one-shot card is consumed even when condition fails")
+				check(g.death_discard.has(106)==(allies>0),"ineffective automatic sacrifice stays available for a later death")
 				check(played==(presented and allies>0),"no false award animation on failed condition")
 				check(g.death_catalog[106].text=="如果有存活的队友，则获得两枚胜利徽章。","description matches rule")
 			# A higher-priority resurrection changes the condition before resolution.
@@ -45,7 +45,7 @@ func _initialize():
 			H.begin(g,{});settle(g)
 			check(g.target(1-team,owner+1)=="","earlier enemy deathrattle can kill last teammate")
 			settle(g)
-			check(g.badges[team]==0 and g.death_discard.has(106),"condition uses current health, not phase-start health")
+			check(g.badges[team]==0 and not g.death_discard.has(106) and g.characters[owner].deathrattles.has(106),"condition uses current health; a no-effect sacrifice is retained")
 			# Feign can trigger a death card while its caster is alive. Self is not a teammate.
 			for allies in [0,1]:
 				g=scenario(team,presented,allies);g.characters[owner].hp=7;g.characters[owner].death_round=-1

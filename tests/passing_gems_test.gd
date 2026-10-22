@@ -22,7 +22,7 @@ func seek_choice(g) -> void:
 	check(false,"gem requests a recipient")
 
 func _play_gem(key:String,actor:int,shown:bool,full:bool) -> void:
-	var g=H.fixture(8);g.presentation_enabled=shown;g.stage_presentation_enabled=shown
+	var g=H.fixture(7);g.presentation_enabled=shown;g.stage_presentation_enabled=shown
 	var target:int=3 if actor==0 else 0
 	g.characters[actor].hp=3;g.characters[target+2].hp=0
 	var card:int=H.give(g,actor,key)
@@ -50,7 +50,7 @@ func _play_gem(key:String,actor:int,shown:bool,full:bool) -> void:
 		check(g.badges[target/3]==before+(1 if key=="topaz" else 0),"second caster receives their own reward")
 
 func _cancel_gem(key:String,shown:bool) -> void:
-	var g=H.fixture(8);g.presentation_enabled=shown;g.characters[0].hp=3
+	var g=H.fixture(7);g.presentation_enabled=shown;g.characters[0].hp=3
 	var card:int=H.give(g,0,key);var guard:int=H.give(g,3,"magic_amulet")
 	H.begin(g,{0:card},false);seek_choice(g);g.target(0,3)
 	check(g.phase=="responding" and g.request.team==1,"recipient may cancel with magic amulet")
@@ -59,24 +59,24 @@ func _cancel_gem(key:String,shown:bool) -> void:
 	check(not g.characters[3].hand.has(card) and g.discard.has(card),"cancelled gem is discarded")
 
 func _exceptions() -> void:
-	var g=H.fixture(8);var card:int=H.give(g,0,"emerald")
+	var g=H.fixture(7);var card:int=H.give(g,0,"emerald")
 	for _i in range(7):H.give(g,0,"strike")
 	H.begin(g,{0:card},false);g.target(0,3);drain(g)
 	check(g.characters[0].hand.size()==8 and g.characters[3].hand.has(card) and _conserved(g),"green gem respects caster hand cap and still passes")
-	g=H.fixture(8);g.characters[0].hp=7;card=H.give(g,0,"amber")
+	g=H.fixture(7);g.characters[0].hp=6;card=H.give(g,0,"amber")
 	H.begin(g,{0:card},false);g.target(0,3);drain(g)
-	check(g.characters[0].hp==8,"orange healing stops at maximum HP")
-	g=H.fixture(8);g.characters[0].hp=3;activate(g,1,"blessing",0);card=H.give(g,0,"amber")
+	check(g.characters[0].hp==7,"orange healing stops at maximum HP")
+	g=H.fixture(7);g.characters[0].hp=3;activate(g,1,"blessing",0);card=H.give(g,0,"amber")
 	H.begin(g,{0:card},false);g.target(0,3);drain(g)
 	check(g.characters[0].hp==3 and g.characters[3].hand.has(card),"blocked healing does not stop gem transfer")
-	g=H.fixture(8);activate(g,1,"prison",0);H.give(g,0,"strike");card=H.give(g,0,"emerald")
+	g=H.fixture(7);activate(g,1,"prison",0);H.give(g,0,"strike");card=H.give(g,0,"emerald")
 	H.begin(g,{0:card},false);g.target(0,3);drain(g)
 	check(g.characters[0].hand.size()==1 and g.characters[3].hand.has(card),"blocked draw does not stop gem transfer")
-	g=H.fixture(8);g.badges[0]=3;card=H.give(g,0,"topaz")
+	g=H.fixture(7);g.badges[0]=3;card=H.give(g,0,"topaz")
 	H.begin(g,{0:card},false);g.target(0,3)
 	check(g.phase=="ended" and g.winner==0,"fourth badge ends game immediately")
 	# A mirror copy transfers a generated card rather than stealing its source.
-	g=H.fixture(8);card=H.give(g,3,"amber");g.characters[0].hp=3
+	g=H.fixture(7);card=H.give(g,3,"amber");g.characters[0].hp=3
 	g.queue=[];g.phase="resolving";g.turn_stage="resolution"
 	var action:Dictionary=g._add_action(0,card,true)
 	g._start_effect(action);g._pump();g.target(0,4);drain(g)
@@ -85,7 +85,7 @@ func _exceptions() -> void:
 
 func _death_stages(shown:bool) -> void:
 	for scenario in ["alive","no_cards","immortal","bound","old_death","new_death","purple","skip","wipe"]:
-		var g=H.fixture(8);g.presentation_enabled=shown;g.stage_presentation_enabled=shown
+		var g=H.fixture(7);g.presentation_enabled=shown;g.stage_presentation_enabled=shown
 		var death_card := -1
 		if scenario!="alive":g.characters[0].hp=0;g.characters[0].death_round=g.round_number
 		if scenario=="immortal":H.give_death(g,0,"immortal")
@@ -101,7 +101,7 @@ func _death_stages(shown:bool) -> void:
 			if g.animation.get("turn_stage","")=="death" and g.animation.get("announce",false):announced=true
 			if g.animation.is_empty() and g.phase in ["review","ended"]:break
 			check(S.step(g)=="","death stage advances")
-		check(announced==(shown and scenario in ["new_death","purple"]),"skip only inactive death stages: "+scenario)
+		check(announced==(shown and scenario in ["new_death","purple","skip"]),"inactive stages are omitted; explicit skip retains its cancellation animation: "+scenario)
 		check(g.badges[0]==(2 if scenario=="new_death" else 0),"eligible death effect is preserved: "+scenario)
 		if scenario=="purple":
 			check(g.characters[0].hp==1 and g.death_queue.is_empty() and not g.death_revealed.has(death_card),"purple revives before death cards are queued or revealed")

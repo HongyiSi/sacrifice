@@ -1,7 +1,7 @@
 extends RefCounted
 const Rules = preload("res://scripts/rules.gd")
 const Actions = preload("res://scripts/match_actions.gd")
-const PROTOCOL := "sacrifice-0.20.69"
+const PROTOCOL := "sacrifice-0.20.70"
 const ALPHABET := "23456789ABCDEFGHJKLMNPQRSTUVWXYZ"
 const MAX_ROOMS := 32
 var rooms: Dictionary = {}
