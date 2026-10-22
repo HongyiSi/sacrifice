@@ -2,6 +2,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 import json, subprocess, shutil, hashlib
 import argparse
+from mix_audio import mix_audio
 parser=argparse.ArgumentParser()
 parser.add_argument('--work',required=True,type=Path,help='Directory containing frames/timeline.json')
 parser.add_argument('--project',required=True,type=Path)
@@ -62,7 +63,9 @@ def title(end=False):
 info=json.loads((W/'frames/timeline.json').read_text(encoding='utf8'))
 intro_n=120;end_n=120;total=intro_n+info['frames']+end_n
 output=OUT/'sacrifice-gameplay-demo.mp4'
-cmd=[str(FF),'-y','-v','warning','-f','rawvideo','-pix_fmt','rgb24','-s','1920x1080','-r',str(FPS),'-i','pipe:0','-stream_loop','-1','-i',str(P/'assets/music/woodland_fantasy.mp3'),'-map','0:v:0','-map','1:a:0','-c:v','libx264','-preset','fast','-crf','21','-pix_fmt','yuv420p','-c:a','aac','-b:a','160k','-af',f'volume=0.24,afade=t=in:d=1.5,afade=t=out:st={total/FPS-3}:d=3','-t',str(total/FPS),'-movflags','+faststart',str(output)]
+soundtrack=OUT/'demo-mix.wav'
+audio_manifest=mix_audio(P,W/'frames/timeline.json',soundtrack,FF,intro_n/FPS,end_n/FPS)
+cmd=[str(FF),'-y','-v','warning','-f','rawvideo','-pix_fmt','rgb24','-s','1920x1080','-r',str(FPS),'-i','pipe:0','-i',str(soundtrack),'-map','0:v:0','-map','1:a:0','-c:v','libx264','-preset','fast','-crf','21','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-t',str(total/FPS),'-movflags','+faststart',str(output)]
 with (W/'encode.log').open('wb') as log:
  proc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=log,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
  def write(im):proc.stdin.write(im.tobytes())
@@ -81,7 +84,7 @@ with (W/'encode.log').open('wb') as log:
 shutil.copy2(W/'frames/frame-00001.jpg',OUT/'gameplay.jpg')
 if args.install:
  for name in [output.name,'gameplay-cover.jpg','gameplay.jpg']:shutil.copy2(OUT/name,MEDIA/name)
-manifest={'video':output.name,'size_bytes':output.stat().st_size,'duration_seconds':total/FPS,'fps':FPS,'resolution':SIZE,'sha256':hashlib.sha256(output.read_bytes()).hexdigest(),'intro_seconds':intro_n/FPS,'outro_seconds':end_n/FPS,'rendered_gameplay_frames':info['frames'],'music':'Woodland Fantasy — Matthew Pablo, CC BY 3.0; excerpt, gain and fades','audio_note':'background music only; gameplay sound effects are not captured','segments':info['segments'],'assertions':info['assertions'],'motion_sample_count':len(info.get('motion_evidence',[]))}
+manifest={'video':output.name,'size_bytes':output.stat().st_size,'duration_seconds':total/FPS,'fps':FPS,'resolution':SIZE,'sha256':hashlib.sha256(output.read_bytes()).hexdigest(),'intro_seconds':intro_n/FPS,'outro_seconds':end_n/FPS,'rendered_gameplay_frames':info['frames'],'music':'Woodland Fantasy — Matthew Pablo, CC BY 3.0; excerpt, gain, ducking and fades','audio_note':'production gameplay cues mixed on the rendered frame clock with background music','audio_cue_count':len(audio_manifest['cues']),'segments':info['segments'],'assertions':info['assertions'],'motion_sample_count':len(info.get('motion_evidence',[]))}
 (OUT/'video-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
 (W/'video-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
 print(json.dumps({k:v for k,v in manifest.items() if k not in ['segments']},ensure_ascii=False),flush=True)

@@ -1,18 +1,18 @@
 {
   "video": "sacrifice-gameplay-demo.mp4",
-  "size_bytes": 5574213,
+  "size_bytes": 5802539,
   "duration_seconds": 56.266666666666666,
   "fps": 30,
   "resolution": [
     1920,
     1080
   ],
-  "sha256": "45f1c7ad9e72b28366cbeb3564d398277779b698c35f9f02fb7eb98aa36ce681",
+  "sha256": "720b7e40c9b5f542eec12a1675c8ee1933a081ffc3373e44ce020689b0813643",
   "intro_seconds": 4.0,
   "outro_seconds": 4.0,
   "rendered_gameplay_frames": 1448,
-  "music": "Woodland Fantasy — Matthew Pablo, CC BY 3.0; excerpt, gain and fades",
-  "audio_note": "background music only; gameplay sound effects are not captured",
+  "music": "Woodland Fantasy — Matthew Pablo, CC BY 3.0; excerpt, gain, ducking and fades",
+  "audio_note": "Production gameplay cues mixed on the rendered frame clock with background music.",
   "segments": [
     {
       "badges": [
@@ -1154,5 +1154,7 @@
     "lethal attack grants enemy fourth badge",
     "alternate target preserves enemy at two badges"
   ],
-  "motion_sample_count": 95
+  "motion_sample_count": 95,
+  "audio_cue_count": 16,
+  "audio_updated": "2026-10-22"
 }

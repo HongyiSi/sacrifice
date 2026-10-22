@@ -1,0 +1,145 @@
+{
+  "video_sha256": "720b7e40c9b5f542eec12a1675c8ee1933a081ffc3373e44ce020689b0813643",
+  "size_bytes": 5802539,
+  "video_picture_stream_unchanged": "SHA256=711494d6bd5a453f46e5cafa7656b387dd5cafa2da63e6c498e1d8d5dcfc1a0b",
+  "full_decode_exit": 0,
+  "duration_seconds": 56.266666666666666,
+  "audio_cues": 16,
+  "audio_to_master_correlation": 0.9972663502398643,
+  "final_peak": 0.6660758256912231,
+  "clipped_samples": 0,
+  "per_cue": [
+    {
+      "file": "res://assets/sfx/cards/play.ogg",
+      "time": 7.8,
+      "final_effect_rms": 0.03704044967889786,
+      "reference_rms": 0.037737760692834854
+    },
+    {
+      "file": "res://assets/sfx/strike_sync/lift.wav",
+      "time": 15.158416666666668,
+      "final_effect_rms": 0.003614844987168908,
+      "reference_rms": 0.00363634480163455
+    },
+    {
+      "file": "res://assets/sfx/strike_sync/flight_standard.wav",
+      "time": 15.548770833333334,
+      "final_effect_rms": 0.03483143448829651,
+      "reference_rms": 0.03558316081762314
+    },
+    {
+      "file": "res://assets/sfx/attacks/strike_impact.ogg",
+      "time": 15.9,
+      "final_effect_rms": 0.04004157334566116,
+      "reference_rms": 0.04066457971930504
+    },
+    {
+      "file": "res://assets/sfx/attacks/magic_strike_rise.ogg",
+      "time": 18.233333333333334,
+      "final_effect_rms": 0.00345930689945817,
+      "reference_rms": 0.003441381733864546
+    },
+    {
+      "file": "res://assets/sfx/attacks/magic_strike_travel.ogg",
+      "time": 19.233333333333334,
+      "final_effect_rms": 0.027143064886331558,
+      "reference_rms": 0.0273148100823164
+    },
+    {
+      "file": "res://assets/sfx/attacks/magic_strike_impact.ogg",
+      "time": 20.1,
+      "final_effect_rms": 0.04267072305083275,
+      "reference_rms": 0.04282248765230179
+    },
+    {
+      "file": "res://assets/sfx/strike_sync/lift.wav",
+      "time": 32.15841666666667,
+      "final_effect_rms": 0.0036210629623383284,
+      "reference_rms": 0.00363634480163455
+    },
+    {
+      "file": "res://assets/sfx/strike_sync/flight_standard.wav",
+      "time": 32.548770833333336,
+      "final_effect_rms": 0.034940097481012344,
+      "reference_rms": 0.03558316081762314
+    },
+    {
+      "file": "res://assets/sfx/attacks/strike_impact.ogg",
+      "time": 32.9,
+      "final_effect_rms": 0.04020966589450836,
+      "reference_rms": 0.04078824818134308
+    },
+    {
+      "file": "res://assets/sfx/attacks/strike_death.ogg",
+      "time": 33.45883333333333,
+      "final_effect_rms": 0.009420372545719147,
+      "reference_rms": 0.009430257603526115
+    },
+    {
+      "file": "res://assets/sfx/ordinary_suite/badge.wav",
+      "time": 37.36666666666667,
+      "final_effect_rms": 0.04572892561554909,
+      "reference_rms": 0.04584835097193718
+    },
+    {
+      "file": "res://assets/sfx/ordinary_suite/badge.wav",
+      "time": 37.486666666666665,
+      "final_effect_rms": 0.04284214228391647,
+      "reference_rms": 0.04294881597161293
+    },
+    {
+      "file": "res://assets/sfx/strike_sync/lift.wav",
+      "time": 48.025083333333335,
+      "final_effect_rms": 0.003789240960031748,
+      "reference_rms": 0.00363634480163455
+    },
+    {
+      "file": "res://assets/sfx/strike_sync/flight_standard.wav",
+      "time": 48.4154375,
+      "final_effect_rms": 0.03471501171588898,
+      "reference_rms": 0.03558316081762314
+    },
+    {
+      "file": "res://assets/sfx/attacks/strike_impact.ogg",
+      "time": 48.766666666666666,
+      "final_effect_rms": 0.03966620936989784,
+      "reference_rms": 0.04066457971930504
+    }
+  ],
+  "source_gameplay_script_changes": false,
+  "browser": {
+    "success": true,
+    "metadata": {
+      "duration": 56.266667,
+      "width": 1920,
+      "height": 1080,
+      "muted": false,
+      "volume": 1
+    },
+    "playback": [
+      {
+        "start": 15.25,
+        "end": 16.940667,
+        "playing": true,
+        "context": "running",
+        "peak_rms": 0.08317080834519634
+      },
+      {
+        "start": 19.45,
+        "end": 21.146,
+        "playing": true,
+        "context": "running",
+        "peak_rms": 0.10124810666450627
+      },
+      {
+        "start": 37.1,
+        "end": 38.78,
+        "playing": true,
+        "context": "running",
+        "peak_rms": 0.07476725579478667
+      }
+    ],
+    "errors": []
+  },
+  "timeline_segments_matched": 54
+}

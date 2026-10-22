@@ -14,10 +14,15 @@ var chapter="planning"
 var timeline=[]
 var motion_evidence=[]
 var preview=false
+var audio_only=false
+var audio_cues=[]
+var audio_matches=[]
 var serial=81000
 
 func _initialize():
 	preview="--preview" in OS.get_cmdline_user_args()
+	audio_only="--audio-only" in OS.get_cmdline_user_args()
+	assert(not (preview and audio_only),"audio-only requires the complete frame timeline")
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--output="):folder=arg.trim_prefix("--output=")
 	if preview:folder+="-preview"
@@ -44,14 +49,29 @@ func show(g):
 func clip(g,seconds:float,label:String,refresh=true):
 	if refresh:await show(g)
 	var first=frame_no
+	if audio_matches.is_empty() or audio_matches[-1].match!=g.match_id:
+		audio_matches.append({"match":g.match_id,"first":first})
 	var animated=[]
 	for n in nodes(main):
 		var props=n.get_property_list().map(func(p):return p.name)
 		if "elapsed" in props and n.has_method("_process"):
 			animated.append(n)
 	var count=maxi(1,roundi(seconds*FPS))
+	# Export the production sound schedule on the same sampled frame clock.
+	# Recording wall-clock playback would drift while JPEGs are being written.
+	var cues:Array=main.attack_audio.cues_for(g.snapshot(0))
+	if label=="stage-card":main.attack_audio._movement_cue(cues,"play",Flight.DURATION_MS/1000.0)
+	for cue in cues:
+		var offset=float(cue.get("delay",0.0))
+		if offset>seconds+.001:continue
+		var entry=cue.duplicate(true)
+		entry.merge({"frame":first+offset/seconds*count,"stage_first":first,"stage_last":first+count-1,
+			"chapter":chapter,"label":label,"kind":g.animation.get("kind",""),
+			"style":g.animation.get("style",""),"match":g.match_id})
+		audio_cues.append(entry)
 	var samples=[0.0,0.25,0.5,0.7,0.88,0.98] if preview else range(count).map(func(i):return float(i)/count)
-	for fraction in samples:
+	if audio_only:frame_no+=count
+	for fraction in ([] if audio_only else samples):
 		var t=float(fraction)*seconds
 		# Move the real card before sampling effects that use its emblem as
 		# their origin. Only card_start/travel raises it; subsequent stages
@@ -150,6 +170,6 @@ func run():
 	assert(g.phase=="review" and g.badges[1]==2 and g.characters[3].hp==1,"alternative must keep the threat alive")
 	await clip(g,3.0,"avoid-trigger")
 	var file=FileAccess.open(folder+"/timeline.json",FileAccess.WRITE)
-	file.store_string(JSON.stringify({"fps":FPS,"frames":frame_no,"preview":preview,"segments":timeline,"motion_evidence":motion_evidence,"assertions":["production cinema stage ages match sampled frames","lethal attack grants enemy fourth badge","alternate target preserves enemy at two badges"]},"  "));file.close()
+	file.store_string(JSON.stringify({"fps":FPS,"frames":frame_no,"preview":preview,"audio_only":audio_only,"segments":timeline,"audio_cues":audio_cues,"audio_matches":audio_matches,"motion_evidence":motion_evidence,"assertions":["audio cues follow production sampled stages" if audio_only else "production cinema stage ages match sampled frames","lethal attack grants enemy fourth badge","alternate target preserves enemy at two badges"]},"  "));file.close()
 	print("PORTFOLIO_CAPTURE_OK frames=",frame_no)
 	main.queue_free();await process_frame;quit()
